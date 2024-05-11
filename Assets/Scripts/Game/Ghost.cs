@@ -4,7 +4,7 @@ public class MonsterController : MonoBehaviour
 {
     public float attackRange = 2f; // 몬스터의 근접 공격 범위
     public float attackCooldown = 1f; // 공격 쿨다운 시간
-    public float attackDamage = 10f; // 공격 데미지
+    public int attackDamage = 10; // 공격 데미지
 
     private Animator animator; // 몬스터의 애니메이터
     private bool isAttacking = false; // 공격 중인지 여부
