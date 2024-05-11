@@ -6,16 +6,40 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int n_Hp;   // 플레이어 체력
+    private float n_Hp;   // 플레이어 체력
+    public float maxHealth = 100f; //플레이어 최대 체력
     public float f_Speed;   // 플레이어 스피드
     private bool isRunning = false;
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
 
+    public static Player instance;
+
+    public void Awake()
+    {
+        if(instance ==  null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void Update()
+    {
+        // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
+        if (Player.instance != null)
+        {
+            // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
+            PlayerMovement();
+        }
+    }
     private void Start()
     {
         rb_Player = GetComponent<Rigidbody2D>();
         p_Ani = GetComponent<Animator>();
+        n_Hp = maxHealth;  //시작할 때 체력 동급
     }
 
     private void FixedUpdate()
@@ -44,5 +68,20 @@ public class Player : MonoBehaviour
         {
             isRunning = true; // 달리기 애니메이션을 재생
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        n_Hp -= damage; //체력 감소 
+
+        if(n_Hp < 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player Died");
     }
 }
