@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public float moveSpeed = 3f; // 몬스터의 이동 속도
+    public float moveSpeed; // 몬스터의 이동 속도
     public float attackRange = 2f; // 몬스터의 근접 공격 범위
     public float attackCooldown = 1f; // 공격 쿨다운 시간
     public float attackDamage = 10f; // 공격 데미지
