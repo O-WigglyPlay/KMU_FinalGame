@@ -4,35 +4,49 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public float moveSpeed = 3f; // 몬스터의 이동 속도
+    public float moveSpeed; // 몬스터의 이동 속도
     public float attackRange = 2f; // 몬스터의 근접 공격 범위
     public float attackCooldown = 1f; // 공격 쿨다운 시간
     public float attackDamage = 10f; // 공격 데미지
 
+    public Rigidbody2D target;
+
+    bool isLive = true;
+
+    Rigidbody2D rigid;
+    SpriteRenderer spriter;
+
     private Animator animator; // 몬스터의 애니메이터
-  //  private bool isAttacking = false; // 공격 중인지 여부
-  //  private float lastAttackTime = 0f; // 마지막 공격 시간
     private Transform playerTransform; // 플레이어의 Transform 컴포넌트
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        rigid = GetComponent<Rigidbody2D>();
+        spriter = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
-
-        // 플레이어 오브젝트를 참조하여 플레이어의 Transform을 가져옴
-        playerTransform = Player.instance.transform;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        // 플레이어를 향하는 방향 벡터 계산
-        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        if(!isLive)
+        {
+            return;
+        }
+        Vector2 dirvec = target.position - rigid.position;
+        Vector2 nextVec = dirvec.normalized * moveSpeed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextVec);
+        rigid.velocity = Vector2.zero;
+    }
 
-        // 플레이어 방향으로 몬스터 이동
-        transform.Translate(directionToPlayer * moveSpeed * Time.deltaTime);
+    void LateUpdate()
+    {
+        if (!isLive)
+        {
+            return;
+        }
 
-        // 플레이어와의 거리를 계산
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        spriter.flipX = target.position.x < rigid.position.y;
     }
 }
