@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     
     public void Update()
     {
+        Debug.Log(n_Hp);
         // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
         if (Player.instance != null)
         {
