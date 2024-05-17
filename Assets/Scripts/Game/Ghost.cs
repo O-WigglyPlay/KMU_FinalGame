@@ -4,85 +4,76 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public int maxHealth;  //ìµœëŒ€ ì²´ë ¥
-    public int curHealth;  //í˜„ì¬ ì²´ë ¥
+    public int maxHealth;  //ÃÖ´ë Ã¼·Â
+    public int curHealth;  //ÇöÀç Ã¼·Â
 
-    public float moveSpeed; // ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„
-    public float attackRange; // ëª¬ìŠ¤í„°ì˜ ê·¼ì ‘ ê³µê²© ë²”ìœ„
-    public float attackCooldown; // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„
-    public int attackDamage; // ê³µê²© ë°ë¯¸ì§€
+    public float moveSpeed; // ¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ
+    public float attackRange; // ¸ó½ºÅÍÀÇ ±ÙÁ¢ °ø°İ ¹üÀ§
+    public float attackCooldown; // °ø°İ Äğ´Ù¿î ½Ã°£
+    public int attackDamage; // °ø°İ µ¥¹ÌÁö
 
-    private Animator animator; // ëª¬ìŠ¤í„°ì˜ ì• ë‹ˆë©”ì´í„°
-    private float lastAttackTime = 0f; // ë§ˆì§€ë§‰ ê³µê²© ì‹œê°„
-    private Transform playerTransform; // í”Œë ˆì´ì–´ì˜ Transform ì»´í¬ë„ŒíŠ¸
-    private Rigidbody2D rb; // Rigidbody2D ì»´í¬ë„ŒíŠ¸
+    private Animator animator; // ¸ó½ºÅÍÀÇ ¾Ö´Ï¸ŞÀÌÅÍ
+    private float lastAttackTime = 0f; // ¸¶Áö¸· °ø°İ ½Ã°£
+    private Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ Transform ÄÄÆ÷³ÍÆ®
+    private Rigidbody2D rb; // Rigidbody2D ÄÄÆ÷³ÍÆ®
 
     private void Start()
     {
-        animator = GetComponent<Animator>(); // ì• ë‹ˆë©”ì´í„° ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
+        animator = GetComponent<Animator>(); // ¾Ö´Ï¸ŞÀÌÅÍ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
 
-        // í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¸ì¡°í•˜ì—¬ í”Œë ˆì´ì–´ì˜ Transformì„ ê°€ì ¸ì˜´
+        // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®¸¦ ÂüÁ¶ÇÏ¿© ÇÃ·¹ÀÌ¾îÀÇ TransformÀ» °¡Á®¿È
         playerTransform = Player.instance.transform;
 
-        // ì´ˆê¸° ì²´ë ¥ ì„¤ì •
+        // ÃÊ±â Ã¼·Â ¼³Á¤
         curHealth = maxHealth;
     }
 
     private void Update()
     {
-        // í”Œë ˆì´ì–´ë¥¼ í–¥í•˜ëŠ” ë°©í–¥ ë²¡í„° ê³„ì‚°
+        // ÇÃ·¹ÀÌ¾î¸¦ ÇâÇÏ´Â ¹æÇâ º¤ÅÍ °è»ê
         Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
-        // í”Œë ˆì´ì–´ ë°©í–¥ìœ¼ë¡œ ëª¬ìŠ¤í„° ì´ë™
+        // ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î ¸ó½ºÅÍ ÀÌµ¿
         rb.velocity = directionToPlayer * moveSpeed;
 
-        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ë¥¼ ê³„ì‚°
+        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®¸¦ °è»ê
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        // í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„°ì˜ ê·¼ì ‘ ê³µê²© ë²”ìœ„ ë‚´ì— ìˆê³ , ê³µê²© ì¿¨ë‹¤ìš´ì´ ì§€ë‚¬ì„ ë•Œ ê³µê²© ì‹œì‘
+        // ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍÀÇ ±ÙÁ¢ °ø°İ ¹üÀ§ ³»¿¡ ÀÖ°í, °ø°İ Äğ´Ù¿îÀÌ Áö³µÀ» ¶§ °ø°İ ½ÃÀÛ
         if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
 
-            // ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
+            // ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
             animator.SetTrigger("Attack");
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        // ì¶©ëŒí•œ ëŒ€ìƒì´ í”Œë ˆì´ì–´ì¸ì§€ í™•ì¸
+        // Ãæµ¹ÇÑ ´ë»óÀÌ ÇÃ·¹ÀÌ¾îÀÎÁö È®ÀÎ
         if (collision.gameObject.CompareTag("Player"))
         {
-            // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„ì´ ì§€ë‚¬ë‹¤ë©´ ì²´ë ¥ ê°ì†Œ
+            // °ø°İ Äğ´Ù¿î ½Ã°£ÀÌ Áö³µ´Ù¸é Ã¼·Â °¨¼Ò
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 lastAttackTime = Time.time;
-    }
 
-                // í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì„ ê°ì†Œì‹œí‚¤ëŠ” ë¡œì§
+                // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» °¨¼Ò½ÃÅ°´Â ·ÎÁ÷
                 Player player = collision.gameObject.GetComponent<Player>();
                 if (player != null)
                 {
                     player.n_Hp -= attackDamage;
-                    // í”Œë ˆì´ì–´ ì²´ë ¥ì´ 0 ì´í•˜ì¸ì§€ í™•ì¸í•˜ì—¬ ì‚¬ë§ ì²˜ë¦¬
+
+                    // ÇÃ·¹ÀÌ¾î Ã¼·ÂÀÌ 0 ÀÌÇÏÀÎÁö È®ÀÎÇÏ¿© »ç¸Á Ã³¸®
                     if (player.n_Hp <= 0)
                     {
                         player.Die();
                     }
                 }
-            
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // ë§Œì•½ ì¶©ëŒí•œ ê°ì²´ê°€ í”Œë ˆì´ì–´ë¼ë©´, ë°ë¯¸ì§€ë¥¼ ì£¼ë„ë¡ í•¨
-        if (other.CompareTag("Player"))
-        {
-            Player playerScript = other.GetComponent<Player>();
-            if (playerScript != null)
-            {
 
-                // ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
+                // ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
                 animator.SetTrigger("Attack");
             }
         }
