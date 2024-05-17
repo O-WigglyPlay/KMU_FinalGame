@@ -79,18 +79,25 @@ public class Player : MonoBehaviour
             isRunning = true; // 달리기 애니메이션을 재생
         }
     }
-    public void TakeDamage(int damage)
-    {
-        n_Hp -= damage; //체력 감소 
-
-        if(n_Hp < 0)
-        {
-            Die();
-        }
-    }
 
     public void Die()
     {
         Debug.Log("Player Died");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 충돌한 오브젝트가 Ghost 또는 Zombie인지 확인
+        if (collision.gameObject.CompareTag("Ghost") || collision.gameObject.CompareTag("Zombie"))
+        {
+            // 충돌 시 피 감소
+            n_Hp -= 10; // 예를 들어 10의 데미지를 입힘
+
+            // 피가 0 이하로 떨어졌을 때 게임 오버
+            if (n_Hp <= 0)
+            {
+                Die();
+            }
+        }
     }
 }
