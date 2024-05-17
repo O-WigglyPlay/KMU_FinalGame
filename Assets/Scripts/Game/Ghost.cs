@@ -20,7 +20,7 @@ public class Ghost : MonoBehaviour
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
 
         // 플레이어 오브젝트를 참조하여 플레이어의 Transform을 가져옴
-        playerTransform = Player.instance.transform;
+        // playerTransform = Player.instance.transform;
     }
 
     private void Update()
@@ -49,11 +49,11 @@ public class Ghost : MonoBehaviour
     public void PerformAttack()
     {
         // 플레이어에게 데미지를 입힘 (플레이어가 몬스터의 자식 객체라고 가정)
-        Player playerScript = Player.instance;
-        if (playerScript != null)
-        {
-            playerScript.TakeDamage(attackDamage);
-        }
+        // Player playerScript = Player.instance;
+        // if (playerScript != null)
+        // {
+        //     playerScript.TakeDamage(attackDamage);
+        // }
     }
 
     // Animation Event: End Attack
@@ -71,7 +71,7 @@ public class Ghost : MonoBehaviour
             if (playerScript != null)
             {
                 // 플레이어에게 데미지를 줌
-                playerScript.TakeDamage(attackDamage);
+                // playerScript.TakeDamage(attackDamage);
 
                 // 다음 공격을 위한 쿨다운 시작
                 StartCoroutine(AttackCooldown());
