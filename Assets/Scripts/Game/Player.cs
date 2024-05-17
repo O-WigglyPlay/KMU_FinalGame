@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         {
             // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
             PlayerMovement();
+            Attack();
         }
     }
     private void FixedUpdate()
@@ -80,6 +81,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(TriggerAttack("p_LeftAttack"));
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(TriggerAttack("p_RightAttack"));
+        }
+    }
+
     public void Die()
     {
         Debug.Log("Player Died");
@@ -99,5 +112,15 @@ public class Player : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    private IEnumerator TriggerAttack(string attackType)
+    {
+        p_Ani.SetBool(attackType, true);
+        if(Input.GetMouseButton(0))
+            yield return new WaitForSeconds(0.9f); // 왼쪽 공격 지속 시간
+        if(Input.GetMouseButton(1))
+            yield return new WaitForSeconds(0.5f); // 오른쪽 공격 지속 시간
+        p_Ani.SetBool(attackType, false);
     }
 }
