@@ -359,7 +359,7 @@ MonoBehaviour:
   curHealth: 10
   moveSpeed: 5
   attackRange: 0
-  attackCooldown: 1
+  attackCooldown: 5
   attackDamage: 10
 --- !u!61 &150208808
 BoxCollider2D:
@@ -432,7 +432,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &150208810
 Animator:
   serializedVersion: 5
@@ -2143,6 +2143,14 @@ PrefabInstance:
       value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -52850753, guid: b2989928cdf4d1f4ba1366c1e71fef29, type: 3}
@@ -2153,6 +2161,10 @@ PrefabInstance:
     - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
       propertyPath: m_SortingLayerID
       value: -735003405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4869393727544722127, guid: 64453d5f9a1a9034a910b3b9b4a9252d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2300,7 +2312,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.22, y: 0.26}
-    newSize: {x: 2.22, y: 3.72}
+    newSize: {x: 0.22, y: 0.26}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3312,7 +3324,7 @@ MonoBehaviour:
   curHealth: 50
   moveSpeed: 2
   attackRange: 2
-  attackCooldown: 1
+  attackCooldown: 5
   attackDamage: 10
 --- !u!61 &1096296967
 BoxCollider2D:
@@ -3385,7 +3397,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1131346162
 GameObject:
   m_ObjectHideFlags: 0

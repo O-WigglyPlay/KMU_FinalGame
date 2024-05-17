@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int n_Hp;               // 플레이어 체력
+    public int n_Hp;               // 플레이어 체력
     public int n_maxHealth = 100;   // 플레이어 최대 체력
     public float f_Speed;           // 플레이어 스피드
     private bool isRunning = false; // 달리는 중인지 확인용
