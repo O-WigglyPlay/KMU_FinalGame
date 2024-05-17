@@ -73,23 +73,13 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            StartCoroutine(TriggerAttack("p_LeftAttack"));
+            p_Ani.SetTrigger("p_LeftAttack");
         }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            StartCoroutine(TriggerAttack("p_RightAttack"));
-        }
-    }
-
-    private IEnumerator TriggerAttack(string attackType)
-    {
-        p_Ani.SetBool(attackType, true);
-        if(Input.GetMouseButton(0))
-            yield return new WaitForSeconds(0.9f); // 왼쪽 공격 지속 시간
-        if(Input.GetMouseButton(1))
-            yield return new WaitForSeconds(0.5f); // 오른쪽 공격 지속 시간
-        p_Ani.SetBool(attackType, false);
+        // else if (Input.GetMouseButtonDown(1))
+        // {
+        //     p_Ani.SetTrigger("p_LeftAttack");
+        // }
     }
 }
