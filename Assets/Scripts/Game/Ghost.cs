@@ -1,90 +1,90 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public float moveSpeed; // ¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ
-    public float attackRange = 2f; // ¸ó½ºÅÍÀÇ ±ÙÁ¢ °ø°İ ¹üÀ§
-    public float attackCooldown = 1f; // °ø°İ Äğ´Ù¿î ½Ã°£
-    public int attackDamage = 10; // °ø°İ µ¥¹ÌÁö
+    public int maxHealth;  //ìµœëŒ€ ì²´ë ¥
+    public int curHealth;  //í˜„ì¬ ì²´ë ¥
 
-    private Animator animator; // ¸ó½ºÅÍÀÇ ¾Ö´Ï¸ŞÀÌÅÍ
-    //private bool isAttacking = false; // °ø°İ ÁßÀÎÁö ¿©ºÎ
-    private float lastAttackTime = 0f; // ¸¶Áö¸· °ø°İ ½Ã°£
-    private Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ Transform ÄÄÆ÷³ÍÆ®
+    public float moveSpeed; // ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„
+    public float attackRange; // ëª¬ìŠ¤í„°ì˜ ê·¼ì ‘ ê³µê²© ë²”ìœ„
+    public float attackCooldown; // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„
+    public int attackDamage; // ê³µê²© ë°ë¯¸ì§€
+
+    private Animator animator; // ëª¬ìŠ¤í„°ì˜ ì• ë‹ˆë©”ì´í„°
+    private float lastAttackTime = 0f; // ë§ˆì§€ë§‰ ê³µê²© ì‹œê°„
+    private Transform playerTransform; // í”Œë ˆì´ì–´ì˜ Transform ì»´í¬ë„ŒíŠ¸
+    private Rigidbody2D rb; // Rigidbody2D ì»´í¬ë„ŒíŠ¸
 
     private void Start()
     {
-        animator = GetComponent<Animator>(); // ¾Ö´Ï¸ŞÀÌÅÍ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        animator = GetComponent<Animator>(); // ì• ë‹ˆë©”ì´í„° ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
 
-        // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®¸¦ ÂüÁ¶ÇÏ¿© ÇÃ·¹ÀÌ¾îÀÇ TransformÀ» °¡Á®¿È
-        // playerTransform = Player.instance.transform;
+        // í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¸ì¡°í•˜ì—¬ í”Œë ˆì´ì–´ì˜ Transformì„ ê°€ì ¸ì˜´
+        playerTransform = Player.instance.transform;
+
+        // ì´ˆê¸° ì²´ë ¥ ì„¤ì •
+        curHealth = maxHealth;
     }
 
     private void Update()
     {
-        // ÇÃ·¹ÀÌ¾î¸¦ ÇâÇÏ´Â ¹æÇâ º¤ÅÍ °è»ê
+        // í”Œë ˆì´ì–´ë¥¼ í–¥í•˜ëŠ” ë°©í–¥ ë²¡í„° ê³„ì‚°
         Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
-        // ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î ¸ó½ºÅÍ ÀÌµ¿
-        transform.Translate(directionToPlayer * moveSpeed * Time.deltaTime);
+        // í”Œë ˆì´ì–´ ë°©í–¥ìœ¼ë¡œ ëª¬ìŠ¤í„° ì´ë™
+        rb.velocity = directionToPlayer * moveSpeed;
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®¸¦ °è»ê
+        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ë¥¼ ê³„ì‚°
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        // ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍÀÇ ±ÙÁ¢ °ø°İ ¹üÀ§ ³»¿¡ ÀÖ°í, °ø°İ Äğ´Ù¿îÀÌ Áö³µÀ» ¶§ °ø°İ ½ÃÀÛ
+        // í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„°ì˜ ê·¼ì ‘ ê³µê²© ë²”ìœ„ ë‚´ì— ìˆê³ , ê³µê²© ì¿¨ë‹¤ìš´ì´ ì§€ë‚¬ì„ ë•Œ ê³µê²© ì‹œì‘
         if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
         {
-            //isAttacking = true;
             lastAttackTime = Time.time;
 
-            // ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
+            // ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
             animator.SetTrigger("Attack");
         }
     }
 
-    // Animation Event: Attack Event
-    public void PerformAttack()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        // ÇÃ·¹ÀÌ¾î¿¡°Ô µ¥¹ÌÁö¸¦ ÀÔÈû (ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍÀÇ ÀÚ½Ä °´Ã¼¶ó°í °¡Á¤)
-        // Player playerScript = Player.instance;
-        // if (playerScript != null)
-        // {
-        //     playerScript.TakeDamage(attackDamage);
-        // }
+        // ì¶©ëŒí•œ ëŒ€ìƒì´ í”Œë ˆì´ì–´ì¸ì§€ í™•ì¸
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„ì´ ì§€ë‚¬ë‹¤ë©´ ì²´ë ¥ ê°ì†Œ
+            if (Time.time - lastAttackTime >= attackCooldown)
+            {
+                lastAttackTime = Time.time;
     }
 
-    // Animation Event: End Attack
-    public void EndAttack()
-    {
-        //isAttacking = false;
-    }
-
+                // í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì„ ê°ì†Œì‹œí‚¤ëŠ” ë¡œì§
+                Player player = collision.gameObject.GetComponent<Player>();
+                if (player != null)
+                {
+                    player.n_Hp -= attackDamage;
+                    // í”Œë ˆì´ì–´ ì²´ë ¥ì´ 0 ì´í•˜ì¸ì§€ í™•ì¸í•˜ì—¬ ì‚¬ë§ ì²˜ë¦¬
+                    if (player.n_Hp <= 0)
+                    {
+                        player.Die();
+                    }
+                }
+            
     void OnTriggerEnter2D(Collider2D other)
     {
-        // ¸¸¾à Ãæµ¹ÇÑ °´Ã¼°¡ ÇÃ·¹ÀÌ¾î¶ó¸é, µ¥¹ÌÁö¸¦ ÁÖµµ·Ï ÇÔ
+        // ë§Œì•½ ì¶©ëŒí•œ ê°ì²´ê°€ í”Œë ˆì´ì–´ë¼ë©´, ë°ë¯¸ì§€ë¥¼ ì£¼ë„ë¡ í•¨
         if (other.CompareTag("Player"))
         {
             Player playerScript = other.GetComponent<Player>();
             if (playerScript != null)
             {
-                // ÇÃ·¹ÀÌ¾î¿¡°Ô µ¥¹ÌÁö¸¦ ÁÜ
-                // playerScript.TakeDamage(attackDamage);
 
-                // ´ÙÀ½ °ø°İÀ» À§ÇÑ Äğ´Ù¿î ½ÃÀÛ
-                StartCoroutine(AttackCooldown());
+                // ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
+                animator.SetTrigger("Attack");
             }
         }
-    }
-
-    private IEnumerator AttackCooldown()
-    {
-        // ÁöÁ¤µÈ Äğ´Ù¿î ½Ã°£±îÁö ´ë±â
-        yield return new WaitForSeconds(attackCooldown);
-
-        // ¸¶Áö¸· °ø°İ ½Ã°£ ÃÊ±âÈ­
-        lastAttackTime = Time.time;
     }
 }

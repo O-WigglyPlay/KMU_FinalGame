@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int n_Hp;               // 플레이어 체력
+    public int n_Hp;               // 플레이어 체력
     public int n_maxHealth = 100;   // 플레이어 최대 체력
     public float f_Speed;           // 플레이어 스피드
     public int n_AttackDmg = 1;
@@ -81,5 +81,21 @@ public class Player : MonoBehaviour
         // {
         //     p_Ani.SetTrigger("p_LeftAttack");
         // }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 충돌한 오브젝트가 Ghost 또는 Zombie인지 확인
+        if (collision.gameObject.CompareTag("Ghost") || collision.gameObject.CompareTag("Zombie"))
+        {
+            // 충돌 시 피 감소
+            n_Hp -= 10; // 예를 들어 10의 데미지를 입힘
+
+            // 피가 0 이하로 떨어졌을 때 게임 오버
+            if (n_Hp <= 0)
+            {
+                Die();
+            }
+        }
     }
 }
