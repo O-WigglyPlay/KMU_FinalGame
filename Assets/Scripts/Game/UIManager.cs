@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public static bool isGamePause = false;
     public GameObject pausePanel;
+    public GameObject Setting;
+    public GameObject PauseBtn;
 
     // Update is called once per frame
     void Update()
@@ -36,6 +39,11 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         isGamePause = true;
     }
+    
+    public void MainGame()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 
     public void GameQuit()
     {
@@ -44,5 +52,12 @@ public class UIManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    public void Settings()
+    {
+        Setting.SetActive(true);
+        PauseBtn.SetActive(false);
+
     }
 }
