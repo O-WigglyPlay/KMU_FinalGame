@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject Setting;
     public GameObject PauseBtn;
-
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +17,7 @@ public class UIManager : MonoBehaviour
             if (isGamePause)
             {
                 Resume();
+                ResetOpt();
             }
             else
             {
@@ -40,8 +40,9 @@ public class UIManager : MonoBehaviour
         isGamePause = true;
     }
     
-    public void MainGame()
+    public void SaveGame()
     {
+        Debug.Log("저장되었습니다.");
         SceneManager.LoadScene("MenuScene");
     }
 
@@ -58,6 +59,11 @@ public class UIManager : MonoBehaviour
     {
         Setting.SetActive(true);
         PauseBtn.SetActive(false);
+    }
 
+    public void ResetOpt()
+    {
+        Setting.SetActive(false);
+        PauseBtn.SetActive(true);
     }
 }
