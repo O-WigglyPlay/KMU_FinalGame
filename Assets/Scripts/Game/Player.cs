@@ -40,9 +40,7 @@ public class Player : MonoBehaviour
         // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
         if (Player.instance != null)
         {
-            // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
-            PlayerMovement();
-            Attack();
+            FlipPlayer();
         }
     }
     private void FixedUpdate()
@@ -59,38 +57,23 @@ public class Player : MonoBehaviour
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
         // 입력에 따라 플레이어의 속도 설정
         rb_Player.velocity = movement * f_Speed;
-
-        if (horizontalInput < 0)
-        {
-            PlayerRenderer.flipX = true;
-        }
-        else
-        {
-            PlayerRenderer.flipX = false;
-        }
         
-        //애니메이션 관리
-        p_Ani.SetBool("p_Run", isRunning);
-        if (horizontalInput == 0 & verticalInput == 0)
-        {
-            isRunning = false; // 달리기 애니메이션을 멈춤
-        }
-        else
-        {
-            isRunning = true; // 달리기 애니메이션을 재생
-        }
+        p_Ani.SetFloat("moveX", horizontalInput);
+        p_Ani.SetFloat("moveY", verticalInput);
     }
-
-    void Attack()
+    
+    void FlipPlayer()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(TriggerAttack("p_LeftAttack"));
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            StartCoroutine(TriggerAttack("p_RightAttack"));
-        }
+        // 플레이어의 위치와 마우스의 위치를 비교하여 플레이어가 어느 방향을 바라보는지 판단
+        Vector3 playerPosition = transform.position;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // 마우스의 x 위치가 플레이어의 x 위치보다 작으면 플레이어는 왼쪽을 바라보고 있음
+        // 그렇지 않으면 플레이어는 오른쪽을 바라보고 있음
+        bool shouldFlip = mousePosition.x < playerPosition.x;
+
+        // 플레이어의 SpriteRenderer를 사용하여 플레이어를 좌우로 뒤집음
+        PlayerRenderer.flipX = shouldFlip;
     }
 
     public void Die()
@@ -112,15 +95,5 @@ public class Player : MonoBehaviour
                 Die();
             }
         }
-    }
-
-    private IEnumerator TriggerAttack(string attackType)
-    {
-        p_Ani.SetBool(attackType, true);
-        if(Input.GetMouseButton(0))
-            yield return new WaitForSeconds(0.9f); // 왼쪽 공격 지속 시간
-        if(Input.GetMouseButton(1))
-            yield return new WaitForSeconds(0.5f); // 오른쪽 공격 지속 시간
-        p_Ani.SetBool(attackType, false);
     }
 }

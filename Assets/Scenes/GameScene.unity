@@ -771,9 +771,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.19373378, y: 0.5671905}
-      - {x: 0.7265955, y: 0.32550496}
-      - {x: 0.1995159, y: 0.023625873}
+    - - {x: 0.09729484, y: 0.09000686}
+      - {x: 0.2822991, y: 0.0056859255}
+      - {x: 0.093278825, y: -0.10792172}
   m_UseDelaunayMesh: 0
 --- !u!1 &255076596
 GameObject:
@@ -7153,7 +7153,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &872979361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7195,7 +7195,7 @@ SpriteRenderer:
   m_SortingLayerID: -1394208919
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1632244783, guid: 2ca88a89899d81c4d87d0a2aa225770d, type: 3}
+  m_Sprite: {fileID: 1222416320, guid: 0ebed1c7b3dda48339357b737ec3c873, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7215,8 +7215,8 @@ Transform:
   m_GameObject: {fileID: 872979359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0.046, y: 0.727, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 745460922}
@@ -7270,18 +7270,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0.029418193}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.23, y: 0.6}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 0.23, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23, y: 0.6}
+  m_Size: {x: 0.23, y: 0.31806403}
   m_EdgeRadius: 0
 --- !u!95 &872979365
 Animator:
@@ -10519,6 +10519,6 @@ SceneRoots:
   - {fileID: 1230392181}
   - {fileID: 141399251}
   - {fileID: 2095167902}
-  - {fileID: 956258820}
   - {fileID: 1219612834}
   - {fileID: 1773513926}
+  - {fileID: 956258820}
