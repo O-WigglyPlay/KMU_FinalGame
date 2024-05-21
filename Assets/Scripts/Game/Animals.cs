@@ -10,16 +10,21 @@ public class Animals : MonoBehaviour
     public GameObject meat; //동물을 죽였을 때 나오는 고기
     public GameObject bone; //동물을 죽였을 때 나오는 뼈
     public GameObject leather; //동물을 죽였을 때 나오는 가죽
+    public GameObject teeth; //동물을 죽였을 때 나오는 이빨
+
 
     public float meatDropChance = 0.25f; // 고기 아이템 드랍 확률
     public float boneDropChance = 0.25f; // 뼈 아이템 드랍 확률
     public float LeatherDropChance = 0.25f; // 가죽 아이템 드랍 확률
+    public float teethDropChance = 0.25f; // 가죽 아이템 드랍 확률
 
     private Animator animator; // 동물의 애니메이터
     private Transform playerTransform; // 플레이어의 Transform 컴포넌트
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
+
+    bool isLive = true;
 
     void Awake()
     {
@@ -48,6 +53,32 @@ public class Animals : MonoBehaviour
     void Die()
     {
         // 여기에 동물이 죽었을 때의 처리를 추가할 수 있음
-        Destroy(gameObject); // 동물 오브젝트 삭제
+        if(isLive)
+        {
+            isLive  = false;
+
+            if(Random.value <= meatDropChance)
+            {
+                //고기 아이템 생성
+                Instantiate(meat, transform.position, Quaternion.identity);
+            }
+            if (Random.value <= meatDropChance)
+            {
+                //뼈 아이템 생성
+                Instantiate(bone, transform.position, Quaternion.identity);
+            }
+            if (Random.value <= meatDropChance)
+            {
+                //가죽 아이템 생성
+                Instantiate(leather, transform.position, Quaternion.identity);
+            }
+            if (Random.value <= meatDropChance)
+            {
+                //이빨 아이템 생성
+                Instantiate(teeth, transform.position, Quaternion.identity);
+            }
+            Destroy(gameObject); // 동물 오브젝트 삭제
+        }
+        
     }
 }

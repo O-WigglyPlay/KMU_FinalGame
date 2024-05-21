@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -195,9 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   moveSpeed: 0
-  meat: {fileID: 0}
-  bone: {fileID: 0}
-  leather: {fileID: 0}
+  meat: {fileID: 5419800662582973347, guid: d0c9710de9339d84bb06d4afe0157ac8, type: 3}
+  bone: {fileID: 5152255821648045046, guid: bad0b96128a53c041bca4dedf96d8576, type: 3}
+  leather: {fileID: 1281626061107421836, guid: e237d6d88314f4a4d9590826f47fd136, type: 3}
+  teeth: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
   meatDropChance: 0.25
   boneDropChance: 0.25
   LeatherDropChance: 0.25
+  teethDropChance: 0.25

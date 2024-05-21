@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimalSpawner : MonoBehaviour
 {
     public GameObject[] animalPrefabs; // 생성할 동물 프리팹 배열
-    public int[] numberOfAnimals; // 각 동물 프리팹마다 생성할 개수 배열
+    public int[] numberOfAnimals; // 각 동물 프리팹마다 생성할 최대 개수 배열
     public float spawnRadius = 10f; // 플레이어 주변에 생성할 반경
     public float despawnDistance = 20f; // 플레이어로부터 이 거리 이상 떨어진 동물은 사라짐
 
@@ -47,18 +47,16 @@ public class AnimalSpawner : MonoBehaviour
                         Destroy(animal);
                         animals.RemoveAt(j);
                         j--; // 리스트에서 요소가 제거되었으므로 인덱스 조정
+                        // 새로운 동물 생성
+                        SpawnAnimals(i, 1);
                     }
                 }
-            }
-        }
-
-        // 사라진 만큼 다시 동물 생성
-        for (int i = 0; i < animalPrefabs.Length; i++)
-        {
-            int numAnimalsToSpawn = numberOfAnimals[i] - spawnedAnimals[i].Count;
-            if (numAnimalsToSpawn > 0)
-            {
-                SpawnAnimals(i, numAnimalsToSpawn);
+                else // 동물이 null일 경우, 리스트에서 제거하고 새로운 동물 생성
+                {
+                    animals.RemoveAt(j);
+                    j--; // 리스트에서 요소가 제거되었으므로 인덱스 조정
+                    SpawnAnimals(i, 1);
+                }
             }
         }
     }
@@ -68,8 +66,7 @@ public class AnimalSpawner : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            float angle = Random.Range(0f, Mathf.PI * 2f); // 0부터 360도 랜덤한 각도
-            Vector2 randomOffset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Random.Range(0f, spawnRadius); // 랜덤한 각도와 반경으로 랜덤한 위치 벡터 생성
+            Vector2 randomOffset = Random.insideUnitCircle * spawnRadius; // 플레이어 주변에 랜덤한 위치 벡터 생성
             Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0); // 플레이어 위치에 랜덤 위치를 더하여 생성 위치 계산
             GameObject animal = Instantiate(animalPrefabs[index], spawnPosition, Quaternion.identity); // 동물 생성
             spawnedAnimals[index].Add(animal); // 생성된 동물을 리스트에 추가
