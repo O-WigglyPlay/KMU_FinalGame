@@ -20,12 +20,16 @@ GameObject:
   - component: {fileID: 9159974914785883082}
   - component: {fileID: -1964229085901618856}
   - component: {fileID: -2719115531173496505}
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom1.prefab
   - component: {fileID: 6081023720218411258}
 >>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Teeth.prefab
 =======
   - component: {fileID: -3691881072979241617}
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Teeth.prefab
+=======
+  - component: {fileID: 6081023720218411258}
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
   m_Layer: 0
   m_Name: Teeth
   m_TagString: Untagged
@@ -180,8 +184,12 @@ BoxCollider2D:
 =======
   m_Size: {x: 1.1, y: 1.07}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!114 &-3691881072979241617
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Teeth.prefab
+=======
+--- !u!114 &6081023720218411258
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3590717579226992521}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom1.prefab
   m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
   m_Name: 
@@ -203,3 +212,8 @@ MonoBehaviour:
   itemTag: 0
   equipmentPrefab: {fileID: 0}
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Teeth.prefab
+=======
+  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")

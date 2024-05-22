@@ -29,8 +29,12 @@ GameObject:
   - component: {fileID: 1814925232969662922}
   - component: {fileID: 2539287639699882258}
   - component: {fileID: -5563359077120064116}
+<<<<<<< HEAD
   - component: {fileID: 214671902155054688}
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/MeatSpawn.prefab
+=======
+  - component: {fileID: 6488928090389280384}
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
   m_Layer: 0
   m_Name: MeatSpawn
   m_TagString: Untagged
@@ -210,8 +214,12 @@ Rigidbody2D:
 >>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Bone.prefab
 =======
   m_Constraints: 4
+<<<<<<< HEAD
 --- !u!114 &214671902155054688
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/MeatSpawn.prefab
+=======
+--- !u!114 &6488928090389280384
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,6 +228,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5419800662582973347}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Prefabs/Game/Zombie 2.prefab
 <<<<<<< HEAD:Assets/Prefabs/Game/Zombie 2.prefab
   m_Script: {fileID: 11500000, guid: d47b607ff2a253042967bbe17554be79, type: 3}
@@ -243,3 +252,8 @@ MonoBehaviour:
   itemTag: 0
   equipmentPrefab: {fileID: 0}
 >>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/MeatSpawn.prefab
+=======
+  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
