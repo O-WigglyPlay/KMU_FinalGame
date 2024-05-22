@@ -23,7 +23,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         activeSlot = parent;
         activeSlot.myItem = this;
         myItem = item;
-        itemIcon.sprite = item.sprite;
+        itemIcon.sprite = item.itemIcon;
     }
 
     public void OnPointerClick(PointerEventData eventData)

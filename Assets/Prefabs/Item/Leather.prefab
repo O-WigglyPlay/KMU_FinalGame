@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5821730671501139236}
   - component: {fileID: 7211559822855016616}
   - component: {fileID: 5183184131074927736}
-  - component: {fileID: 260090515910758836}
+  - component: {fileID: 5263648536481211152}
   m_Layer: 0
   m_Name: Leather
   m_TagString: Untagged
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &260090515910758836
+--- !u!114 &5263648536481211152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1281626061107421836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Script: {fileID: 11500000, guid: 49f337235ca8f4c6691b7119efdcdcc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: 1124887219, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
+  itemTag: 0
+  equipmentPrefab: {fileID: 0}
