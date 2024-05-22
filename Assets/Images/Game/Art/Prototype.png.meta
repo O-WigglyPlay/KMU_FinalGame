@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: f7d38564f2930fc4495fcf9ba9976cae
+TextureImporter:
+<<<<<<< HEAD
+  internalIDToNameTable: []
+  externalObjects: {}
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+  serializedVersion: 13
+=======
+  fileIDToRecycleName: {}
+  externalObjects: {}
+  serializedVersion: 7
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+  serializedVersion: 11
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+<<<<<<< HEAD
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+=======
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+    filterMode: 0
+<<<<<<< HEAD
+    aniso: 1
+    mipBias: 0
+=======
+    aniso: -1
+    mipBias: -100
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+=======
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 1
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+<<<<<<< HEAD
+  flipbookRows: 1
+  flipbookColumns: 1
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+=======
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+<<<<<<< HEAD
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+=======
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+<<<<<<< HEAD
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+=======
+    androidETC2FallbackOverride: 0
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+    spriteID: 3f93ee2b73f9f4741a7b3143095cffe4
+<<<<<<< HEAD
+=======
+    spriteID: 
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+    internalID: 0
+=======
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+<<<<<<< HEAD
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+<<<<<<< HEAD:Assets/Images/Game/Player/Hero and Opponents/Sprites/Enemy1/attack-A1.png.meta
+=======
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+  pSDShowRemoveMatteOption: 0
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Prototype.png.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

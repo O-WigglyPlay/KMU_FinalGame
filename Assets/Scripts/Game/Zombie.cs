@@ -49,6 +49,7 @@ public class Zombie : MonoBehaviour
         }
         Vector2 dirvec = target.position - rigid.position;
         Vector2 nextVec = dirvec.normalized * moveSpeed * Time.fixedDeltaTime;
+
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
 
@@ -107,14 +108,16 @@ public class Zombie : MonoBehaviour
     IEnumerator Attack()
     {
         isAttacking = true; // 공격 중 상태로 변경
-        animator.SetTrigger("ZombieAttack"); // 공격 애니메이션 재생
+        animator.SetBool("ZombieAttack", isAttacking); // 공격 애니메이션 재생
 
+        float attackAnimationLength = 1.0f; // 공격 애니메이션의 실제 길이로 변경
         // 공격 모션이 끝날 때까지 대기
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(attackAnimationLength);
 
         // 공격 후 쿨다운 갱신
         lastAttackTime = Time.time;
         isAttacking = false; // 공격 종료 상태로 변경
+        animator.SetBool("ZombieAttack", isAttacking); // 공격 애니메이션 재생
     }
 
 }

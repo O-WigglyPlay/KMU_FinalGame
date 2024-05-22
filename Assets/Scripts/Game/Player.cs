@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
 <<<<<<< HEAD
+<<<<<<< HEAD
     private int n_Hp;               // 플레이어 체력
 =======
     public int n_Hp;               // 플레이어 체력
@@ -14,6 +15,12 @@ public class Player : MonoBehaviour
     public int n_maxHealth = 100;   // 플레이어 최대 체력
     public float f_Speed;           // 플레이어 스피드
     private bool isRunning = false; // 달리는 중인지 확인용
+=======
+    public int n_Hp;               // 플레이어 체력
+    public int n_maxHealth = 100;  // 플레이어 최대 체력
+    public float f_Speed;          // 플레이어 스피드
+    private bool isRunning = false;// 달리는 중인지 확인용
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
     private SpriteRenderer PlayerRenderer;
@@ -22,7 +29,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-        if(instance ==  null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -31,27 +38,33 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         rb_Player = GetComponent<Rigidbody2D>();
         p_Ani = GetComponent<Animator>();
-        n_Hp = n_maxHealth;  //시작할 때 체력 동급
+        n_Hp = n_maxHealth;  // 시작할 때 체력 동급
         PlayerRenderer = GetComponent<SpriteRenderer>();
     }
-    
+
     public void Update()
     {
         // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
         if (Player.instance != null)
         {
+<<<<<<< HEAD
             // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
             PlayerMovement();
 <<<<<<< HEAD
 =======
             Attack();
 >>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+            FlipPlayer();
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
         }
     }
+
     private void FixedUpdate()
     {
         PlayerMovement();
@@ -67,33 +80,30 @@ public class Player : MonoBehaviour
         // 입력에 따라 플레이어의 속도 설정
         rb_Player.velocity = movement * f_Speed;
 
-        if (horizontalInput < 0)
+        p_Ani.SetFloat("moveX", horizontalInput);
+        p_Ani.SetFloat("moveY", verticalInput);
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 ||
+            Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            PlayerRenderer.flipX = true;
-        }
-        else
-        {
-            PlayerRenderer.flipX = false;
-        }
-        
-        //애니메이션 관리
-        p_Ani.SetBool("p_Run", isRunning);
-        if (horizontalInput == 0 & verticalInput == 0)
-        {
-            isRunning = false; // 달리기 애니메이션을 멈춤
-        }
-        else
-        {
-            isRunning = true; // 달리기 애니메이션을 재생
+            p_Ani.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            p_Ani.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     public void TakeDamage(int damage)
     {
         n_Hp -= damage; //체력 감소 
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 
-        if(n_Hp < 0)
+    void FlipPlayer()
+    {
+        bool isMoving = p_Ani.GetFloat("moveX") != 0 || p_Ani.GetFloat("moveY") != 0;
+
+        if (isMoving)
         {
+<<<<<<< HEAD
             Die();
 =======
 
@@ -107,6 +117,21 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(TriggerAttack("p_RightAttack"));
 >>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+            // 플레이어의 위치와 마우스의 위치를 비교하여 플레이어가 어느 방향을 바라보는지 판단
+            Vector3 playerPosition = transform.position;
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // 마우스 위치에 따라 플레이어의 스프라이트를 좌우 반전
+            if (mousePosition.x < playerPosition.x)
+            {
+                transform.localScale = new Vector3(-1, 1, 1); // 좌우 반전
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1); // 원래 방향
+            }
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
         }
     }
 
@@ -115,7 +140,10 @@ public class Player : MonoBehaviour
         Debug.Log("Player Died");
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -132,6 +160,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+<<<<<<< HEAD
 
     private IEnumerator TriggerAttack(string attackType)
     {
@@ -143,4 +172,6 @@ public class Player : MonoBehaviour
         p_Ani.SetBool(attackType, false);
     }
 >>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 }

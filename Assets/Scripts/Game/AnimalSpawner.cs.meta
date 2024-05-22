@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/MChange.cs.meta
+<<<<<<< HEAD:Assets/MChange.cs.meta
+guid: cbf829c12817ac3499f3562875ca21cb
+=======
+guid: 39f12012daf342045b57bc8d7fa66f30
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Scripts/Game/Item.cs.meta
+=======
+guid: 29873cad95da7f943babc33836a81b09
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Scripts/Game/AnimalSpawner.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
