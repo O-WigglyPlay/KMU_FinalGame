@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 0
+  moveSpeed: 1
   meat: {fileID: 5419800662582973347, guid: d0c9710de9339d84bb06d4afe0157ac8, type: 3}
   bone: {fileID: 5152255821648045046, guid: bad0b96128a53c041bca4dedf96d8576, type: 3}
   leather: {fileID: 1281626061107421836, guid: e237d6d88314f4a4d9590826f47fd136, type: 3}
