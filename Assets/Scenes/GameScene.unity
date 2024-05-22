@@ -10150,13 +10150,10 @@ MonoBehaviour:
   draggablesTransform: {fileID: 466311741}
   itemPrefab: {fileID: 8527893814601168996, guid: 1028cb616073445408e5c9f2550546dc, type: 3}
   items:
-  - {fileID: 11400000, guid: 5b7ca39d927137548a3d23af8a1d850a, type: 2}
-  - {fileID: 11400000, guid: 9b5bf9bd7ce1ff547a00b276e27cb938, type: 2}
-  - {fileID: 11400000, guid: ae95ce17135ea564d8a6dec3fef09f0c, type: 2}
-  - {fileID: 11400000, guid: 02cd9a38279b9584b8f72290a1efc5e2, type: 2}
-  - {fileID: 11400000, guid: 948c7f0463a0b9146a37f5cf053f1f15, type: 2}
-  - {fileID: 11400000, guid: 9531362353670304494a59c1ccff8990, type: 2}
-  - {fileID: 11400000, guid: d0f7a0fcd9fa26a4ba161a461a2cc713, type: 2}
+  - {fileID: -1530410152647912159, guid: bad0b96128a53c041bca4dedf96d8576, type: 3}
+  - {fileID: 5263648536481211152, guid: e237d6d88314f4a4d9590826f47fd136, type: 3}
+  - {fileID: 214671902155054688, guid: d0c9710de9339d84bb06d4afe0157ac8, type: 3}
+  - {fileID: -3691881072979241617, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
   giveItemBtn: {fileID: 372522430}
 --- !u!114 &1272132140
 MonoBehaviour:
@@ -14193,8 +14190,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1936719822}
   - {fileID: 1272132138}
+  - {fileID: 1936719822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

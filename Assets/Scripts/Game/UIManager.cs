@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isInvenOn)
         {
             if (isGamePause)
             {
@@ -95,7 +95,11 @@ public class UIManager : MonoBehaviour
                 Pause();
             }
         }
-        Inventory();
+
+        if (!isGamePause)
+        {
+            Inventory();
+        }
     }
 
     public void Resume()

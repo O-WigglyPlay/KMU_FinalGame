@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Sprite itemIcon;
+    public SlotTag itemTag;
+
+    [Header("If the item can be equipped")]
+    public GameObject equipmentPrefab;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject); // 아이템이 플레이어와 충돌하면 아이템을 파괴합니다.
+            Destroy(gameObject);
         }
     }
 }
