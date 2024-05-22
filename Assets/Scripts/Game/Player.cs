@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public int n_Hp;               // 플레이어 체력
     public int n_maxHealth = 100;  // 플레이어 최대 체력
     public float f_Speed;          // 플레이어 스피드
+    private bool isRunning = false;// 달리는 중인지 확인용
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
     private SpriteRenderer PlayerRenderer;
@@ -82,11 +83,11 @@ public class Player : MonoBehaviour
             // 마우스 위치에 따라 플레이어의 스프라이트를 좌우 반전
             if (mousePosition.x < playerPosition.x)
             {
-                transform.localScale = new Vector3(-2, 2, 2); // 좌우 반전
+                transform.localScale = new Vector3(-1, 1, 1); // 좌우 반전
             }
             else
             {
-                transform.localScale = new Vector3(2, 2, 2); // 원래 방향
+                transform.localScale = new Vector3(1, 1, 1); // 원래 방향
             }
         }
     }
