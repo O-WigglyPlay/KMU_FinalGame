@@ -5,28 +5,43 @@ using UnityEngine;
 
 public class MChange : MonoBehaviour
 {
-    private SpriteRenderer SpritesRenderer;
-    public List<Sprite> Sprites = new List<Sprite>();
+    public Sprite[] destructionSprites; // 파괴 스프라이트들의 배열
+    public AudioClip destructionSound; // 파괴 사운드
+    public float destructionDelay = 1.0f; // 파괴 지연 시간
 
-    private int Timer = 2;
+    private SpriteRenderer spriteRenderer;
+    private int destructionStage = 0;
+    private bool isDestroyed = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        SpritesRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Timer--;
-        if (Timer <= 0)
+        if (collision.gameObject.CompareTag("Player") && !isDestroyed)
         {
-            SpritesRenderer.sprite = Sprites[1];
+            DestroyRock();
         }
-        //if (LIfe == 0)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
+
+    void DestroyRock()
+    {
+        if (destructionStage < destructionSprites.Length - 1)
+        {
+            // 다음 파괴 스프라이트로 변경
+            spriteRenderer.sprite = destructionSprites[destructionStage];
+            destructionStage++;
+        }
+        else
+        {
+            // 마지막 파괴 스프라이트일 때 게임 오브젝트 파괴
+            Destroy(gameObject, destructionDelay);
+            isDestroyed = true;
+            // 추가적인 파괴 효과나 사운드를 재생할 수 있습니다.
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
+        }
+    }
+
 }

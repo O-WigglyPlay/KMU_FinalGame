@@ -98,9 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf829c12817ac3499f3562875ca21cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
+  destructionSprites:
   - {fileID: -1554287730, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   - {fileID: 1786233496, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
+  destructionSound: {fileID: 0}
+  destructionDelay: 1
 --- !u!95 &5805290021911323517
 Animator:
   serializedVersion: 5
