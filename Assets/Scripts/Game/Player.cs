@@ -6,7 +6,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
+<<<<<<< HEAD
     private int n_Hp;               // 플레이어 체력
+=======
+    public int n_Hp;               // 플레이어 체력
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
     public int n_maxHealth = 100;   // 플레이어 최대 체력
     public float f_Speed;           // 플레이어 스피드
     private bool isRunning = false; // 달리는 중인지 확인용
@@ -42,6 +46,10 @@ public class Player : MonoBehaviour
         {
             // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
             PlayerMovement();
+<<<<<<< HEAD
+=======
+            Attack();
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
         }
     }
     private void FixedUpdate()
@@ -79,6 +87,7 @@ public class Player : MonoBehaviour
             isRunning = true; // 달리기 애니메이션을 재생
         }
     }
+<<<<<<< HEAD
     public void TakeDamage(int damage)
     {
         n_Hp -= damage; //체력 감소 
@@ -86,6 +95,18 @@ public class Player : MonoBehaviour
         if(n_Hp < 0)
         {
             Die();
+=======
+
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(TriggerAttack("p_LeftAttack"));
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(TriggerAttack("p_RightAttack"));
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
         }
     }
 
@@ -93,4 +114,33 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player Died");
     }
+<<<<<<< HEAD
+=======
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 충돌한 오브젝트가 Ghost 또는 Zombie인지 확인
+        if (collision.gameObject.CompareTag("Ghost") || collision.gameObject.CompareTag("Zombie"))
+        {
+            // 충돌 시 피 감소
+            n_Hp -= 10; // 예를 들어 10의 데미지를 입힘
+
+            // 피가 0 이하로 떨어졌을 때 게임 오버
+            if (n_Hp <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    private IEnumerator TriggerAttack(string attackType)
+    {
+        p_Ani.SetBool(attackType, true);
+        if(Input.GetMouseButton(0))
+            yield return new WaitForSeconds(0.9f); // 왼쪽 공격 지속 시간
+        if(Input.GetMouseButton(1))
+            yield return new WaitForSeconds(0.5f); // 오른쪽 공격 지속 시간
+        p_Ani.SetBool(attackType, false);
+    }
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
 }

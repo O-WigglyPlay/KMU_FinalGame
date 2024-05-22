@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Fild.meta
 guid: f323c1efa1317e5418811dc2fb903486
+========
+guid: 38762a89264457d46bb65741a18eb88a
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Scenes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

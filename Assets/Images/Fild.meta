@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Images/Fild.meta
 guid: bab8efa9cebdea444835df79291aedbb
+========
+guid: 2e64d8f37aea0384a975e1145368d947
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Sprites.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

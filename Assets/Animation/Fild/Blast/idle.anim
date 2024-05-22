@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Animation/Fild/Blast/idle.anim
   m_Name: idle
+========
+  m_Name: Attack_Right
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Animation/Game/Player/Attack_Right.anim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +25,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+<<<<<<<< HEAD:Assets/Animation/Fild/Blast/idle.anim
       value: {fileID: 1086241788, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
+========
+      value: {fileID: 21300000, guid: ec7f290adc6c3614388579668a5544b2, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: bdf3cbeacd2741d41921b45486b135a1, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: a60236631d49d7946be4f462e60c47ee, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 53960355d73a97c459bd61ff181f9282, type: 3}
+    - time: 0.38333333
+      value: {fileID: 21300000, guid: f57e12fc3de2ba642be90b0143449d25, type: 3}
+    - time: 0.48333332
+      value: {fileID: 21300000, guid: ad34273e1f47e2341ac7059093347b42, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: ed0ea2b078ec55a4681a62fae35fab00, type: 3}
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Animation/Game/Player/Attack_Right.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +64,23 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+<<<<<<<< HEAD:Assets/Animation/Fild/Blast/idle.anim
     - {fileID: 1086241788, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
+========
+    - {fileID: 21300000, guid: ec7f290adc6c3614388579668a5544b2, type: 3}
+    - {fileID: 21300000, guid: bdf3cbeacd2741d41921b45486b135a1, type: 3}
+    - {fileID: 21300000, guid: a60236631d49d7946be4f462e60c47ee, type: 3}
+    - {fileID: 21300000, guid: 53960355d73a97c459bd61ff181f9282, type: 3}
+    - {fileID: 21300000, guid: f57e12fc3de2ba642be90b0143449d25, type: 3}
+    - {fileID: 21300000, guid: ad34273e1f47e2341ac7059093347b42, type: 3}
+    - {fileID: 21300000, guid: ed0ea2b078ec55a4681a62fae35fab00, type: 3}
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Animation/Game/Player/Attack_Right.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.59999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

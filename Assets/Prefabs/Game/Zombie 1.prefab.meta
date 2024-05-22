@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab.meta
 guid: 54077c62e7f33c442adc7f110dbf8379
 PrefabImporter:
+========
+guid: 64bd5a5a58cd28145842c72a37b0dd0a
+TextScriptImporter:
+>>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/license.txt.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -8,12 +8,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 2.prefab
   - component: {fileID: 3748688846132955697}
   - component: {fileID: 4869393727544722127}
   - component: {fileID: 5617849615286218552}
   - component: {fileID: 4575948808785179639}
   - component: {fileID: 247449448989079628}
   - component: {fileID: 5558399323531409508}
+=======
+  - component: {fileID: 5850388146183655577}
+  - component: {fileID: 8628942165324263091}
+  - component: {fileID: 4049326936048180389}
+  - component: {fileID: 4900300629607572956}
+  - component: {fileID: 347694861628336532}
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Bone.prefab
   m_Layer: 0
   m_Name: Zombie 2
   m_TagString: Untagged
@@ -154,6 +162,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.22, y: 3.72}
   m_EdgeRadius: 0
+<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 2.prefab
 --- !u!50 &247449448989079628
 Rigidbody2D:
   serializedVersion: 4
@@ -182,6 +191,9 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &5558399323531409508
+=======
+--- !u!114 &347694861628336532
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Bone.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +202,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2319503112473482683}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 2.prefab
   m_Script: {fileID: 11500000, guid: d47b607ff2a253042967bbe17554be79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -198,3 +211,8 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 10
   target: {fileID: 0}
+=======
+  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Bone.prefab
