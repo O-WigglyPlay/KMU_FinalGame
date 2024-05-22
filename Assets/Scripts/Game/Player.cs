@@ -6,10 +6,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
+<<<<<<< HEAD
+<<<<<<< HEAD
+    private int n_Hp;               // 플레이어 체력
+=======
+    public int n_Hp;               // 플레이어 체력
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+    public int n_maxHealth = 100;   // 플레이어 최대 체력
+    public float f_Speed;           // 플레이어 스피드
+    private bool isRunning = false; // 달리는 중인지 확인용
+=======
     public int n_Hp;               // 플레이어 체력
     public int n_maxHealth = 100;  // 플레이어 최대 체력
     public float f_Speed;          // 플레이어 스피드
     private bool isRunning = false;// 달리는 중인지 확인용
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
     private SpriteRenderer PlayerRenderer;
@@ -41,7 +52,16 @@ public class Player : MonoBehaviour
         // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
         if (Player.instance != null)
         {
+<<<<<<< HEAD
+            // 플레이어가 존재하므로 이동 및 공격 등의 동작 수행
+            PlayerMovement();
+<<<<<<< HEAD
+=======
+            Attack();
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
             FlipPlayer();
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
         }
     }
 
@@ -69,6 +89,13 @@ public class Player : MonoBehaviour
             p_Ani.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public void TakeDamage(int damage)
+    {
+        n_Hp -= damage; //체력 감소 
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 
     void FlipPlayer()
     {
@@ -76,6 +103,21 @@ public class Player : MonoBehaviour
 
         if (isMoving)
         {
+<<<<<<< HEAD
+            Die();
+=======
+
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(TriggerAttack("p_LeftAttack"));
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(TriggerAttack("p_RightAttack"));
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
             // 플레이어의 위치와 마우스의 위치를 비교하여 플레이어가 어느 방향을 바라보는지 판단
             Vector3 playerPosition = transform.position;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -89,6 +131,7 @@ public class Player : MonoBehaviour
             {
                 transform.localScale = new Vector3(2, 2, 2); // 원래 방향
             }
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
         }
     }
 
@@ -96,6 +139,11 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player Died");
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -112,4 +160,18 @@ public class Player : MonoBehaviour
             }
         }
     }
+<<<<<<< HEAD
+
+    private IEnumerator TriggerAttack(string attackType)
+    {
+        p_Ani.SetBool(attackType, true);
+        if(Input.GetMouseButton(0))
+            yield return new WaitForSeconds(0.9f); // 왼쪽 공격 지속 시간
+        if(Input.GetMouseButton(1))
+            yield return new WaitForSeconds(0.5f); // 오른쪽 공격 지속 시간
+        p_Ani.SetBool(attackType, false);
+    }
+>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player)
+=======
+>>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild)
 }
