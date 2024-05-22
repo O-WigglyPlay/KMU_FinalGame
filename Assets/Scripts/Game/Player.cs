@@ -83,11 +83,11 @@ public class Player : MonoBehaviour
             // 마우스 위치에 따라 플레이어의 스프라이트를 좌우 반전
             if (mousePosition.x < playerPosition.x)
             {
-                transform.localScale = new Vector3(-1, 1, 1); // 좌우 반전
+                transform.localScale = new Vector3(-2, 2, 2); // 좌우 반전
             }
             else
             {
-                transform.localScale = new Vector3(1, 1, 1); // 원래 방향
+                transform.localScale = new Vector3(2, 2, 2); // 원래 방향
             }
         }
     }

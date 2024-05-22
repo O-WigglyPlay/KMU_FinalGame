@@ -82,10 +82,18 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
+<<<<<<< Updated upstream
         // ì‹œë„ íšŸìˆ˜ë¥¼ ì´ˆê³¼í•œ ê²½ìš° (ì˜¤ë¸Œì íŠ¸ë¥¼ ìƒì„±í•  ìœ„ì¹˜ë¥¼ ì°¾ì§€ ëª»í•œ ê²½ìš°) ê²½ê³  ë©”ì‹œì§€ ì¶œë ¥ 
         if (!validPosition)
         {
             Debug.LogWarning("Could not find a valid position to spawn an object from group.");
         }
+=======
+        // ½Ãµµ È½¼ö¸¦ ÃÊ°úÇÑ °æ¿ì (¿ÀºêÁ§Æ®¸¦ »ý¼ºÇÒ À§Ä¡¸¦ Ã£Áö ¸øÇÑ °æ¿ì) °æ°í ¸Þ½ÃÁö Ãâ·Â
+        //if (!validPosition)
+        //{
+        //    Debug.LogWarning("Could not find a valid position to spawn an object from group.");
+        //}
+>>>>>>> Stashed changes
     }
 }
