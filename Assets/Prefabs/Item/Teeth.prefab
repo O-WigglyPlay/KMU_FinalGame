@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9159974914785883082}
   - component: {fileID: -1964229085901618856}
   - component: {fileID: -2719115531173496505}
-  - component: {fileID: 6081023720218411258}
+  - component: {fileID: -3691881072979241617}
   m_Layer: 0
   m_Name: Teeth
   m_TagString: Untagged
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.07}
   m_EdgeRadius: 0
---- !u!114 &6081023720218411258
+--- !u!114 &-3691881072979241617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3590717579226992521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Script: {fileID: 11500000, guid: 49f337235ca8f4c6691b7119efdcdcc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: -2005357179, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
+  itemTag: 0
+  equipmentPrefab: {fileID: 0}
