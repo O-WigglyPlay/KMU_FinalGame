@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1814925232969662922}
   - component: {fileID: 2539287639699882258}
   - component: {fileID: -5563359077120064116}
-  - component: {fileID: 214671902155054688}
+  - component: {fileID: 6488928090389280384}
   m_Layer: 0
   m_Name: MeatSpawn
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &214671902155054688
+--- !u!114 &6488928090389280384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +190,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5419800662582973347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49f337235ca8f4c6691b7119efdcdcc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 103de7425e392bc47b7b477445885617, type: 3}
-  itemTag: 0
-  equipmentPrefab: {fileID: 0}
