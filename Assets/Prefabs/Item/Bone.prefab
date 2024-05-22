@@ -8,29 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom2.prefab
-<<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom2.prefab
-  - component: {fileID: 7149141108069799871}
-  - component: {fileID: 9077521635394062622}
-  - component: {fileID: 8339124204654095855}
-=======
-  - component: {fileID: 5748173125080091124}
-  - component: {fileID: 5821730671501139236}
-  - component: {fileID: 7211559822855016616}
-  - component: {fileID: 5183184131074927736}
-  - component: {fileID: 260090515910758836}
->>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Leather.prefab
-=======
   - component: {fileID: 5850388146183655577}
   - component: {fileID: 8628942165324263091}
   - component: {fileID: 4049326936048180389}
   - component: {fileID: 4900300629607572956}
-<<<<<<< HEAD
   - component: {fileID: -1530410152647912159}
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Bone.prefab
-=======
-  - component: {fileID: 347694861628336532}
->>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -175,73 +157,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom2.prefab
-<<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom2.prefab
-  m_Radius: 0.19031733
-=======
-  m_Size: {x: 0.97, y: 0.97}
-  m_EdgeRadius: 0
---- !u!50 &5183184131074927736
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281626061107421836}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &260090515910758836
-=======
   m_Size: {x: 1.45, y: 1.04}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!114 &-1530410152647912159
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Bone.prefab
-=======
---- !u!114 &347694861628336532
->>>>>>> parent of efb321a (Reapply "인벤토리 성공!")
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/Prefabs/AnyItem/Mushroom2.prefab
-  m_GameObject: {fileID: 1281626061107421836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/Leather.prefab
-=======
   m_GameObject: {fileID: 5152255821648045046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
+  m_Script: {fileID: 11500000, guid: 49f337235ca8f4c6691b7119efdcdcc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   itemIcon: {fileID: 1546045455, guid: f33b0bb1e4ab0fb479a2e0edbe0e1029, type: 3}
   itemTag: 0
   equipmentPrefab: {fileID: 0}
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Item/Bone.prefab
-=======
->>>>>>> parent of efb321a (Reapply "인벤토리 성공!")

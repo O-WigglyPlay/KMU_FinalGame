@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
-<<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
-guid: 3540b4e645cfd0b4e9887438f9d4e86b
-========
-guid: 0931903f51c512b479a85d5fc4545cfd
->>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Sprites/Player/Run/run-5.png.meta
-=======
 guid: 3a4d29fbb366c7e40a992cb981db1993
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Kenny NL/arrowBeige_right.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,21 +62,15 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-<<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
   applyGammaDecoding: 0
   cookieLightType: 0
-========
-  applyGammaDecoding: 1
-  swizzle: 50462976
-  cookieLightType: 1
->>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Sprites/Player/Run/run-5.png.meta
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,19 +90,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
-<<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
-    buildTarget: WebGL
-========
-    buildTarget: Android
->>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Sprites/Player/Run/run-5.png.meta
-=======
     buildTarget: Server
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Kenny NL/arrowBeige_right.png.meta
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,51 +103,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: run-5_0
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 16
-        width: 44
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90abf015d8d982f48969688c560c1784
-      internalID: -1435123483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3216d1bbf58560446b935cf39d38a597
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
     nameFileIdTable: {}
-<<<<<<< HEAD:Assets/Trees_Free/Forage Items/Singles/Forage Items/03_Birch_Log.png.meta
-========
-    nameFileIdTable:
-      run-5_0: -1435123483
-      run-5_1: 1123624064
-      run-5_2: -1081323313
->>>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Images/Game/Player/Hero and Opponents/Sprites/Player/Run/run-5.png.meta
-  mipmapLimitGroupName: 
-=======
   spritePackingTag: 
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Images/Game/Art/Kenny NL/arrowBeige_right.png.meta
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 

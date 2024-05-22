@@ -8,30 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-  - component: {fileID: 3748688846132955697}
-  - component: {fileID: 4869393727544722127}
-  - component: {fileID: 5617849615286218552}
-  - component: {fileID: 4575948808785179639}
-  - component: {fileID: 247449448989079628}
-  - component: {fileID: 5558399323531409508}
-=======
-  - component: {fileID: 7832191244846415152}
-  - component: {fileID: 4416751319058816429}
-  - component: {fileID: 1814925232969662922}
-  - component: {fileID: 2539287639699882258}
-  - component: {fileID: -5563359077120064116}
-  - component: {fileID: 6488928090389280384}
->>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/MeatSpawn.prefab
-=======
   - component: {fileID: 8595042076286359015}
   - component: {fileID: 5576917011143359623}
   - component: {fileID: 417869623707305414}
   - component: {fileID: 1657910939260993300}
   - component: {fileID: 8853755153036300239}
   - component: {fileID: 1058144104816004267}
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Animals/Moos.prefab
   m_Layer: 0
   m_Name: Moos
   m_TagString: Untagged
@@ -198,18 +180,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-  m_Constraints: 0
---- !u!114 &5558399323531409508
-=======
-  m_Constraints: 4
---- !u!114 &6488928090389280384
->>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/MeatSpawn.prefab
-=======
   m_Constraints: 4
 --- !u!114 &1058144104816004267
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Animals/Moos.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,22 +190,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7849617014384290424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-<<<<<<< HEAD:Assets/Prefabs/Game/Zombie 1.prefab
-  m_Script: {fileID: 11500000, guid: d47b607ff2a253042967bbe17554be79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  attackRange: 2
-  attackCooldown: 1
-  attackDamage: 10
-  target: {fileID: 0}
-=======
-  m_Script: {fileID: 11500000, guid: 39f12012daf342045b57bc8d7fa66f30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> parent of b404b19 (Merge pull request #16 from O-WigglyPlay/Player):Assets/Prefabs/Item/MeatSpawn.prefab
-=======
   m_Script: {fileID: 11500000, guid: b4359983d0531134586f0b8b79071f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -247,4 +203,3 @@ MonoBehaviour:
   boneDropChance: 0.25
   LeatherDropChance: 0.25
   teethDropChance: 0.25
->>>>>>> parent of c649bda (Merge pull request #17 from O-WigglyPlay/Fild):Assets/Prefabs/Animals/Moos.prefab

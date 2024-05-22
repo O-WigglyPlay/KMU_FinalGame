@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ghost
   - Zombie
+  - Tree
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Build
     uniqueID: 3096142525
+    locked: 0
+  - name: AnyItem
+    uniqueID: 58739157
     locked: 0
   - name: Enemy
     uniqueID: 3559963891
