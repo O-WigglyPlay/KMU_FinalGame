@@ -8,10 +8,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static bool isGamePause = false;
-    public static bool isInvenOn = false;
     public GameObject pausePanel;
     public GameObject settingPanel;
-    public GameObject inventoryPanel;
     public GameObject pauseButton;
     public Slider bgmSlider;
     public Slider effectSlider;
@@ -24,20 +22,9 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        InitializeGameData();
-        InitializeResolutions();
-        InitializeVolumeSettings();
-        AddSliderListeners();
-    }
-
-    void InitializeGameData()
-    {
         // 게임 데이터를 JSON 파일에서 불러오기
         gameData = DataManager.LoadGameData();
-    }
 
-    void InitializeResolutions()
-    {
         // 해상도 설정 초기화
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -61,10 +48,7 @@ public class UIManager : MonoBehaviour
         // JSON 데이터에서 저장된 해상도 인덱스를 불러오기
         resolutionDropdown.value = gameData.settings.resolutionIndex;
         resolutionDropdown.RefreshShownValue();
-    }
 
-    void InitializeVolumeSettings()
-    {
         // JSON 데이터에서 저장된 볼륨 설정 불러오기
         bgmSlider.value = gameData.settings.bgmVolume;
         effectSlider.value = gameData.settings.effectVolume;
@@ -72,10 +56,7 @@ public class UIManager : MonoBehaviour
         // 초기 볼륨 설정 적용
         SetVolumeBGM(bgmSlider.value);
         SetVolumeEffect(effectSlider.value);
-    }
 
-    void AddSliderListeners()
-    {
         // 슬라이더 이벤트 리스너 추가
         bgmSlider.onValueChanged.AddListener(SetVolumeBGM);
         effectSlider.onValueChanged.AddListener(SetVolumeEffect);
@@ -83,7 +64,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isInvenOn)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePause)
             {
@@ -94,11 +75,6 @@ public class UIManager : MonoBehaviour
             {
                 Pause();
             }
-        }
-
-        if (!isGamePause)
-        {
-            Inventory();
         }
     }
 
@@ -178,25 +154,5 @@ public class UIManager : MonoBehaviour
         SetResolution(gameData.settings.resolutionIndex);
 
         Debug.Log("Settings applied and saved.");
-    }
-
-    void Inventory()
-    {
-        if (isInvenOn)
-        {
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape))
-            {
-                inventoryPanel.SetActive(false);
-                isInvenOn = false;
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                inventoryPanel.SetActive(true);
-                isInvenOn = true;
-            }   
-        }
     }
 }
