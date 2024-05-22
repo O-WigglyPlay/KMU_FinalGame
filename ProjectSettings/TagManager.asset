@@ -46,6 +46,9 @@ TagManager:
   - name: Build
     uniqueID: 3096142525
     locked: 0
+  - name: AnyItem
+    uniqueID: 2762572173
+    locked: 0
   - name: Enemy
     uniqueID: 3559963891
     locked: 0
