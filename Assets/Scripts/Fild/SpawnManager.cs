@@ -6,22 +6,22 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class SpawnableObjectGroup
     {
-        public List<GameObject> prefabs;  // »ı¼ºÇÒ ÇÁ¸®ÆÕ ¸®½ºÆ®
-        public int count;                 // »ı¼ºÇÒ ¿ÀºêÁ§Æ®ÀÇ °³¼ö
-        public float minDistance;         // ´Ù¸¥ ¿ÀºêÁ§Æ®¿ÍÀÇ ÃÖ¼Ò °Å¸®
+        public List<GameObject> prefabs;  // ìƒì„±í•  í”„ë¦¬íŒ¹ ë¦¬ìŠ¤íŠ¸
+        public int count;                 // ìƒì„±í•  ì˜¤ë¸Œì íŠ¸ì˜ ê°œìˆ˜
+        public float minDistance;         // ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ì˜ ìµœì†Œ ê±°ë¦¬
     }
 
     [System.Serializable]
     public class SpawnArea
     {
-        public Vector3 spawnAreaMin;  // ½ºÆù ¿µ¿ªÀÇ ÃÖ¼Ò °ª
-        public Vector3 spawnAreaMax;  // ½ºÆù ¿µ¿ªÀÇ ÃÖ´ë °ª
-        public List<SpawnableObjectGroup> objectGroupsToSpawn;  // »ı¼ºÇÒ ¿ÀºêÁ§Æ® ±×·ì ¸®½ºÆ®
+        public Vector3 spawnAreaMin;  // ìŠ¤í° ì˜ì—­ì˜ ìµœì†Œ ê°’
+        public Vector3 spawnAreaMax;  // ìŠ¤í° ì˜ì—­ì˜ ìµœëŒ€ ê°’
+        public List<SpawnableObjectGroup> objectGroupsToSpawn;  // ìƒì„±í•  ì˜¤ë¸Œì íŠ¸ ê·¸ë£¹ ë¦¬ìŠ¤íŠ¸
     }
 
-    public List<SpawnArea> spawnAreas;  // ¿©·¯ ½ºÆù ¿µ¿ª ¸®½ºÆ®
+    public List<SpawnArea> spawnAreas;  // ì—¬ëŸ¬ ìŠ¤í° ì˜ì—­ ë¦¬ìŠ¤íŠ¸
 
-    private List<Vector3> spawnPositions = new List<Vector3>();  // »ı¼ºµÈ À§Ä¡¸¦ ÃßÀûÇÒ ¸®½ºÆ®
+    private List<Vector3> spawnPositions = new List<Vector3>();  // ìƒì„±ëœ ìœ„ì¹˜ë¥¼ ì¶”ì í•  ë¦¬ìŠ¤íŠ¸
 
     void Start()
     {
@@ -43,17 +43,17 @@ public class SpawnManager : MonoBehaviour
         int attempts = 0;
         bool validPosition = false;
 
-        // À¯È¿ÇÑ À§Ä¡¸¦ Ã£±â À§ÇÑ ½Ãµµ È½¼ö¸¦ Á¦ÇÑ
+        // ìœ íš¨í•œ ìœ„ì¹˜ë¥¼ ì°¾ê¸° ìœ„í•œ ì‹œë„ íšŸìˆ˜ë¥¼ ì œí•œ
         while (!validPosition && attempts < 100)
         {
             attempts++;
-            // ·£´ıÇÑ À§Ä¡ °è»ê
+            // ëœë¤í•œ ìœ„ì¹˜ ê³„ì‚°
             float randomX = Random.Range(area.spawnAreaMin.x, area.spawnAreaMax.x);
             float randomY = Random.Range(area.spawnAreaMin.y, area.spawnAreaMax.y);
             float randomZ = Random.Range(area.spawnAreaMin.z, area.spawnAreaMax.z);
             randomPosition = new Vector3(randomX, randomY, randomZ);
 
-            // ´Ù¸¥ ¿ÀºêÁ§Æ®¿ÍÀÇ ÃÖ¼Ò °Å¸® È®ÀÎ
+            // ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ì˜ ìµœì†Œ ê±°ë¦¬ í™•ì¸
             validPosition = true;
             foreach (Vector3 pos in spawnPositions)
             {
@@ -64,16 +64,16 @@ public class SpawnManager : MonoBehaviour
                 }
             }
 
-            // À¯È¿ÇÑ À§Ä¡ÀÎ °æ¿ì ¸®½ºÆ®¿¡ Ãß°¡
+            // ìœ íš¨í•œ ìœ„ì¹˜ì¸ ê²½ìš° ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             if (validPosition)
             {
                 spawnPositions.Add(randomPosition);
-                // ·£´ı ÇÁ¸®ÆÕ ¼±ÅÃ
+                // ëœë¤ í”„ë¦¬íŒ¹ ì„ íƒ
                 int prefabIndex = Random.Range(0, spawnableObjectGroup.prefabs.Count);
                 GameObject prefabToSpawn = spawnableObjectGroup.prefabs[prefabIndex];
                 GameObject newObject = Instantiate(prefabToSpawn, randomPosition, Quaternion.identity);
 
-                // ³ª¹« ÇÁ¸®ÆÕÀÏ °æ¿ì ¼ºÀå ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
+                // ë‚˜ë¬´ í”„ë¦¬íŒ¹ì¼ ê²½ìš° ì„±ì¥ ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
                 Tree tree = newObject.GetComponent<Tree>();
                 if (tree != null)
                 {
@@ -82,7 +82,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        // ½Ãµµ È½¼ö¸¦ ÃÊ°úÇÑ °æ¿ì (¿ÀºêÁ§Æ®¸¦ »ı¼ºÇÒ À§Ä¡¸¦ Ã£Áö ¸øÇÑ °æ¿ì) °æ°í ¸Ş½ÃÁö Ãâ·Â
+        // ì‹œë„ íšŸìˆ˜ë¥¼ ì´ˆê³¼í•œ ê²½ìš° (ì˜¤ë¸Œì íŠ¸ë¥¼ ìƒì„±í•  ìœ„ì¹˜ë¥¼ ì°¾ì§€ ëª»í•œ ê²½ìš°) ê²½ê³  ë©”ì‹œì§€ ì¶œë ¥ 
         if (!validPosition)
         {
             Debug.LogWarning("Could not find a valid position to spawn an object from group.");
