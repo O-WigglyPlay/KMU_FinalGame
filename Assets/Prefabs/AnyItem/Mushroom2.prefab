@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7149141108069799871}
   - component: {fileID: 9077521635394062622}
   - component: {fileID: 8339124204654095855}
+  - component: {fileID: -8802718979813220068}
   m_Layer: 0
   m_Name: Mushroom2
   m_TagString: Untagged
@@ -120,3 +121,15 @@ CircleCollider2D:
   m_Offset: {x: 0.01203239, y: 0}
   serializedVersion: 2
   m_Radius: 0.19031733
+--- !u!114 &-8802718979813220068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5399395557939117971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928576c8d39d08d46a968973667ad986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -74,7 +74,7 @@ public class SpawnManager : MonoBehaviour
                 GameObject newObject = Instantiate(prefabToSpawn, randomPosition, Quaternion.identity);
 
                 // 나무 프리팹일 경우 성장 애니메이션 시작
-                Tree tree = newObject.GetComponent<Tree>();
+                AdultTree tree = newObject.GetComponent<AdultTree>();
                 if (tree != null)
                 {
                     tree.StartGrowthAnimation();
