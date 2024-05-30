@@ -1,33 +1,33 @@
 using UnityEngine;
 using System.Collections;
 
-public class Tree : MonoBehaviour
+public class AdultTree : MonoBehaviour
 {
-    public Animator animator;       // ³ª¹«ÀÇ ¾Ö´Ï¸ŞÀÌÅÍ
-    public float growthDuration = 60f; // ¼ºÀå ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ ½Ã°£ (ÃÊ)
-    public GameObject treePrefab;   // ³ª¹« ÇÁ¸®ÆÕ
+    public Animator animator;       // ë‚˜ë¬´ì˜ ì• ë‹ˆë©”ì´í„°
+    public float growthDuration = 60f; // ì„±ì¥ ì• ë‹ˆë©”ì´ì…˜ì˜ ì‹œê°„ (ì´ˆ)
+    public GameObject treePrefab;   // ë‚˜ë¬´ í”„ë¦¬íŒ¹
     private Vector3 initialPosition;
 
     void Start()
     {
         initialPosition = transform.position;
-        // Ã³À½¿£ ´Ù ÀÚ¶õ ³ª¹«·Î ½ÃÀÛ
+        // ì²˜ìŒì—” ë‹¤ ìë€ ë‚˜ë¬´ë¡œ ì‹œì‘
         animator.Play("FullyGrown");
     }
 
     public void DestroyAndRespawn()
     {
-        // ³ª¹« ÆÄ±«
+        // ë‚˜ë¬´ íŒŒê´´
         Destroy(gameObject);
-        // ÀÏÁ¤ ½Ã°£ ÈÄ Àç»ı¼º
+        // ì¼ì • ì‹œê°„ í›„ ì¬ìƒì„±
         StartCoroutine(RespawnTree());
     }
 
     IEnumerator RespawnTree()
     {
-        yield return new WaitForSeconds(1f); // ³ª¹«°¡ ÆÄ±«µÈ ÈÄ Àá½Ã ´ë±â
+        yield return new WaitForSeconds(1f); // ë‚˜ë¬´ê°€ íŒŒê´´ëœ í›„ ì ì‹œ ëŒ€ê¸°
         GameObject newTree = Instantiate(treePrefab, initialPosition, Quaternion.identity);
-        newTree.GetComponent<Tree>().StartGrowthAnimation();
+        newTree.GetComponent<AdultTree>().StartGrowthAnimation();
     }
 
     public void StartGrowthAnimation()

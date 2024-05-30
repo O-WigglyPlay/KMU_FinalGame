@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MoveObject : MonoBehaviour
 {
-    public float moveDistance = 5f;  // ÀÌµ¿ÇÒ °Å¸®
-    public float moveSpeed = 2f;     // ÀÌµ¿ ¼Óµµ
+    public float moveDistance = 5f;  // ì´ë™í•  ê±°ë¦¬
+    public float moveSpeed = 2f;     // ì´ë™ ì†ë„
 
     private Vector3 startPosition;
     private bool movingRight = true;
@@ -28,7 +28,7 @@ public class MoveObject : MonoBehaviour
                 yield return null;
             }
 
-            // Àá½Ã ¸ØÃá ÈÄ ¹æÇâ ÀüÈ¯
+            // ì ì‹œ ë©ˆì¶˜ í›„ ë°©í–¥ ì „í™˜
             yield return new WaitForSeconds(1f);
             movingRight = !movingRight;
         }

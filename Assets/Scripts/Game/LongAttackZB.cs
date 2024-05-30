@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class LongAttackZB : MonoBehaviour
 {
-    public float moveSpeed; // ¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ
-    public float attackRange = 5f; // ¿ø°Å¸® °ø°İ ¹üÀ§
-    public float attackCooldown = 3f; // °ø°İ Äğ´Ù¿î ½Ã°£
-    public GameObject ZBSpitPrefab; // Åõ»çÃ¼ ÇÁ¸®Æé
+    public float moveSpeed; // ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„
+    public float attackRange = 5f; // ì›ê±°ë¦¬ ê³µê²© ë²”ìœ„
+    public float attackCooldown = 3f; // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„
+    public GameObject ZBSpitPrefab; // íˆ¬ì‚¬ì²´ í”„ë¦¬í©
 
     public Rigidbody2D target;
 
@@ -19,15 +19,15 @@ public class LongAttackZB : MonoBehaviour
     bool isAttacking = false;
     float lastAttackTime;
 
-    private Animator animator; // ¸ó½ºÅÍÀÇ ¾Ö´Ï¸ŞÀÌÅÍ
-    private Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ Transform ÄÄÆ÷³ÍÆ®
+    private Animator animator; // ëª¬ìŠ¤í„°ì˜ ì• ë‹ˆë©”ì´í„°
+    private Transform playerTransform; // í”Œë ˆì´ì–´ì˜ Transform ì»´í¬ë„ŒíŠ¸
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        rigid.freezeRotation = true; // È¸ÀüÀ» °íÁ¤
+        rigid.freezeRotation = true; // íšŒì „ì„ ê³ ì •
         spriter = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>(); // ¾Ö´Ï¸ŞÀÌÅÍ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        animator = GetComponent<Animator>(); // ì• ë‹ˆë©”ì´í„° ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
     }
 
     void FixedUpdate()
@@ -42,13 +42,13 @@ public class LongAttackZB : MonoBehaviour
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
 
-        // ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î¸¦ º¸°í ÀÖ´ÂÁö È®ÀÎÇÏ°í ¹æÇâÀ» ¼³Á¤
+        // ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ë¥¼ ë³´ê³  ìˆëŠ”ì§€ í™•ì¸í•˜ê³  ë°©í–¥ì„ ì„¤ì •
         spriter.flipX = target.position.x > rigid.position.x;
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
+        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ ê³„ì‚°
         float distanceToPlayer = Vector2.Distance(rigid.position, target.position);
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®°¡ ¿ø°Å¸® °ø°İ ¹üÀ§ ÀÌ³»ÀÌ°í °ø°İ Äğ´Ù¿îÀÌ Áö³µÀ¸¸é °ø°İ
+        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ê°€ ì›ê±°ë¦¬ ê³µê²© ë²”ìœ„ ì´ë‚´ì´ê³  ê³µê²© ì¿¨ë‹¤ìš´ì´ ì§€ë‚¬ìœ¼ë©´ ê³µê²©
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             StartCoroutine(RangedAttack());
@@ -58,14 +58,14 @@ public class LongAttackZB : MonoBehaviour
     IEnumerator RangedAttack()
     {
         isAttacking = true;
-        animator.SetBool("ZombieLongA", isAttacking); // ¿ø°Å¸® °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı
+        animator.SetBool("ZombieLongA", isAttacking); // ì›ê±°ë¦¬ ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
 
-        float attackAnimationLength = 1.0f; // ¿ø°Å¸® °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç ±æÀÌ
-        yield return new WaitForSeconds(attackAnimationLength / 2); // ¾Ö´Ï¸ŞÀÌ¼Ç Áß°£¿¡ Åõ»çÃ¼ ¹ß»ç
+        float attackAnimationLength = 1.0f; // ì›ê±°ë¦¬ ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ê¸¸ì´
+        yield return new WaitForSeconds(attackAnimationLength / 2); // ì• ë‹ˆë©”ì´ì…˜ ì¤‘ê°„ì— íˆ¬ì‚¬ì²´ ë°œì‚¬
 
         Vector2 direction = (target.position - rigid.position).normalized;
         GameObject ZBSpit = Instantiate(ZBSpitPrefab, transform.position, Quaternion.identity);
-        ZBSpit.GetComponent<SpitCtrl>().SetDirection(direction); // Åõ»çÃ¼ÀÇ ¹æÇâ ¼³Á¤
+        ZBSpit.GetComponent<SpitCtrl>().SetDirection(direction); // íˆ¬ì‚¬ì²´ì˜ ë°©í–¥ ì„¤ì •
 
         lastAttackTime = Time.time;
         yield return new WaitForSeconds(attackAnimationLength / 2);

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Transparent : MonoBehaviour
 {
-    public Collider2D buildingCollider; // °ÇÃà¹°ÀÇ BoxCollider2D
-    public Collider2D transparentTrigger; // °ÇÃà¹° µÚÀÇ Åõ¸íÈ­ Æ®¸®°Å ¿µ¿ª
+    public Collider2D buildingCollider; // ê±´ì¶•ë¬¼ì˜ BoxCollider2D
+    public Collider2D transparentTrigger; // ê±´ì¶•ë¬¼ ë’¤ì˜ íˆ¬ëª…í™” íŠ¸ë¦¬ê±° ì˜ì—­
 
-    private SpriteRenderer spriteRenderer; // °ÇÃà¹°ÀÇ SpriteRenderer
+    private SpriteRenderer spriteRenderer; // ê±´ì¶•ë¬¼ì˜ SpriteRenderer
 
     void Start()
     {
@@ -18,9 +18,9 @@ public class Transparent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Åõ¸íÈ­ Ã³¸®
+            // íˆ¬ëª…í™” ì²˜ë¦¬
             Color color = spriteRenderer.color;
-            color.a = 0.5f; // Åõ¸íµµ ¼³Á¤ (0.0 ~ 1.0)
+            color.a = 0.5f; // íˆ¬ëª…ë„ ì„¤ì • (0.0 ~ 1.0)
             spriteRenderer.color = color;
         }
     }
@@ -29,7 +29,7 @@ public class Transparent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // ¿ø·¡ »óÅÂ·Î º¹±¸
+            // ì›ë˜ ìƒíƒœë¡œ ë³µêµ¬
             Color color = spriteRenderer.color;
             color.a = 1.0f;
             spriteRenderer.color = color;
