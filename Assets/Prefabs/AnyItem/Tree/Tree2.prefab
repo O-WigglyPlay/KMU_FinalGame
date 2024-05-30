@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 3726449951933646530}
   - component: {fileID: 73634881739103158}
   - component: {fileID: -7761690181017623651}
-  - component: {fileID: 1437442282945994387}
+  - component: {fileID: -596732880357429341}
   m_Layer: 0
   m_Name: Tree2
   m_TagString: Tree
@@ -228,7 +228,7 @@ BoxCollider2D:
   m_Offset: {x: 0.00000006146729, y: -0.0642969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.48777518, y: 0.142826}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.65625, y: 1.078125}
     newSize: {x: 0.65625, y: 1.078125}
     adaptiveTilingThreshold: 0.5
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingCollider: {fileID: 3726449951933646530}
   transparentTrigger: {fileID: 4583848447201746764}
---- !u!114 &1437442282945994387
+--- !u!114 &-596732880357429341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
