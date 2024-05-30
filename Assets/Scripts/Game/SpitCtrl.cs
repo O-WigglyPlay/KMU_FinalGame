@@ -35,6 +35,20 @@ public class SpitCtrl : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        /* 충돌한 객체가 플레이어인 경우 데미지를 줄 수 있도록 처리 (선택 사항)
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // 플레이어에게 데미지를 주는 로직 추가
+            // collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
+        */
+
+        // 충돌 시 투사체를 파괴
+        Destroy(gameObject);
+    }
+
     void Update()
     {
 
