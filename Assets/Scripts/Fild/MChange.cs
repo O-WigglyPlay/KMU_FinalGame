@@ -6,7 +6,6 @@ using UnityEngine;
 public class MChange : MonoBehaviour
 {
     public Sprite[] destructionSprites; // 파괴 스프라이트들의 배열
-    public AudioClip destructionSound; // 파괴 사운드
     public float destructionDelay = 1.0f; // 파괴 지연 시간
 
     private SpriteRenderer spriteRenderer;
@@ -39,8 +38,6 @@ public class MChange : MonoBehaviour
             // 마지막 파괴 스프라이트일 때 게임 오브젝트 파괴
             Destroy(gameObject, destructionDelay);
             isDestroyed = true;
-            // 추가적인 파괴 효과나 사운드를 재생할 수 있습니다.
-            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
     }
 
