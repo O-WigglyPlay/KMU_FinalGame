@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class MChange : MonoBehaviour
 {
-    public Sprite[] destructionSprites; // íŒŒê´´ ìŠ¤í”„ë¼ì´íŠ¸ë“¤ì˜ ë°°ì—´
-    public AudioClip destructionSound; // íŒŒê´´ ì‚¬ìš´ë“œ
-    public float destructionDelay = 1.0f; // íŒŒê´´ ì§€ì—° ì‹œê°„
+    public Sprite[] destructionSprites; // ÆÄ±« ½ºÇÁ¶óÀÌÆ®µéÀÇ ¹è¿­
+    public float destructionDelay = 1.0f; // ÆÄ±« Áö¿¬ ½Ã°£
 
     private SpriteRenderer spriteRenderer;
     private int destructionStage = 0;
@@ -30,13 +29,13 @@ public class MChange : MonoBehaviour
     {
         if (destructionStage < destructionSprites.Length - 1)
         {
-            // ë‹¤ìŒ íŒŒê´´ ìŠ¤í”„ë¼ì´íŠ¸ë¡œ ë³€ê²½
+            // ´ÙÀ½ ÆÄ±« ½ºÇÁ¶óÀÌÆ®·Î º¯°æ
             spriteRenderer.sprite = destructionSprites[destructionStage];
             destructionStage++;
         }
         else
         {
-            // ë§ˆì§€ë§‰ íŒŒê´´ ìŠ¤í”„ë¼ì´íŠ¸ì¼ ë•Œ ê²Œì„ ì˜¤ë¸Œì íŠ¸ íŒŒê´´
+            // ¸¶Áö¸· ÆÄ±« ½ºÇÁ¶óÀÌÆ®ÀÏ ¶§ °ÔÀÓ ¿ÀºêÁ§Æ® ÆÄ±«
             Destroy(gameObject, destructionDelay);
             isDestroyed = true;
         }
