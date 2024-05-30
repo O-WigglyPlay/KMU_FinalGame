@@ -38,30 +38,6 @@ public class Player : MonoBehaviour
         n_Dmg = 1;
     }
 
-    public void Update()
-    {
-        // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
-        if (Player.instance != null)
-        {
-            LookAtMouse();
-            // A키 입력 확인과 나무 대미지 처리
-            if (currentTree != null && Input.GetKeyDown(KeyCode.A))
-            {
-                Tree treeComponent = currentTree.GetComponent<Tree>();
-                if (treeComponent != null)
-                {
-                    treeComponent.Tree_Hp -= n_Dmg;
-                    Debug.Log("Tree Hp : " + treeComponent.Tree_Hp);
-                    if (treeComponent.Tree_Hp <= 0)
-                    {
-                        Destroy(currentTree);
-                    }
-                    currentTree = null; // 처리 후 초기화
-                }
-            }
-        }
-    }
-
     private void FixedUpdate()
     {
         PlayerMovement();
@@ -87,28 +63,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    void LookAtMouse()
-    {
-        // 마우스의 월드 좌표 가져오기
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
-
-        // 플레이어의 위치 가져오기
-        Vector3 playerPosition = transform.position;
-
-        // 마우스 위치에 따라 스프라이트 좌우 반전
-        if (mousePosition.x < playerPosition.x)
-        {
-            // 마우스가 플레이어의 왼쪽에 있을 때
-            PlayerRenderer.flipX = true;
-        }
-        else
-        {
-            // 마우스가 플레이어의 오른쪽에 있을 때
-            PlayerRenderer.flipX = false;
-        }
-    }
-
     public void Die()
     {
         Debug.Log("Player Died");
@@ -128,17 +82,5 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Tree"))
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Tree treeComponent = other.gameObject.GetComponent<Tree>();
-                treeComponent.Tree_Hp -= n_Dmg;
-                Debug.Log("Tree Hp : " + treeComponent.Tree_Hp);
-            }
-        }
-    }
+    
 }
