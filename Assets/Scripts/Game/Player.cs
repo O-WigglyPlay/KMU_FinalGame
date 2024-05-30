@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         // 플레이어가 존재하고 플레이어 컨트롤러가 초기화되었는지 확인
         if (Player.instance != null)
         {
-            FlipPlayer();
+            LookAtMouse();
         }
     }
 
@@ -69,25 +69,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FlipPlayer()
+    void LookAtMouse()
     {
-        bool isMoving = p_Ani.GetFloat("moveX") != 0 || p_Ani.GetFloat("moveY") != 0;
+        // 마우스의 월드 좌표 가져오기
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f;
 
-        if (isMoving)
+        // 플레이어의 위치 가져오기
+        Vector3 playerPosition = transform.position;
+
+        // 마우스 위치에 따라 스프라이트 좌우 반전
+        if (mousePosition.x < playerPosition.x)
         {
-            // 플레이어의 위치와 마우스의 위치를 비교하여 플레이어가 어느 방향을 바라보는지 판단
-            Vector3 playerPosition = transform.position;
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // 마우스 위치에 따라 플레이어의 스프라이트를 좌우 반전
-            if (mousePosition.x < playerPosition.x)
-            {
-                transform.localScale = new Vector3(-2, 2, 2); // 좌우 반전
-            }
-            else
-            {
-                transform.localScale = new Vector3(2, 2, 2); // 원래 방향
-            }
+            // 마우스가 플레이어의 왼쪽에 있을 때
+            PlayerRenderer.flipX = true;
+        }
+        else
+        {
+            // 마우스가 플레이어의 오른쪽에 있을 때
+            PlayerRenderer.flipX = false;
         }
     }
 

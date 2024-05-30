@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public float moveSpeed; // ¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ
-    public float attackRange = 2f; // ¸ó½ºÅÍÀÇ ±ÙÁ¢ °ø°İ ¹üÀ§
-    public float attackCooldown = 1f; // °ø°İ Äğ´Ù¿î ½Ã°£
-    public float attackDamage = 10f; // °ø°İ µ¥¹ÌÁö
+    public float moveSpeed; // ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„
+    public float attackRange = 2f; // ëª¬ìŠ¤í„°ì˜ ê·¼ì ‘ ê³µê²© ë²”ìœ„
+    public float attackCooldown = 1f; // ê³µê²© ì¿¨ë‹¤ìš´ ì‹œê°„
+    public float attackDamage = 10f; // ê³µê²© ë°ë¯¸ì§€
 
     public Rigidbody2D target;
 
-    public GameObject ZombieArm;   //ÆÈ ÇÁ¸®Æé
-    public GameObject ZombieBody;   //¸öÅë ¾ÆÀÌÅÛ
-    public GameObject ZombieHead;  //¸Ó¸® ¾ÆÀÌÅÛ
-    public GameObject ZombieFeet;  //¹ß ¾ÆÀÌÅÛ
+    public GameObject ZombieArm;   //íŒ” í”„ë¦¬í©
+    public GameObject ZombieBody;   //ëª¸í†µ ì•„ì´í…œ
+    public GameObject ZombieHead;  //ë¨¸ë¦¬ ì•„ì´í…œ
+    public GameObject ZombieFeet;  //ë°œ ì•„ì´í…œ
 
-    public float armDropChance = 0.25f; // ÆÈ ¾ÆÀÌÅÛ µå¶ø È®·ü
-    public float bodyDropChance = 0.25f; // ¸öÅë ¾ÆÀÌÅÛ µå¶ø È®·ü
-    public float headDropChance = 0.25f; // ¸Ó¸® ¾ÆÀÌÅÛ µå¶ø È®·ü
-    public float legDropChance = 0.25f; // ´Ù¸® ¾ÆÀÌÅÛ µå¶ø È®·ü
+    public float armDropChance = 0.25f; // íŒ” ì•„ì´í…œ ë“œë í™•ë¥ 
+    public float bodyDropChance = 0.25f; // ëª¸í†µ ì•„ì´í…œ ë“œë í™•ë¥ 
+    public float headDropChance = 0.25f; // ë¨¸ë¦¬ ì•„ì´í…œ ë“œë í™•ë¥ 
+    public float legDropChance = 0.25f; // ë‹¤ë¦¬ ì•„ì´í…œ ë“œë í™•ë¥ 
 
     bool isLive = true;
     bool isAttacking = false;
@@ -28,16 +28,16 @@ public class Zombie : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriter;
 
-    private Animator animator; // ¸ó½ºÅÍÀÇ ¾Ö´Ï¸ŞÀÌÅÍ
-    private Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ Transform ÄÄÆ÷³ÍÆ®
+    private Animator animator; // ëª¬ìŠ¤í„°ì˜ ì• ë‹ˆë©”ì´í„°
+    private Transform playerTransform; // í”Œë ˆì´ì–´ì˜ Transform ì»´í¬ë„ŒíŠ¸
 
     // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        rigid.freezeRotation = true; // È¸ÀüÀ» °íÁ¤
+        rigid.freezeRotation = true; // íšŒì „ì„ ê³ ì •
         spriter = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>(); // ¾Ö´Ï¸ŞÀÌÅÍ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        animator = GetComponent<Animator>(); // ì• ë‹ˆë©”ì´í„° ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
     }
 
     // Update is called once per frame
@@ -53,20 +53,20 @@ public class Zombie : MonoBehaviour
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
 
-        // ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î¸¦ º¸°í ÀÖ´ÂÁö È®ÀÎÇÏ°í ¹æÇâÀ» ¼³Á¤
+        // ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ë¥¼ ë³´ê³  ìˆëŠ”ì§€ í™•ì¸í•˜ê³  ë°©í–¥ì„ ì„¤ì •
         spriter.flipX = target.position.x < rigid.position.x;
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
+        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ ê³„ì‚°
         float distanceToPlayer = Vector2.Distance(rigid.position, target.position);
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®°¡ ±ÙÁ¢ °ø°İ ¹üÀ§ ÀÌ³»ÀÌ°í °ø°İ Äğ´Ù¿îÀÌ Áö³µÀ¸¸é °ø°İ
+        // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ê°€ ê·¼ì ‘ ê³µê²© ë²”ìœ„ ì´ë‚´ì´ê³  ê³µê²© ì¿¨ë‹¤ìš´ì´ ì§€ë‚¬ìœ¼ë©´ ê³µê²©
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             StartCoroutine(Attack());
         }
         else
         {
-            // ±ÙÁ¢ °ø°İ ¹üÀ§ ÀÌ³»°¡ ¾Æ´Ï¸é ¸ó½ºÅÍ¸¦ ÇÃ·¹ÀÌ¾î ÂÊÀ¸·Î ÀÌµ¿½ÃÅ´
+            // ê·¼ì ‘ ê³µê²© ë²”ìœ„ ì´ë‚´ê°€ ì•„ë‹ˆë©´ ëª¬ìŠ¤í„°ë¥¼ í”Œë ˆì´ì–´ ìª½ìœ¼ë¡œ ì´ë™ì‹œí‚´
             rigid.MovePosition(rigid.position + nextVec);
             rigid.velocity = Vector2.zero;
         }
@@ -76,48 +76,48 @@ public class Zombie : MonoBehaviour
     {
         if (isLive)
         {
-            isLive = false; // »ıÁ¸ »óÅÂ¸¦ false·Î º¯°æ
+            isLive = false; // ìƒì¡´ ìƒíƒœë¥¼ falseë¡œ ë³€ê²½
 
-            // ¾ÆÀÌÅÛ µå¶ø È®·üÀ» Ã¼Å©ÇÏ¿© ¾ÆÀÌÅÛÀ» »ı¼ºÇÒÁö °áÁ¤
+            // ì•„ì´í…œ ë“œë í™•ë¥ ì„ ì²´í¬í•˜ì—¬ ì•„ì´í…œì„ ìƒì„±í• ì§€ ê²°ì •
             if (Random.value <= armDropChance)
             {
-                // ÆÈ ¾ÆÀÌÅÛ »ı¼º
+                // íŒ” ì•„ì´í…œ ìƒì„±
                 Instantiate(ZombieArm, transform.position, Quaternion.identity);
             }
             if (Random.value <= bodyDropChance)
             {
-                // ¸öÅë ¾ÆÀÌÅÛ »ı¼º
+                // ëª¸í†µ ì•„ì´í…œ ìƒì„±
                 Instantiate(ZombieBody, transform.position, Quaternion.identity);
             }
             if (Random.value <= headDropChance)
             {
-                // ¸Ó¸® ¾ÆÀÌÅÛ »ı¼º
+                // ë¨¸ë¦¬ ì•„ì´í…œ ìƒì„±
                 Instantiate(ZombieHead, transform.position, Quaternion.identity);
             }
             if (Random.value <= legDropChance)
             {
-                // ´Ù¸® ¾ÆÀÌÅÛ »ı¼º
+                // ë‹¤ë¦¬ ì•„ì´í…œ ìƒì„±
                 Instantiate(ZombieFeet, transform.position, Quaternion.identity);
             }
 
-            // Àû ¿ÀºêÁ§Æ®¸¦ ÆÄ±«
+            // ì  ì˜¤ë¸Œì íŠ¸ë¥¼ íŒŒê´´
             Destroy(gameObject);
         }
     }
-    // °ø°İ ÄÚ·çÆ¾
+    // ê³µê²© ì½”ë£¨í‹´
     IEnumerator Attack()
     {
-        isAttacking = true; // °ø°İ Áß »óÅÂ·Î º¯°æ
-        animator.SetBool("ZombieAttack", isAttacking); // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı
+        isAttacking = true; // ê³µê²© ì¤‘ ìƒíƒœë¡œ ë³€ê²½
+        animator.SetBool("ZombieAttack", isAttacking); // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
 
-        float attackAnimationLength = 1.0f; // °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ ½ÇÁ¦ ±æÀÌ·Î º¯°æ
-        // °ø°İ ¸ğ¼ÇÀÌ ³¡³¯ ¶§±îÁö ´ë±â
+        float attackAnimationLength = 1.0f; // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì˜ ì‹¤ì œ ê¸¸ì´ë¡œ ë³€ê²½
+        // ê³µê²© ëª¨ì…˜ì´ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return new WaitForSeconds(attackAnimationLength);
 
-        // °ø°İ ÈÄ Äğ´Ù¿î °»½Å
+        // ê³µê²© í›„ ì¿¨ë‹¤ìš´ ê°±ì‹ 
         lastAttackTime = Time.time;
-        isAttacking = false; // °ø°İ Á¾·á »óÅÂ·Î º¯°æ
-        animator.SetBool("ZombieAttack", isAttacking); // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı
+        isAttacking = false; // ê³µê²© ì¢…ë£Œ ìƒíƒœë¡œ ë³€ê²½
+        animator.SetBool("ZombieAttack", isAttacking); // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
     }
 
 }
