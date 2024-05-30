@@ -6,7 +6,6 @@ using UnityEngine;
 public class MChange : MonoBehaviour
 {
     public Sprite[] destructionSprites; // 파괴 스프라이트들의 배열
-    public AudioClip destructionSound; // 파괴 사운드
     public float destructionDelay = 1.0f; // 파괴 지연 시간
 
     private SpriteRenderer spriteRenderer;
