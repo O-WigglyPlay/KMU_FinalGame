@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
-    private SpriteRenderer PlayerRenderer;
     private GameObject currentTree; // 현재 충돌 중인 나무 저장
 
     public static Player instance;
@@ -33,7 +32,6 @@ public class Player : MonoBehaviour
     {
         rb_Player = GetComponent<Rigidbody2D>();
         p_Ani = GetComponent<Animator>();
-        PlayerRenderer = GetComponent<SpriteRenderer>();
         n_Hp = n_maxHealth;  // 시작할 때 체력 초기화
         n_Dmg = 1;
 
@@ -69,7 +67,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && currentTree != null)  // 마우스 왼쪽 버튼 클릭 감지
         {
-            Tree treeScript = currentTree.GetComponent<Tree>();
+            TreeMng treeScript = currentTree.GetComponent<TreeMng>();
             if (treeScript != null)
             {
                 treeScript.Tree_Hp -= n_Dmg;  // 나무의 체력 감소

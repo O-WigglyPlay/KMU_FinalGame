@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 317554385393579584}
   - component: {fileID: 1864448056339702454}
-  - component: {fileID: -4751149345249380090}
   m_Layer: 0
   m_Name: Bush2
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4751149345249380090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612189075522394589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 928576c8d39d08d46a968973667ad986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 20156670932619296}
   - component: {fileID: 3548567477797572282}
   - component: {fileID: 4994446980292395520}
+  - component: {fileID: -1838585438163355150}
   - component: {fileID: 6030907763928979017}
   - component: {fileID: 5442724488877095252}
-  - component: {fileID: 8775178341725491309}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Tree
@@ -140,6 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingCollider: {fileID: 6030907763928979017}
   transparentTrigger: {fileID: 9140546020166476099}
+--- !u!114 &-1838585438163355150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259452632982526862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689461db6bcd7eb47a37045aebfbd9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tree_Hp: 10
+  teethPrefab: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
 --- !u!61 &6030907763928979017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +189,7 @@ BoxCollider2D:
   m_Offset: {x: 0.027005795, y: -0.12586384}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5111608, y: 0.1528873}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.71875, y: 1.109375}
     newSize: {x: 0.71875, y: 1.109375}
     adaptiveTilingThreshold: 0.5
@@ -212,20 +226,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8775178341725491309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4259452632982526862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 689461db6bcd7eb47a37045aebfbd9b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tree_Hp: 10
-  teethPrefab: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
 --- !u!1 &5824654840992531388
 GameObject:
   m_ObjectHideFlags: 0

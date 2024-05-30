@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject ZombiePrefab;  // Á»ºñ ÇÁ¸®ÆÕ
-    public GameObject BigghostPrefab;   // Å«À¯·É ÇÁ¸®ÆÕ
-    public GameObject SmallGhostPrefab; // ÀÛÀº À¯·É ÇÁ¸®ÆÕ
-    public GameObject SpliterZombiePrefab; // ¿ø°Å¸® Á»ºñ ÇÁ¸®ÆÕ
+    public GameObject ZombiePrefab;  // ì¢€ë¹„ í”„ë¦¬íŒ¹
+    public GameObject BigghostPrefab;   // í°ìœ ë ¹ í”„ë¦¬íŒ¹
+    public GameObject SmallGhostPrefab; // ì‘ì€ ìœ ë ¹ í”„ë¦¬íŒ¹
+    public GameObject SpliterZombiePrefab; // ì›ê±°ë¦¬ ì¢€ë¹„ í”„ë¦¬íŒ¹
 
-    public float spawnInterval = 3f; // ¸ó½ºÅÍ »ı¼º °£°İ
-    public float spawnRadius = 5f;   // ¸ó½ºÅÍ »ı¼º ¹İ°æ
-    public Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ Transform
+    public float spawnInterval = 3f; // ëª¬ìŠ¤í„° ìƒì„± ê°„ê²©
+    public float spawnRadius = 5f;   // ëª¬ìŠ¤í„° ìƒì„± ë°˜ê²½
+    public Transform playerTransform; // í”Œë ˆì´ì–´ì˜ Transform
 
     private void Start()
     {
@@ -23,33 +23,33 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            // ·£´ıÇÑ °¢µµ¸¦ »ı¼º
+            // ëœë¤í•œ ê°ë„ë¥¼ ìƒì„±
             float angle = Random.Range(0, 2 * Mathf.PI);
-            // ·£´ıÇÑ ¹İ°æ °Å¸®¸¦ »ı¼º
+            // ëœë¤í•œ ë°˜ê²½ ê±°ë¦¬ë¥¼ ìƒì„±
             float radius = Random.Range(0, spawnRadius);
-            // ·£´ı À§Ä¡ °è»ê
+            // ëœë¤ ìœ„ì¹˜ ê³„ì‚°
             Vector2 spawnPosition = new Vector2(
                 playerTransform.position.x + Mathf.Cos(angle) * radius,
                 playerTransform.position.y + Mathf.Sin(angle) * radius
             );
 
-            // ·£´ıÇÏ°Ô ¸ó½ºÅÍ ¼±ÅÃ
+            // ëœë¤í•˜ê²Œ ëª¬ìŠ¤í„° ì„ íƒ
             GameObject monsterPrefab = GetRandomMonsterPrefab();
 
-            // ¸ó½ºÅÍ »ı¼º
+            // ëª¬ìŠ¤í„° ìƒì„±
             GameObject spawnedMonster = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
 
-            // »ı¼ºµÈ ¸ó½ºÅÍ È°¼ºÈ­ (È¤½Ã ºñÈ°¼ºÈ­µÈ »óÅÂ·Î »ı¼ºµÇ¾ú´Ù¸é)
+            // ìƒì„±ëœ ëª¬ìŠ¤í„° í™œì„±í™” (í˜¹ì‹œ ë¹„í™œì„±í™”ëœ ìƒíƒœë¡œ ìƒì„±ë˜ì—ˆë‹¤ë©´)
             spawnedMonster.SetActive(true);
 
-            // ÁöÁ¤µÈ ½Ã°£¸¸Å­ ´ë±â
+            // ì§€ì •ëœ ì‹œê°„ë§Œí¼ ëŒ€ê¸°
             yield return new WaitForSeconds(spawnInterval);
         }
     }
 
     private GameObject GetRandomMonsterPrefab()
     {
-        int randomIndex = Random.Range(0, 4); // 0¿¡¼­ 3±îÁöÀÇ ·£´ı Á¤¼ö »ı¼º
+        int randomIndex = Random.Range(0, 4); // 0ì—ì„œ 3ê¹Œì§€ì˜ ëœë¤ ì •ìˆ˜ ìƒì„±
         switch (randomIndex)
         {
             case 0:
@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
             case 3:
                 return SpliterZombiePrefab;
             default:
-                return ZombiePrefab; // ±âº»°ª
+                return ZombiePrefab; // ê¸°ë³¸ê°’
         }
     }
 }
