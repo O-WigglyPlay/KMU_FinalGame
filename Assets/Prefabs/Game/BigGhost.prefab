@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4117875639489354058}
   - component: {fileID: 37013245585008653}
   - component: {fileID: 6896486874854590963}
-  - component: {fileID: 2213738734586089532}
   m_Layer: 0
   m_Name: BigGhost
   m_TagString: Ghost
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -735003405
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1836481662, guid: f0b9c505f81613849856170795207f59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -200,20 +199,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &2213738734586089532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851575237186326156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d76cd96c664f1408c4b457db70beff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ZombiePrefab: {fileID: 0}
-  ghostPrefab: {fileID: 0}
-  spawnInterval: 3
-  spawnRadius: 5
-  playerTransform: {fileID: 0}

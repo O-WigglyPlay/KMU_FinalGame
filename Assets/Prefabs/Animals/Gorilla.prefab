@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1394208919
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -338260964, guid: 7a11da556db342a40acc8c163b974d7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -201,5 +201,5 @@ MonoBehaviour:
   teeth: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
   meatDropChance: 0.25
   boneDropChance: 0.25
-  LeatherDropChance: 0.25
+  leatherDropChance: 0.25
   teethDropChance: 0.25

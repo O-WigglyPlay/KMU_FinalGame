@@ -9,8 +9,6 @@ public class Zombie : MonoBehaviour
     public float attackCooldown = 1f; // 공격 쿨다운 시간
     public float attackDamage = 10f; // 공격 데미지
 
-    public Rigidbody2D target;
-
     public GameObject ZombieArm;   //팔 프리펩
     public GameObject ZombieBody;   //몸통 아이템
     public GameObject ZombieHead;  //머리 아이템
@@ -40,6 +38,16 @@ public class Zombie : MonoBehaviour
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
     }
 
+    private void Start()
+    {
+        // 플레이어를 찾아서 설정
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -47,17 +55,17 @@ public class Zombie : MonoBehaviour
         {
             return;
         }
-        Vector2 dirvec = target.position - rigid.position;
+        Vector2 dirvec = (Vector2)(playerTransform.position - transform.position);
         Vector2 nextVec = dirvec.normalized * moveSpeed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
 
         // 몬스터가 플레이어를 보고 있는지 확인하고 방향을 설정
-        spriter.flipX = target.position.x < rigid.position.x;
+        spriter.flipX = playerTransform.position.x < rigid.position.x;
 
         // 플레이어와의 거리 계산
-        float distanceToPlayer = Vector2.Distance(rigid.position, target.position);
+        float distanceToPlayer = Vector2.Distance(rigid.position, playerTransform.position);
 
         // 플레이어와의 거리가 근접 공격 범위 이내이고 공격 쿨다운이 지났으면 공격
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)

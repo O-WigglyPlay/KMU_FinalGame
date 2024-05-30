@@ -12,6 +12,7 @@ public class AnimalSpawner : MonoBehaviour
     private List<GameObject>[] spawnedAnimals; // 생성된 동물들을 추적하기 위한 리스트 배열
     private GameObject player; // 플레이어
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // 플레이어 찾기
