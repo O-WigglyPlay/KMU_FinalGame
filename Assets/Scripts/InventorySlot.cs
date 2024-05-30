@@ -8,7 +8,6 @@ public enum SlotTag { None, Head, Chest, Legs, Feet }
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
     public InventoryItem myItem { get; set; }
-
     public SlotTag myTag;
 
     public void OnPointerClick(PointerEventData eventData)

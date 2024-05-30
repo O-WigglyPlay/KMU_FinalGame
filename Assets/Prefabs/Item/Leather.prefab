@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5263648536481211152}
   m_Layer: 0
   m_Name: Leather
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1782229565
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1124887219, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
   m_Color: {r: 0.9433962, g: 0.9433962, b: 0.80989677, a: 1}

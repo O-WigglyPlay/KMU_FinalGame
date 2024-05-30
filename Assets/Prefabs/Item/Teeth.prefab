@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3691881072979241617}
   m_Layer: 0
   m_Name: Teeth
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,11 +73,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1782229565
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2005357179, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
-  m_Color: {r: 0.75, g: 0.49132907, b: 0.35023582, a: 1}
+  m_Color: {r: 0.6320754, g: 0.38320887, b: 0.24746348, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &-2719115531173496505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

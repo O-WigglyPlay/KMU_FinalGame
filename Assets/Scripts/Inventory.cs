@@ -26,26 +26,31 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         Singleton = this;
-        giveItemBtn.onClick.AddListener( delegate { SpawnInventoryItem(); } );
+        if (giveItemBtn != null)
+        {
+            giveItemBtn.onClick.AddListener(delegate { SpawnRandomInventoryItem(); });
+        }
     }
 
     void Update()
     {
-        if(carriedItem == null) return;
+        if (carriedItem == null) return;
 
         carriedItem.transform.position = Input.mousePosition;
     }
 
     public void SetCarriedItem(InventoryItem item)
     {
-        if(carriedItem != null)
+        if (carriedItem != null)
         {
-            if(item.activeSlot.myTag != SlotTag.None && item.activeSlot.myTag != carriedItem.myItem.itemTag) return;
+            if (item.activeSlot.myTag != SlotTag.None && item.activeSlot.myTag != carriedItem.myItem.itemTag) return;
             item.activeSlot.SetItem(carriedItem);
         }
 
-        if(item.activeSlot.myTag != SlotTag.None)
-        { EquipEquipment(item.activeSlot.myTag, null); }
+        if (item.activeSlot.myTag != SlotTag.None)
+        {
+            EquipEquipment(item.activeSlot.myTag, null);
+        }
 
         carriedItem = item;
         carriedItem.canvasGroup.blocksRaycasts = false;
@@ -57,7 +62,7 @@ public class Inventory : MonoBehaviour
         switch (tag)
         {
             case SlotTag.Head:
-                if(item == null)
+                if (item == null)
                 {
                     // Destroy item.equipmentPrefab on the Player Object;
                     Debug.Log("Unequipped helmet on " + tag);
@@ -77,21 +82,26 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void SpawnInventoryItem(Item item = null)
+    public void SpawnInventoryItem(Item item)
     {
-        Item _item = item;
-        if(_item == null)
-        { _item = PickRandomItem(); }
-
+        Debug.Log("Spawning item in inventory: " + item.name);
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            // Check if the slot is empty
-            if(inventorySlots[i].myItem == null)
+            if (inventorySlots[i].myItem == null)
             {
-                Instantiate(itemPrefab, inventorySlots[i].transform).Initialize(_item, inventorySlots[i]);
+                InventoryItem newItem = Instantiate(itemPrefab, inventorySlots[i].transform);
+                newItem.Initialize(item, inventorySlots[i]);
+                Debug.Log("Item added to inventory slot: " + i);
                 break;
             }
         }
+    }
+
+
+    public void SpawnRandomInventoryItem()
+    {
+        Item randomItem = PickRandomItem();
+        SpawnInventoryItem(randomItem);
     }
 
     Item PickRandomItem()

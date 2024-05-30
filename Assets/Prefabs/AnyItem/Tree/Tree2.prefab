@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 3726449951933646530}
   - component: {fileID: 73634881739103158}
   - component: {fileID: -7761690181017623651}
+  - component: {fileID: 1437442282945994387}
   m_Layer: 0
   m_Name: Tree2
   m_TagString: Tree
@@ -227,7 +228,7 @@ BoxCollider2D:
   m_Offset: {x: 0.00000006146729, y: -0.0642969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.48777518, y: 0.142826}
     oldSize: {x: 0.65625, y: 1.078125}
     newSize: {x: 0.65625, y: 1.078125}
     adaptiveTilingThreshold: 0.5
@@ -278,3 +279,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingCollider: {fileID: 3726449951933646530}
   transparentTrigger: {fileID: 4583848447201746764}
+--- !u!114 &1437442282945994387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469932248382879055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689461db6bcd7eb47a37045aebfbd9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tree_Hp: 10
+  teethPrefab: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}

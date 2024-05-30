@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 214671902155054688}
   m_Layer: 0
   m_Name: MeatSpawn
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1782229565
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1832593373, guid: 50e8eab3f27bdf74db2cf645a417da24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
