@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class HealthStaminaManager : MonoBehaviour
 {
-    public Image[] healthBlocks; // Ã¼·Â ºí·Ï ÀÌ¹ÌÁö ¹è¿­
-    public Image[] staminaBlocks; // ½ºÅ×¹Ì³ª ºí·Ï ÀÌ¹ÌÁö ¹è¿­
+    public Image[] healthBlocks; // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½è¿­
+    public Image[] staminaBlocks; // ï¿½ï¿½ï¿½×¹Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½è¿­
 
     private int currentHealth;
     private int maxHealth;
@@ -15,9 +15,9 @@ public class HealthStaminaManager : MonoBehaviour
     private Coroutine healthRegenCoroutine;
     private Coroutine staminaRegenCoroutine;
 
-    public float healthRegenDelay = 5f; // Ã¼·Â È¸º¹ ´ë±â ½Ã°£
-    public float staminaRegenDelay = 2f; // ½ºÅ×¹Ì³ª È¸º¹ ´ë±â ½Ã°£
-    public float regenInterval = 1f; // È¸º¹ °£°Ý
+    public float healthRegenDelay = 5f; // Ã¼ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+    public float staminaRegenDelay = 2f; // ï¿½ï¿½ï¿½×¹Ì³ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+    public float regenInterval = 1f; // È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
@@ -30,12 +30,12 @@ public class HealthStaminaManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) // Å×½ºÆ®¿ëÀ¸·Î ½ºÆäÀÌ½º¹Ù¸¦ ´­·¶À» ¶§ Ã¼·Â °¨¼Ò
+        if (Input.GetKeyDown(KeyCode.Space)) // ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             TakeDamage(1);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift)) // ´Þ¸®±â ½Ã ½ºÅ×¹Ì³ª °¨¼Ò
+        if (Input.GetKey(KeyCode.LeftShift)) // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½×¹Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             if (staminaCoroutine == null)
             {
