@@ -7,12 +7,13 @@ public class Animals : MonoBehaviour
 {
     public int health = 100;
     public float moveSpeed; // 동물의 이동 속도
+    public float speedBoostMultiplier = 2.0f; // 속도 증가 배율
+    public float speedBoostDuration = 2.0f; // 속도 증가 지속 시간
 
     public GameObject meat; //동물을 죽였을 때 나오는 고기
     public GameObject bone; //동물을 죽였을 때 나오는 뼈
     public GameObject leather; //동물을 죽였을 때 나오는 가죽
     public GameObject teeth; //동물을 죽였을 때 나오는 이빨
-
 
     public float meatDropChance = 0.25f; // 고기 아이템 드랍 확률
     public float boneDropChance = 0.25f; // 뼈 아이템 드랍 확률
@@ -27,6 +28,7 @@ public class Animals : MonoBehaviour
 
     bool isLive = true;
     private Vector2 moveDirection;
+    private float currentMoveSpeed;
 
     void Awake()
     {
@@ -34,6 +36,7 @@ public class Animals : MonoBehaviour
         rigid.freezeRotation = true; // 회전을 고정
         spriter = GetComponent<SpriteRenderer>();   //Sprite 불러오기
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
+        currentMoveSpeed = moveSpeed; // 초기 이동 속도를 기본 이동 속도로 설정
     }
 
     void Update()
@@ -77,6 +80,17 @@ public class Animals : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 충돌한 대상이 플레이어가 아닌 경우 반대 방향으로 이동
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            Vector2 oppositeDirection = -moveDirection; // 반대 방향으로 이동
+            rigid.velocity = oppositeDirection * moveSpeed;
+            moveDirection = oppositeDirection; // 이동 방향 업데이트
+            UpdateSpriteDirection(); // 스프라이트 방향 업데이트
+        }
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -94,11 +108,20 @@ public class Animals : MonoBehaviour
             {
                 // 반대 방향으로 도망
                 Vector2 oppositeDirection = (transform.position - playerTransform.position).normalized;
+                StartCoroutine(TemporarySpeedBoost()); // 일시적인 속도 증가 코루틴 시작
                 rigid.velocity = oppositeDirection * moveSpeed;
                 moveDirection = oppositeDirection; // 이동 방향 업데이트
                 UpdateSpriteDirection(); // 스프라이트 방향 업데이트
             }
         }
+    }
+
+    // 일시적으로 속도를 증가시키는 코루틴
+    IEnumerator TemporarySpeedBoost()
+    {
+        currentMoveSpeed = moveSpeed * speedBoostMultiplier; // 속도 증가
+        yield return new WaitForSeconds(speedBoostDuration); // 일정 시간 대기
+        currentMoveSpeed = moveSpeed; // 원래 속도로 복원
     }
 
     // 동물이 사망할 때 호출되는 함수
