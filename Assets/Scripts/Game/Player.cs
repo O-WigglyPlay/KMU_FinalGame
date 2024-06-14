@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public int n_Hp;               // 플레이어 체력
-    [SerializeField] public int n_maxHealth = 100;  // 플레이어 최대 체력
-    [SerializeField] public float f_Speed;          // 플레이어 스피드
-    [SerializeField] public int n_Dmg = 1;
+    public int n_Hp;               // 플레이어 체력
+    public int n_maxHealth = 100;  // 플레이어 최대 체력
+    public float f_Speed;          // 플레이어 스피드
+    public int n_Dmg = 1;
+
     [SerializeField] private Transform attackTransform; // Attack 오브젝트의 Transform
+    [SerializeField] private GameObject top_Hitbox; // Top 히트박스 오브젝트
+    [SerializeField] private GameObject down_Hitbox; // Down 히트박스 오브젝트
 
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
@@ -35,22 +38,7 @@ public class Player : MonoBehaviour
         n_Hp = n_maxHealth;  // 시작할 때 체력 초기화
         n_Dmg = 1;
 
-        if (attackTransform == null)
-        {
-            Debug.LogError("Attack Transform이 설정되지 않았습니다.");
-            return;
-        }
-
-        // Attack 오브젝트의 Collider에 이벤트 등록
         var attackCollider = attackTransform.GetComponent<BoxCollider2D>();
-        if (attackCollider != null)
-        {
-            attackCollider.isTrigger = true;
-        }
-        else
-        {
-            Debug.LogError("Attack 오브젝트에 BoxCollider2D가 없습니다.");
-        }
     }
 
     private void FixedUpdate()
@@ -60,19 +48,58 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (currentTree != null)
-        {
-            Debug.Log("현재 충돌 중인 나무: " + currentTree.name);
-        }
+        Attack();
+    }
 
-        if (Input.GetMouseButtonDown(0) && currentTree != null)  // 마우스 왼쪽 버튼 클릭 감지
+    private void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            TreeMng treeScript = currentTree.GetComponent<TreeMng>();
-            if (treeScript != null)
+            float lastMoveX = p_Ani.GetFloat("lastMoveX");
+            float lastMoveY = p_Ani.GetFloat("lastMoveY");
+            
+            if (lastMoveX == -1)
             {
-                treeScript.Tree_Hp -= n_Dmg;  // 나무의 체력 감소
-                Debug.Log(treeScript.Tree_Hp);
+                attackTransform.localPosition = new Vector3(-0.033f, attackTransform.localPosition.y, attackTransform.localPosition.z);
+                p_Ani.Play("Atk_left");
             }
+            else if (lastMoveX == 1)
+            {
+                attackTransform.localPosition = new Vector3(0.6f, attackTransform.localPosition.y, attackTransform.localPosition.z);
+                p_Ani.Play("Atk_right");
+            }
+
+            if (lastMoveY == 1)
+            {
+                EnableHitbox(top_Hitbox);
+                DisableHitbox(down_Hitbox);
+            }
+            else if (lastMoveY == -1)
+            {
+                EnableHitbox(down_Hitbox);
+                DisableHitbox(top_Hitbox);
+            }
+        }
+    }
+
+    private void EnableHitbox(GameObject hitbox)
+    {
+        var collider = hitbox.GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            collider.isTrigger = true;
+            hitbox.SetActive(true);
+            AttackCollision();
+        }
+    }
+
+    private void DisableHitbox(GameObject hitbox)
+    {
+        var collider = hitbox.GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            collider.isTrigger = false;
+            hitbox.SetActive(false);
         }
     }
 
@@ -95,7 +122,7 @@ public class Player : MonoBehaviour
             p_Ani.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
     }
-
+    
     public void Die()
     {
         Debug.Log("Player Died");
@@ -118,6 +145,20 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("나무와 충돌 끝: " + currentTree.name);
                 currentTree = null;  // 나무와의 충돌이 끝났다면 참조 제거
+            }
+        }
+    }
+    
+    public void AttackCollision()
+    {
+        Debug.Log("충돌 발생");
+        if (currentTree != null)
+        {
+            TreeMng treeScript = currentTree.GetComponent<TreeMng>();
+            if (treeScript != null)
+            {
+                treeScript.Tree_Hp -= n_Dmg;  // 나무의 체력 감소
+                Debug.Log("충돌로 인한 나무 체력 감소: " + treeScript.Tree_Hp);
             }
         }
     }
