@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
     private GameObject currentTree; // 현재 충돌 중인 나무 저장
+    private bool isColliding = false; // 충돌 상태를 저장하는 변수
+    private Vector2 lastMoveDirection; // 마지막 이동 방향
 
     public static Player instance;
 
@@ -57,7 +59,7 @@ public class Player : MonoBehaviour
         {
             float lastMoveX = p_Ani.GetFloat("lastMoveX");
             float lastMoveY = p_Ani.GetFloat("lastMoveY");
-            
+
             if (lastMoveX == -1)
             {
                 attackTransform.localPosition = new Vector3(-0.033f, attackTransform.localPosition.y, attackTransform.localPosition.z);
@@ -113,6 +115,11 @@ public class Player : MonoBehaviour
         // 입력에 따라 플레이어의 속도 설정
         rb_Player.velocity = movement * f_Speed;
 
+        if (movement != Vector2.zero)
+        {
+            lastMoveDirection = movement;
+        }
+
         p_Ani.SetFloat("moveX", horizontalInput);
         p_Ani.SetFloat("moveY", verticalInput);
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 ||
@@ -122,7 +129,12 @@ public class Player : MonoBehaviour
             p_Ani.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
     }
-    
+
+    public Vector2 GetLastMoveDirection()
+    {
+        return lastMoveDirection.normalized; // 방향을 정규화하여 반환
+    }
+
     public void Die()
     {
         Debug.Log("Player Died");
@@ -130,6 +142,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        isColliding = true;
         if (collision.gameObject.CompareTag("Tree"))
         {
             currentTree = collision.gameObject;  // 나무 오브젝트를 현재 충돌한 나무로 설정
@@ -137,8 +150,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            isColliding = true;  // 충돌 상태를 지속적으로 갱신
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
+        isColliding = false;
         if (collision.gameObject.CompareTag("Tree"))
         {
             if (currentTree == collision.gameObject)
@@ -148,7 +170,12 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
+    public bool IsColliding()
+    {
+        return isColliding; // 충돌 상태가 유지되는지 확인
+    }
+
     public void AttackCollision()
     {
         Debug.Log("충돌 발생");
