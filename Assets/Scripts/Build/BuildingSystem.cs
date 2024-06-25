@@ -13,6 +13,12 @@ public class BuildingSystem : MonoBehaviour
     public GameObject buildingMenuUI; // 건축 메뉴 UI 패널 참조
     private float currentRotation = 0f; // 현재 회전 각도
 
+    public Inventory inventory; // 인벤토리 참조
+    public Item woodItem; // 목재 아이템 참조
+    public Item stoneItem; // 돌 아이템 참조
+    public int buildingCostWood = 20; // 건축에 필요한 목재 양
+    public int buildingCostStone = 10; // 건축에 필요한 돌의 양
+
     void Start()
     {
         buildingMenuUI.SetActive(false); // 시작할 때 UI 비활성화
@@ -45,16 +51,24 @@ public class BuildingSystem : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && CanBuildAtPosition(buildPosition))
                 {
-                    Instantiate(currentBuildingPrefab, buildPosition, Quaternion.Euler(0, 0, currentRotation));
+                    if (HasEnoughResources())
+                    {
+                        Instantiate(currentBuildingPrefab, buildPosition, Quaternion.Euler(0, 0, currentRotation));
+                        UseResources(); // 자재 사용
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough resources to build!");
+                    }
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.B)) // Toggle building mode with 'B' key
+            if (Input.GetKeyDown(KeyCode.B)) // 'B' 키로 건축 모드 토글
             {
                 ToggleBuildingMode();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.B)) // Allow re-entering building mode
+        else if (Input.GetKeyDown(KeyCode.B)) // 건축 모드 재진입 허용
         {
             ToggleBuildingMode();
         }
@@ -100,6 +114,59 @@ public class BuildingSystem : MonoBehaviour
         if (renderer != null)
         {
             renderer.color = color;
+        }
+    }
+
+    bool HasEnoughResources()
+    {
+        int woodCount = 0;
+        int stoneCount = 0;
+
+        foreach (var slot in inventory.GetInventorySlots())
+        {
+            if (slot.myItem != null)
+            {
+                if (slot.myItem.myItem == woodItem)
+                {
+                    woodCount += slot.myItem.quantity;
+                }
+                else if (slot.myItem.myItem == stoneItem)
+                {
+                    stoneCount += slot.myItem.quantity;
+                }
+            }
+        }
+
+        return woodCount >= buildingCostWood && stoneCount >= buildingCostStone;
+    }
+
+    void UseResources()
+    {
+        int woodNeeded = buildingCostWood;
+        int stoneNeeded = buildingCostStone;
+
+        foreach (var slot in inventory.GetInventorySlots())
+        {
+            if (slot.myItem != null)
+            {
+                if (slot.myItem.myItem == woodItem && woodNeeded > 0)
+                {
+                    int usedWood = Mathf.Min(woodNeeded, slot.myItem.quantity);
+                    slot.myItem.AddQuantity(-usedWood); // AddQuantity 메서드 호출
+                    woodNeeded -= usedWood;
+                }
+                else if (slot.myItem.myItem == stoneItem && stoneNeeded > 0)
+                {
+                    int usedStone = Mathf.Min(stoneNeeded, slot.myItem.quantity);
+                    slot.myItem.AddQuantity(-usedStone); // AddQuantity 메서드 호출
+                    stoneNeeded -= usedStone;
+                }
+
+                if (woodNeeded <= 0 && stoneNeeded <= 0)
+                {
+                    break;
+                }
+            }
         }
     }
 }

@@ -6,9 +6,15 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Singleton;
     public static InventoryItem carriedItem;
+  
 
     [SerializeField] InventorySlot[] inventorySlots;
     [SerializeField] InventorySlot[] hotbarSlots;
+
+    public InventorySlot[] GetInventorySlots()
+    {
+        return inventorySlots;
+    }
 
     // 0=Head, 1=Chest, 2=Legs, 3=Feet
     [SerializeField] InventorySlot[] equipmentSlots;

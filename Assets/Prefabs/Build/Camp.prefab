@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5909616027473649908}
   - component: {fileID: 8445911405330644146}
   - component: {fileID: 8362304579652502464}
+  - component: {fileID: 4040896200989486682}
   m_Layer: 0
   m_Name: Camp
   m_TagString: Untagged
@@ -120,3 +121,24 @@ CircleCollider2D:
   m_Offset: {x: -0.003925413, y: -0.0032711327}
   serializedVersion: 2
   m_Radius: 0.085793525
+--- !u!95 &4040896200989486682
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103970769421317413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

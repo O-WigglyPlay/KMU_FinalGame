@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -62,6 +60,10 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     public void AddQuantity(int amount)
     {
         quantity += amount;
+        if (quantity <= 0)
+        {
+            Destroy(gameObject); // 아이템 수량이 0 이하일 경우 게임 오브젝트 파괴
+        }
         Debug.Log(myItem.name + " quantity: " + quantity);
         UpdateQuantityText(); // 아이템 개수가 변경될 때마다 텍스트 업데이트
     }
@@ -78,11 +80,11 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             Inventory.Singleton.SetCarriedItem(this);
         }
-        else if(eventData.button == PointerEventData.InputButton.Right)
+        else if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (quantity > 1)
             {
