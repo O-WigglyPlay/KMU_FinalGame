@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
+    private HealthStaminaManager healthStaminaManager;
+
     private void Awake()
     {
         if (instance == null)
@@ -44,6 +47,10 @@ public class Player : MonoBehaviour
         n_Dmg = 1;
 
         var attackCollider = attackTransform.GetComponent<BoxCollider2D>();
+
+        // HealthStaminaManager 찾기
+        healthStaminaManager = FindObjectOfType<HealthStaminaManager>();
+        healthStaminaManager.SetHealth(n_Hp, n_maxHealth); // 초기 체력을 설정
     }
 
     private void FixedUpdate()
@@ -154,7 +161,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Player Died");
+        SceneManager.LoadScene("ResultScene");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -173,6 +180,11 @@ public class Player : MonoBehaviour
             woodWeapon.SetActive(false);
             mineWeapon.SetActive(true);
             Debug.Log("광물과 충돌 시작: " + currentMineral.name);
+        }
+
+        if (collision.gameObject.name == "Square")
+        {
+            TakeDamage(10);
         }
     }
 
@@ -210,6 +222,22 @@ public class Player : MonoBehaviour
     public bool IsColliding()
     {
         return isColliding; // 충돌 상태가 유지되는지 확인
+    }
+
+    public void TakeDamage(int amount)
+    {
+        n_Hp -= amount;
+        if (n_Hp < 0) n_Hp = 0;
+
+        if (healthStaminaManager != null)
+        {
+            healthStaminaManager.SetHealth(n_Hp, n_maxHealth); // 체력 갱신
+        }
+
+        if (n_Hp <= 0)
+        {
+            Die();
+        }
     }
 
     public void AttackCollision()
