@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Game/LongAttackZB.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Game/Spawner.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Transparent.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/UI/Map.cs" charset="UTF-8" />
   </component>
 </project>
