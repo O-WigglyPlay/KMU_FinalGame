@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 {
     private Image itemIcon;
     public CanvasGroup canvasGroup { get; private set; }
-    public TextMeshPro quantityText; // TextMeshPro를 사용하여 아이템 개수를 표시할 텍스트
+    public TextMeshProUGUI quantityText; // TextMeshPro를 사용하여 아이템 개수를 표시할 텍스트
 
     public Item myItem { get; set; }
     public InventorySlot activeSlot { get; set; }
@@ -26,7 +26,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         }
 
         // TextMeshProUGUI 컴포넌트 참조
-        quantityText = GetComponentInChildren<TextMeshPro>();
+        quantityText = GetComponentInChildren<TextMeshProUGUI>();
         if (quantityText == null)
         {
             Debug.LogError("quantityText is not assigned in InventoryItem.");
