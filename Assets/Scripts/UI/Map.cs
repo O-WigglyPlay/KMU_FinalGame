@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public Transform playerPos; // ÇÃ·¹ÀÌ¾î À§Ä¡
-    public Transform offscreenPos; // ¿ÀÇÁ½ºÅ©¸° À§Ä¡
-    public float speed; // ÀÌµ¿ ¼Óµµ
+    public Transform playerPos; // í”Œë ˆì´ì–´ ìœ„ì¹˜
+    public Transform offscreenPos; // ì˜¤í”„ìŠ¤í¬ë¦° ìœ„ì¹˜
+    public float speed; // ì´ë™ ì†ë„
 
-    private bool isMapVisible = false; // ÁöµµÀÇ ÇöÀç »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö
+    private bool isMapVisible = false; // ì§€ë„ì˜ í˜„ì¬ ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M)) // Å°°¡ ´­¸± ¶§ »óÅÂ ÀüÈ¯
+        if (Input.GetKeyDown(KeyCode.M)) // í‚¤ê°€ ëˆŒë¦´ ë•Œ ìƒíƒœ ì „í™˜
         {
             isMapVisible = !isMapVisible;
         }
