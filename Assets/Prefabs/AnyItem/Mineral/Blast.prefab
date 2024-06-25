@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7309135208416152443}
   m_Layer: 0
   m_Name: Blast
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf829c12817ac3499f3562875ca21cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mineral_Hp: 10
   destructionSprites: []
-  destructionSound: {fileID: 0}
   destructionDelay: 1
 --- !u!95 &7309135208416152443
 Animator:
