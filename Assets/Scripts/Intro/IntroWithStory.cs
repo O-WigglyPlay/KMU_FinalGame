@@ -4,18 +4,18 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
-public class LoadingScreenWithStoryTMP : MonoBehaviour
+public class IntroWithStoryTMP : MonoBehaviour
 {
-    public TextMeshProUGUI storyText; // ½ºÅä¸® ÅØ½ºÆ®¸¦ Ç¥½ÃÇÒ TMP ÅØ½ºÆ®
-    public string[] storyMessages; // ¼øÂ÷ÀûÀ¸·Î Ç¥½ÃÇÒ ½ºÅä¸® ¸Þ½ÃÁö ¹è¿­
-    public Button startGameButton; // °ÔÀÓ ¾ÀÀ¸·Î ³Ñ¾î°¡´Â ¹öÆ°
-    private int currentMessageIndex = 0; // ÇöÀç Ç¥½Ã ÁßÀÎ ¸Þ½ÃÁöÀÇ ÀÎµ¦½º
+    public TextMeshProUGUI storyText; // ï¿½ï¿½ï¿½ä¸® ï¿½Ø½ï¿½Æ®ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ TMP ï¿½Ø½ï¿½Æ®
+    public string[] storyMessages; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ä¸® ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½è¿­
+    public Button startGameButton; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½Æ°
+    private int currentMessageIndex = 0; // ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
     private string pressAnyKeyMessage = "";
-    private float typingSpeed = 0.05f; // Å¸ÀÌÇÎ ¼Óµµ
+    private float typingSpeed = 0.05f; // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
 
     void Start()
     {
-        startGameButton.gameObject.SetActive(false); // ½ÃÀÛÇÒ ¶§ ¹öÆ°À» ºñÈ°¼ºÈ­
+        startGameButton.gameObject.SetActive(false); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         StartCoroutine(LoadAsyncScene());
         DisplayStory();
         StartCoroutine(AutoNextMessage());
@@ -25,9 +25,9 @@ public class LoadingScreenWithStoryTMP : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            StopCoroutine(AutoNextMessage()); // ÀÚµ¿ ÀüÈ¯ ÄÚ·çÆ¾ ÁßÁö
+            StopCoroutine(AutoNextMessage()); // ï¿½Úµï¿½ ï¿½ï¿½È¯ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
             DisplayNextMessage();
-            StartCoroutine(AutoNextMessage()); // ÀÚµ¿ ÀüÈ¯ ÄÚ·çÆ¾ Àç½ÃÀÛ
+            StartCoroutine(AutoNextMessage()); // ï¿½Úµï¿½ ï¿½ï¿½È¯ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½ï¿½
         }
     }
 
@@ -61,7 +61,7 @@ public class LoadingScreenWithStoryTMP : MonoBehaviour
         }
         else
         {
-            startGameButton.gameObject.SetActive(true); // ¸ðµç ¸Þ½ÃÁö°¡ Ãâ·ÂµÇ¸é ¹öÆ° È°¼ºÈ­
+            startGameButton.gameObject.SetActive(true); // ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÂµÇ¸ï¿½ ï¿½ï¿½Æ° È°ï¿½ï¿½È­
         }
     }
 
@@ -69,7 +69,7 @@ public class LoadingScreenWithStoryTMP : MonoBehaviour
     {
         while (currentMessageIndex < storyMessages.Length)
         {
-            yield return new WaitForSeconds(3.0f); // 3ÃÊ ´ë±â
+            yield return new WaitForSeconds(3.0f); // 3ï¿½ï¿½ ï¿½ï¿½ï¿½
             DisplayNextMessage();
         }
     }
@@ -91,7 +91,7 @@ public class LoadingScreenWithStoryTMP : MonoBehaviour
 
     IEnumerator ActivateScene()
     {
-        yield return new WaitForSeconds(0.5f); // ¾à°£ÀÇ Áö¿¬À» Ãß°¡ÇÏ¿© Å° ÀÔ·Â ´©¶ô ¹æÁö
+        yield return new WaitForSeconds(0.5f); // ï¿½à°£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï¿ï¿½ Å° ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("GameScene");
         asyncLoad.allowSceneActivation = true;
     }
