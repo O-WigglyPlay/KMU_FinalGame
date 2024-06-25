@@ -47,9 +47,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Build
-    uniqueID: 3096142525
-    locked: 0
   - name: AnyItem
     uniqueID: 2762572173
     locked: 0
@@ -61,6 +58,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2900758377
+    locked: 0
+  - name: Build
+    uniqueID: 3096142525
     locked: 0
   - name: Map
     uniqueID: 3227408233
