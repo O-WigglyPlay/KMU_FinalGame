@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1782229565
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2005357179, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
   m_Color: {r: 0.6320754, g: 0.38320887, b: 0.24746348, a: 1}
@@ -173,4 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -2005357179, guid: 1d537a614bb230743936a5ea0c6ac563, type: 3}
   itemTag: 0
+  maxStack: 60
   equipmentPrefab: {fileID: 0}

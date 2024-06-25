@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Inventory : MonoBehaviour
 {
     public static Inventory Singleton;
@@ -82,9 +81,29 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void SpawnInventoryItem(Item item)
+    public void AddItem(Item item)
     {
-        Debug.Log("Spawning item in inventory: " + item.name);
+        Debug.Log("Adding item to inventory: " + item.name);
+
+        // 기존에 동일한 아이템이 있는지 확인
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.myItem != null && slot.myItem.myItem == item)
+            {
+                if (slot.myItem.quantity < item.maxStack)
+                {
+                    int spaceLeft = item.maxStack - slot.myItem.quantity;
+                    if (spaceLeft > 0)
+                    {
+                        int quantityToAdd = Mathf.Min(spaceLeft, 1);
+                        slot.myItem.AddQuantity(quantityToAdd);
+                        return;
+                    }
+                }
+            }
+        }
+
+        // 새로운 슬롯에 아이템 추가
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i].myItem == null)
@@ -97,11 +116,10 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     public void SpawnRandomInventoryItem()
     {
         Item randomItem = PickRandomItem();
-        SpawnInventoryItem(randomItem);
+        AddItem(randomItem);
     }
 
     Item PickRandomItem()

@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Item : MonoBehaviour
 {
     public Sprite itemIcon;
     public SlotTag itemTag;
+    public int maxStack = 60; // 스택 가능한 최대 개수를 60으로 설정
 
     [Header("If the item can be equipped")]
     public GameObject equipmentPrefab;
@@ -49,7 +49,7 @@ public class Item : MonoBehaviour
 
         // 인벤토리에 아이템 추가
         Debug.Log("Adding item to inventory: " + name);
-        Inventory.Singleton.SpawnInventoryItem(this);
+        Inventory.Singleton.AddItem(this);
         Destroy(gameObject);
     }
 }
