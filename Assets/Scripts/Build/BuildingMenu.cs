@@ -18,13 +18,14 @@ public class BuildingMenu : MonoBehaviour
             Button button = transform.GetChild(i).GetComponent<Button>();
             button.onClick.AddListener(() => {
                 buildingSystemScript.SetBuildingPrefab(buildingPrefabs[index]);
-                buildingSystemScript.ToggleBuildingMode(); // Enable building mode when a prefab is selected
+                // 건축 모드를 끄지 않도록 ToggleBuildingMode 호출 제거
             });
         }
     }
 
     void Update()
     {
+        // 'B' 키를 눌렀을 때만 건축 모드를 토글
         if (Input.GetKeyDown(KeyCode.B))
         {
             buildingSystemScript.ToggleBuildingMode();
