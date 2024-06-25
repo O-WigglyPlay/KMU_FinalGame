@@ -37,6 +37,16 @@ public class Ghost : MonoBehaviour
         // 플레이어 방향으로 몬스터 이동
         rb.velocity = directionToPlayer * moveSpeed;
 
+        // 유령이 플레이어를 바라보도록 좌우 방향 변경
+        if (directionToPlayer.x > 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
         // 플레이어와의 거리를 계산
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
