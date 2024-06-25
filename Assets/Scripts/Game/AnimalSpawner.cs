@@ -15,6 +15,7 @@ public class AnimalSpawner : MonoBehaviour
     void Start()
     {
         spawnedAnimals = new List<GameObject>(); // 생성된 동물들을 추적하기 위한 리스트 초기화
+        SpawnAnimal(); // 게임 시작 시 첫 번째 동물 생성
         StartCoroutine(SpawnAnimals()); // 동물 생성 코루틴 시작
     }
 
