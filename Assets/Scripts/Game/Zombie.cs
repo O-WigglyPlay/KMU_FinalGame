@@ -7,7 +7,7 @@ public class Zombie : MonoBehaviour
     public float moveSpeed; // 몬스터의 이동 속도
     public float attackRange = 2f; // 몬스터의 근접 공격 범위
     public float attackCooldown = 1f; // 공격 쿨다운 시간
-    public float attackDamage = 10f; // 공격 데미지
+    public int attackDamage = 10; // 공격 데미지
 
     public GameObject ZombieArm;   //팔 프리펩
     public GameObject ZombieBody;   //몸통 아이템
@@ -29,11 +29,10 @@ public class Zombie : MonoBehaviour
     private Animator animator; // 몬스터의 애니메이터
     private Transform playerTransform; // 플레이어의 Transform 컴포넌트
 
-    // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        rigid.freezeRotation = true; // 회전을 고정
+        rigid.bodyType = RigidbodyType2D.Kinematic; // Rigidbody2D를 Kinematic으로 설정
         spriter = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
     }
@@ -48,35 +47,43 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if(!isLive || isAttacking)
+        if (!isLive || isAttacking)
         {
             return;
         }
-        Vector2 dirvec = (Vector2)(playerTransform.position - transform.position);
-        Vector2 nextVec = dirvec.normalized * moveSpeed * Time.fixedDeltaTime;
 
-        rigid.MovePosition(rigid.position + nextVec);
-        rigid.velocity = Vector2.zero;
+        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        float distanceToPlayer = Vector2.Distance(rigid.position, playerTransform.position);
+
+        if (distanceToPlayer > attackRange)
+        {
+            Vector2 nextPosition = Vector2.MoveTowards(rigid.position, playerTransform.position, moveSpeed * Time.fixedDeltaTime);
+            rigid.MovePosition(nextPosition);
+        }
 
         // 몬스터가 플레이어를 보고 있는지 확인하고 방향을 설정
         spriter.flipX = playerTransform.position.x < rigid.position.x;
-
-        // 플레이어와의 거리 계산
-        float distanceToPlayer = Vector2.Distance(rigid.position, playerTransform.position);
 
         // 플레이어와의 거리가 근접 공격 범위 이내이고 공격 쿨다운이 지났으면 공격
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             StartCoroutine(Attack());
         }
-        else
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // 근접 공격 범위 이내가 아니면 몬스터를 플레이어 쪽으로 이동시킴
-            rigid.MovePosition(rigid.position + nextVec);
-            rigid.velocity = Vector2.zero;
+            // 플레이어와 충돌했을 때 처리 로직 추가
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                // 플레이어에게 데미지를 줍니다.
+                player.TakeDamage(attackDamage);
+            }
         }
     }
 
@@ -112,7 +119,7 @@ public class Zombie : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // 공격 코루틴
+
     IEnumerator Attack()
     {
         isAttacking = true; // 공격 중 상태로 변경
@@ -127,5 +134,4 @@ public class Zombie : MonoBehaviour
         isAttacking = false; // 공격 종료 상태로 변경
         animator.SetBool("ZombieAttack", isAttacking); // 공격 애니메이션 재생
     }
-
 }
