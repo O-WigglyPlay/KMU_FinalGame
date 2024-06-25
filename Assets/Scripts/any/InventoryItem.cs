@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using TMPro; // TextMeshPro 네임스페이스 추가
+using TMPro;
 
 public class InventoryItem : MonoBehaviour, IPointerClickHandler
 {
@@ -67,11 +67,12 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     }
 
     // 아이템 개수를 표시하는 텍스트를 업데이트하는 메서드
-    private void UpdateQuantityText()
+    public void UpdateQuantityText()
     {
         if (quantityText != null)
         {
             quantityText.text = quantity.ToString();
+            quantityText.gameObject.SetActive(quantity > 1); // 개수가 1보다 큰 경우에만 텍스트를 표시
         }
     }
 
@@ -80,6 +81,13 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         if(eventData.button == PointerEventData.InputButton.Left)
         {
             Inventory.Singleton.SetCarriedItem(this);
+        }
+        else if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (quantity > 1)
+            {
+                Inventory.Singleton.SplitStack(this);
+            }
         }
     }
 }

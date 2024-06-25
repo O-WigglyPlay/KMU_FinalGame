@@ -116,6 +116,25 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void SplitStack(InventoryItem originalItem)
+    {
+        // 스택된 아이템 중 하나를 분리하여 새로운 아이템으로 만듭니다.
+        originalItem.AddQuantity(-1);
+
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            if (inventorySlots[i].myItem == null)
+            {
+                InventoryItem newItem = Instantiate(itemPrefab, inventorySlots[i].transform);
+                newItem.Initialize(originalItem.myItem, inventorySlots[i]);
+                newItem.quantity = 1;
+                newItem.UpdateQuantityText();
+                SetCarriedItem(newItem); // 분리된 아이템을 드래그 상태로 설정
+                break;
+            }
+        }
+    }
+
     public void SpawnRandomInventoryItem()
     {
         Item randomItem = PickRandomItem();
