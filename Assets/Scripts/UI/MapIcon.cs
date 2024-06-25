@@ -15,7 +15,7 @@ public class MapIcon : MonoBehaviour
     private void Update()
     {
         // 방향과 속도에 따라 맵 아이콘을 이동시킴
-        transform.Translate(moveDirection * f_Speed * Time.deltaTime);
+        transform.Translate(moveDirection * f_Speed *0.05f * Time.deltaTime);
 
         // 디버깅용 로그 출력
         Debug.Log("Move Direction: " + moveDirection + ", Speed: " + f_Speed);
