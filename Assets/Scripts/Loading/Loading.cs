@@ -24,7 +24,7 @@ public class Loading : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(StartLoad("GameScene"));
+        StartCoroutine(StartLoad("IntroScene"));
         StartCoroutine(TypeLoadingText());
         ShowRandomTip();  // 랜덤 팁 표시
     }
