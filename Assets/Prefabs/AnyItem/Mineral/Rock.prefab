@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9214170956290635135}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf829c12817ac3499f3562875ca21cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mineral_Hp: 10
   destructionSprites:
   - {fileID: -321884580, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   - {fileID: -2040925119, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
-  destructionSound: {fileID: 8300000, guid: 010ca9e053c2e4e2f90aeb5957f309a9, type: 3}
   destructionDelay: 1
 --- !u!95 &462982859707461339
 Animator:

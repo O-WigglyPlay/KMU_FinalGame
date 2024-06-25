@@ -9,6 +9,7 @@ public class Animals : MonoBehaviour
     public float moveSpeed; // 동물의 이동 속도
     public float speedBoostMultiplier = 2.0f; // 속도 증가 배율
     public float speedBoostDuration = 2.0f; // 속도 증가 지속 시간
+    public float directionChangeInterval;// 방향을 변경하는 간격
 
     public GameObject meat; //동물을 죽였을 때 나오는 고기
     public GameObject bone; //동물을 죽였을 때 나오는 뼈
@@ -66,6 +67,8 @@ public class Animals : MonoBehaviour
         moveDirection = Random.insideUnitCircle.normalized;
         rigid.velocity = moveDirection * moveSpeed;
         UpdateSpriteDirection();
+
+        StartCoroutine(ChangeDirectionRoutine()); // 방향을 주기적으로 변경하는 코루틴 시작
     }
 
     private void UpdateSpriteDirection()
@@ -123,6 +126,25 @@ public class Animals : MonoBehaviour
         yield return new WaitForSeconds(speedBoostDuration); // 일정 시간 대기
         currentMoveSpeed = moveSpeed; // 원래 속도로 복원
     }
+
+    // 방향을 주기적으로 변경하는 코루틴
+    IEnumerator ChangeDirectionRoutine()
+    {
+        while (isLive)
+        {
+            yield return new WaitForSeconds(directionChangeInterval); // 일정 시간 대기
+            ChangeDirection(); // 방향 변경
+        }
+    }
+
+    // 방향을 변경하는 함수
+    void ChangeDirection()
+    {
+        moveDirection = Random.insideUnitCircle.normalized; // 새로운 랜덤 방향 설정
+        rigid.velocity = moveDirection * currentMoveSpeed; // 새로운 방향으로 이동
+        UpdateSpriteDirection(); // 스프라이트 방향 업데이트
+    }
+
 
     // 동물이 사망할 때 호출되는 함수
     void Die()

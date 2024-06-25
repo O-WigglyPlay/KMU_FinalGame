@@ -9,6 +9,7 @@ TagManager:
   - Tree
   - AttackFov
   - Item
+  - Mineral
   layers:
   - Default
   - TransparentFX

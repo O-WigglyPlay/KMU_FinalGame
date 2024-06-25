@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1264197281366302808}
   m_Layer: 0
   m_Name: Diamond
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,11 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf829c12817ac3499f3562875ca21cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mineral_Hp: 10
   destructionSprites:
   - {fileID: 125218991, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   - {fileID: 1048531439, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   - {fileID: 2014151593, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
-  destructionSound: {fileID: 0}
   destructionDelay: 1
 --- !u!95 &7812510814323257991
 Animator:

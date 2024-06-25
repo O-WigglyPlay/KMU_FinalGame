@@ -1,44 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class MChange : MonoBehaviour
 {
-    public Sprite[] destructionSprites; // ÆÄ±« ½ºÇÁ¶óÀÌÆ®µéÀÇ ¹è¿­
-    public float destructionDelay = 1.0f; // ÆÄ±« Áö¿¬ ½Ã°£
+    public int Mineral_Hp = 10;
+    public Sprite[] destructionSprites; // íŒŒê´´ ìŠ¤í”„ë¼ì´íŠ¸ë“¤ì˜ ë°°ì—´
+    public float destructionDelay = 1.0f; // íŒŒê´´ ì§€ì—° ì‹œê°„
 
     private SpriteRenderer spriteRenderer;
-    private int destructionStage = 0;
+    private int maxHp; // ìµœëŒ€ ì²´ë ¥
     private bool isDestroyed = false;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        maxHp = Mineral_Hp; // ìµœëŒ€ ì²´ë ¥ì„ ì €ì¥
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void UpdateSprite()
     {
-        if (collision.gameObject.CompareTag("Player") && !isDestroyed)
+        // ì²´ë ¥ì— ë¹„ë¡€í•˜ì—¬ ìŠ¤í”„ë¼ì´íŠ¸ ë³€ê²½
+        int spriteIndex = Mathf.FloorToInt((1 - (float)Mineral_Hp / maxHp) * destructionSprites.Length);
+        spriteIndex = Mathf.Clamp(spriteIndex, 0, destructionSprites.Length - 1);
+        spriteRenderer.sprite = destructionSprites[spriteIndex];
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (isDestroyed) return;
+
+        Mineral_Hp -= damage;
+        UpdateSprite();
+        Debug.Log("ë‚¨ì€ ê´‘ë¬¼ ì²´ë ¥ : " + Mineral_Hp);
+
+        if (Mineral_Hp <= 0)
         {
             DestroyRock();
         }
     }
 
-    void DestroyRock()
+    public void DestroyRock()
     {
-        if (destructionStage < destructionSprites.Length - 1)
+        if (!isDestroyed)
         {
-            // ´ÙÀ½ ÆÄ±« ½ºÇÁ¶óÀÌÆ®·Î º¯°æ
-            spriteRenderer.sprite = destructionSprites[destructionStage];
-            destructionStage++;
-        }
-        else
-        {
-            // ¸¶Áö¸· ÆÄ±« ½ºÇÁ¶óÀÌÆ®ÀÏ ¶§ °ÔÀÓ ¿ÀºêÁ§Æ® ÆÄ±«
+            // ë§ˆì§€ë§‰ íŒŒê´´ ìŠ¤í”„ë¼ì´íŠ¸ë¡œ ë³€ê²½
+            spriteRenderer.sprite = destructionSprites[destructionSprites.Length - 1];
             Destroy(gameObject, destructionDelay);
             isDestroyed = true;
         }
     }
-
 }
