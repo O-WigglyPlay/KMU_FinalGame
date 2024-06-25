@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
             float lastMoveX = p_Ani.GetFloat("lastMoveX");
             float lastMoveY = p_Ani.GetFloat("lastMoveY");
 
+            // 좌우 공격
             if (lastMoveX == -1)
             {
                 attackTransform.localPosition = new Vector3(-0.033f, attackTransform.localPosition.y, attackTransform.localPosition.z);
@@ -71,17 +72,21 @@ public class Player : MonoBehaviour
                 p_Ani.Play("Atk_right");
             }
 
+            // 상하 공격
             if (lastMoveY == 1)
             {
                 EnableHitbox(top_Hitbox);
                 DisableHitbox(down_Hitbox);
+                p_Ani.Play("Atk_top");  // 위쪽 공격 애니메이션 실행
             }
             else if (lastMoveY == -1)
             {
                 EnableHitbox(down_Hitbox);
                 DisableHitbox(top_Hitbox);
+                p_Ani.Play("Atk_bottom");  // 아래쪽 공격 애니메이션 실행
             }
         }
+
     }
 
     private void EnableHitbox(GameObject hitbox)
