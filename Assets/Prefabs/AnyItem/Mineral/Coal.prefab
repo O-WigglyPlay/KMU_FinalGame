@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mineral_Hp: 10
-  destructionSprites: []
+  destructionSprites:
+  - {fileID: -1607023038, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
+  - {fileID: -1649889224, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   destructionDelay: 1
 --- !u!114 &1734384439672446725
 MonoBehaviour:
