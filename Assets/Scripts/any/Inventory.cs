@@ -228,6 +228,27 @@ public class Inventory : MonoBehaviour
         int random = Random.Range(0, items.Length);
         return items[random];
     }
+    public void RemoveItem(Item item, int quantity)
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.myItem != null && slot.myItem.myItem == item)
+            {
+                int removeQuantity = Mathf.Min(quantity, slot.myItem.quantity);
+                slot.myItem.AddQuantity(-removeQuantity);
+                quantity -= removeQuantity;
+
+                if (slot.myItem.quantity == 0)
+                {
+                    Destroy(slot.myItem.gameObject);
+                    slot.myItem = null;
+                }
+
+                if (quantity <= 0)
+                    return;
+            }
+        }
+    }
 
     public bool HasItem(Item item)
     {
