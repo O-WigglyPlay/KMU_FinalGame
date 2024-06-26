@@ -11,23 +11,51 @@ public class AdultTree : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        // 처음엔 다 자란 나무로 시작
-        animator.Play("FullyGrown");
+        if (animator != null)
+        {
+            // GameObject 활성화
+            if (!gameObject.activeSelf)
+            {
+                gameObject.SetActive(true);
+            }
+
+            // 처음엔 다 자란 나무로 시작
+            animator.Play("FullyGrown");
+        }
+        else
+        {
+            Debug.LogError("Animator가 할당되지 않았습니다.");
+        }
     }
 
     public void DestroyAndRespawn()
     {
-        // 나무 파괴
-        Destroy(gameObject);
-        // 일정 시간 후 재생성
-        StartCoroutine(RespawnTree());
+        if (treePrefab != null)
+        {
+            // 나무 파괴
+            Destroy(gameObject);
+            // 일정 시간 후 재생성
+            StartCoroutine(RespawnTree());
+        }
+        else
+        {
+            Debug.LogError("TreePrefab이 할당되지 않았습니다.");
+        }
     }
 
     IEnumerator RespawnTree()
     {
         yield return new WaitForSeconds(1f); // 나무가 파괴된 후 잠시 대기
         GameObject newTree = Instantiate(treePrefab, initialPosition, Quaternion.identity);
-        newTree.GetComponent<AdultTree>().StartGrowthAnimation();
+        var newTreeScript = newTree.GetComponent<AdultTree>();
+        if (newTreeScript != null)
+        {
+            newTreeScript.StartGrowthAnimation();
+        }
+        else
+        {
+            Debug.LogError("생성된 나무에 AdultTree 스크립트가 없습니다.");
+        }
     }
 
     public void StartGrowthAnimation()
@@ -37,8 +65,21 @@ public class AdultTree : MonoBehaviour
 
     IEnumerator GrowthCoroutine()
     {
-        animator.Play("Growth");
-        yield return new WaitForSeconds(growthDuration);
-        animator.Play("FullyGrown");
+        if (animator != null)
+        {
+            // GameObject 활성화
+            if (!gameObject.activeSelf)
+            {
+                gameObject.SetActive(true);
+            }
+
+            animator.Play("Growth");
+            yield return new WaitForSeconds(growthDuration);
+            animator.Play("FullyGrown");
+        }
+        else
+        {
+            Debug.LogError("Animator가 할당되지 않았습니다.");
+        }
     }
 }
