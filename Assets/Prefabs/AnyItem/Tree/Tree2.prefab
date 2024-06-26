@@ -145,7 +145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1532395123
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 255663861, guid: 7bc85b0e02b92c84caf9f81c6a6c3912, type: 3}
   m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
@@ -292,4 +292,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree_Hp: 10
-  teethPrefab: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
+  teethPrefab: {fileID: 484298782491941051, guid: 2af4cf5e35daa0646b7f67d7e9ab544c, type: 3}

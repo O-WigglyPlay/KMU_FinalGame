@@ -19,10 +19,6 @@ public class SpitCtrl : MonoBehaviour
             Vector2 dir = player.transform.position - transform.position;
             SetDirection(dir);
         }
-        else
-        {
-            Debug.LogError("플레이어를 찾을 수 없습니다.");
-        }
     }
     public void SetDirection(Vector2 dir)
     {

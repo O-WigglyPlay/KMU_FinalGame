@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree_Hp: 10
-  teethPrefab: {fileID: 3590717579226992521, guid: 52aaa79219777d14aac219cae7fe4eb1, type: 3}
+  teethPrefab: {fileID: 484298782491941051, guid: 2af4cf5e35daa0646b7f67d7e9ab544c, type: 3}
 --- !u!61 &6030907763928979017
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -78,12 +78,10 @@ public class Inventory : MonoBehaviour
                 if (item == null)
                 {
                     // Destroy item.equipmentPrefab on the Player Object;
-                    Debug.Log("Unequipped helmet on " + tag);
                 }
                 else
                 {
                     // Instantiate item.equipmentPrefab on the Player Object;
-                    Debug.Log("Equipped " + item.myItem.name + " on " + tag);
                 }
                 break;
             case SlotTag.Chest:
@@ -97,9 +95,8 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        Debug.Log("Adding item to inventory: " + item.name);
 
-        // 기존에 동일한 아이템이 있는지 확인
+        // 동일한 아이템을 찾고 최대 스택 수에 도달하지 않았는지 확인
         foreach (var slot in inventorySlots)
         {
             if (slot.myItem != null && slot.myItem.myItem == item)
@@ -107,12 +104,10 @@ public class Inventory : MonoBehaviour
                 if (slot.myItem.quantity < item.maxStack)
                 {
                     int spaceLeft = item.maxStack - slot.myItem.quantity;
-                    if (spaceLeft > 0)
-                    {
-                        int quantityToAdd = Mathf.Min(spaceLeft, 1);
-                        slot.myItem.AddQuantity(quantityToAdd);
-                        return;
-                    }
+                    int quantityToAdd = Mathf.Min(spaceLeft, 1);
+
+                    slot.myItem.AddQuantity(quantityToAdd);
+                    return;
                 }
             }
         }
@@ -124,7 +119,6 @@ public class Inventory : MonoBehaviour
             {
                 InventoryItem newItem = Instantiate(itemPrefab, inventorySlots[i].transform);
                 newItem.Initialize(item, inventorySlots[i]);
-                Debug.Log("Item added to inventory slot: " + i);
                 break;
             }
         }
@@ -159,7 +153,6 @@ public class Inventory : MonoBehaviour
                 return; // 한 번 조합하면 종료
             }
         }
-        Debug.Log("No combination available.");
     }
 
     private bool CanCombine(CombineRecipe recipe)
@@ -214,7 +207,6 @@ public class Inventory : MonoBehaviour
             }
         }
         AddItem(recipe.resultItem);
-        Debug.Log("Combined items into " + recipe.resultItem.name);
     }
 
     public void SpawnRandomInventoryItem()

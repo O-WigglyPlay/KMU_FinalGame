@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IPointerClickHandler, IDropHandler
 {
     public InventoryItem myItem { get; set; }
-    public SlotTag myTag; // 기존의 SlotTag를 참조
+    public SlotTag myTag;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -58,7 +58,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IDropHandler
             myItem = item;
             myItem.activeSlot = this;
             myItem.transform.SetParent(transform);
-            myItem.transform.localPosition = Vector3.zero; // 위치 초기화
+            myItem.transform.localPosition = Vector3.zero;
             myItem.canvasGroup.blocksRaycasts = true;
 
             if (myTag != SlotTag.None)

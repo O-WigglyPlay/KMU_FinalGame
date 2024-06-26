@@ -18,7 +18,6 @@ public class DataManager : MonoBehaviour
         string json = JsonUtility.ToJson(data, true);
         // JSON 데이터를 파일에 저장
         File.WriteAllText(filePath, json);
-        Debug.Log("Game data saved: " + json);
     }
 
     // JSON 파일에서 게임 데이터를 불러오는 메서드
@@ -31,12 +30,10 @@ public class DataManager : MonoBehaviour
             string json = File.ReadAllText(filePath);
             // JSON 데이터를 객체로 변환
             GameData data = JsonUtility.FromJson<GameData>(json);
-            Debug.Log("Game data loaded: " + json);
             return data;
         }
         else
         {
-            Debug.Log("No saved game data found.");
             return new GameData();
         }
     }

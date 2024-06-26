@@ -18,11 +18,6 @@ public class PlayerMovementController : MonoBehaviour
         if (displayText != null)
         {
             displayText.gameObject.SetActive(false); // 게임 시작 시 텍스트를 비활성화
-            Debug.Log($"[{gameObject.name}] Start: Display text is set to inactive.");
-        }
-        else
-        {
-            Debug.LogError($"[{gameObject.name}] Start: Display text is not assigned.");
         }
     }
 
@@ -39,7 +34,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (other.CompareTag("Player") && other.transform == triggerPoint)
         {
-            Debug.Log($"[{gameObject.name}] OnTriggerEnter: Player reached the trigger point.");
             StartMovement();
         }
     }

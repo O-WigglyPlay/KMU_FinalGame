@@ -17,19 +17,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     {
         canvasGroup = GetComponent<CanvasGroup>();
         itemIcon = GetComponent<Image>();
-
-        if (itemIcon == null)
-        {
-            Debug.LogError("itemIcon is not assigned in InventoryItem.");
-        }
-
-        // TextMeshProUGUI 컴포넌트 참조
         quantityText = GetComponentInChildren<TextMeshProUGUI>();
-        if (quantityText == null)
-        {
-            Debug.LogError("quantityText is not assigned in InventoryItem.");
-        }
-
         UpdateQuantityText(); // 초기 아이템 개수를 텍스트로 표시
     }
 
@@ -44,14 +32,6 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         if (itemIcon != null)
         {
             itemIcon.sprite = item.itemIcon;
-            if (itemIcon.sprite == null)
-            {
-                Debug.LogError("itemIcon.sprite is null. Check if itemIcon is properly set in Item asset.");
-            }
-        }
-        else
-        {
-            Debug.LogError("itemIcon is not assigned in Initialize.");
         }
 
         UpdateQuantityText(); // 초기 아이템 개수를 텍스트로 표시
@@ -64,7 +44,6 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         {
             Destroy(gameObject); // 아이템 수량이 0 이하일 경우 게임 오브젝트 파괴
         }
-        Debug.Log(myItem.name + " quantity: " + quantity);
         UpdateQuantityText(); // 아이템 개수가 변경될 때마다 텍스트 업데이트
     }
 

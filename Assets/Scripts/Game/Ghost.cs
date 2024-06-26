@@ -16,11 +16,13 @@ public class Ghost : MonoBehaviour
     private float lastAttackTime = 0f; // 마지막 공격 시간
     private Transform playerTransform; // 플레이어의 Transform 컴포넌트
     private Rigidbody2D rb; // Rigidbody2D 컴포넌트
+    private SpriteRenderer spriteRenderer; // SpriteRenderer 컴포넌트
 
     private void Start()
     {
         animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
         rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
+        spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 컴포넌트 가져오기
 
         // 플레이어 오브젝트를 참조하여 플레이어의 Transform을 가져옴
         playerTransform = Player.instance.transform;
@@ -37,9 +39,15 @@ public class Ghost : MonoBehaviour
         // 플레이어 방향으로 몬스터 이동
         rb.velocity = directionToPlayer * moveSpeed;
 
-        // 유령이 플레이어를 바라보도록 회전 설정
-        float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        // 유령이 플레이어를 바라보도록 스프라이트 뒤집기 (반대 방향)
+        if (directionToPlayer.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
 
         // 플레이어와의 거리를 계산
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
@@ -109,5 +117,42 @@ public class Ghost : MonoBehaviour
                 playerRb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 플레이어의 공격과 충돌했는지 확인
+        if (collision.gameObject.CompareTag("PlayerAttack"))
+        {
+            Debug.Log("플레이어의 공격과 충돌");
+            // 유령의 체력을 감소시키는 로직
+            TakeDamage(Player.instance.n_Dmg);
+        }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        curHealth -= damage;
+        Debug.Log("유령 체력 감소: " + curHealth);
+
+        // 유령 체력이 0 이하인지 확인하여 사망 처리
+        if (curHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // 유령 사망 처리 로직
+        animator.SetTrigger("Die");
+        rb.velocity = Vector2.zero;
+        // 일정 시간 후 유령 오브젝트 비활성화
+        Invoke("DeactivateGhost", 1f);
+    }
+
+    private void DeactivateGhost()
+    {
+        gameObject.SetActive(false);
     }
 }
