@@ -1,25 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 public class NoteManager : MonoBehaviour
 {
-    public GameObject[] noteObjects; // 미리 생성된 쪽지 오브젝트들을 참조합니다.
-    public string[] messages; // 각 쪽지의 내용을 설정할 배열입니다.
+    private Note currentNote;
 
-    void Start()
+    void Update()
     {
-        // noteObjects와 messages 배열의 크기가 동일한지 확인합니다.
-        if (noteObjects.Length != messages.Length)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.LogError("Note objects and messages arrays must have the same length!");
-            return;
+            if (currentNote != null)
+            {
+                ToggleNoteUI(currentNote);
+            }
         }
+    }
 
-        // 각 쪽지 오브젝트의 내용을 설정합니다.
-        for (int i = 0; i < noteObjects.Length; i++)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Note note = other.GetComponent<Note>();
+        if (note != null)
         {
-            NoteController noteController = noteObjects[i].GetComponent<NoteController>();
-            noteController.SetText(messages[i]);
+            currentNote = note;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Note note = other.GetComponent<Note>();
+        if (note != null && note == currentNote)
+        {
+            currentNote = null;
+        }
+    }
+
+    void ToggleNoteUI(Note note)
+    {
+        bool isActive = note.noteUIPanel.activeSelf;
+        note.noteUIPanel.SetActive(!isActive);
     }
 }
