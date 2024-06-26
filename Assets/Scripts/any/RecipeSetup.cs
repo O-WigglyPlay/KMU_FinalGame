@@ -26,7 +26,7 @@ public class RecipeSetup : MonoBehaviour
 
     public Item blast; // 용광로
     public Item toach;// 촛불
-    public Item craftbox; // 제작대
+    public Item craftbook; // 제작대
     public Item Armor1;  //가죽 보호대
     public Item Armor2; //철 보호대 
     public Item Armor3;  //다이아몬드 보호대
@@ -115,7 +115,7 @@ public class RecipeSetup : MonoBehaviour
             resultItem = stoneaxe
         };
         //제작대
-        CombineRecipe craftboxRecipe = new CombineRecipe
+        CombineRecipe craftbookRecipe = new CombineRecipe
         {
             requiredItems = new Item[] { wood },
             requiredQuantities = new int[] { 4 },
@@ -156,7 +156,7 @@ public class RecipeSetup : MonoBehaviour
         recipes = new CombineRecipe[] { diamondaxeRecipe };
         recipes = new CombineRecipe[] { diamondswordRecipe };
         recipes = new CombineRecipe[] { blastRecipe };
-        recipes = new CombineRecipe[] { craftboxRecipe };
+        recipes = new CombineRecipe[] { craftbookRecipe };
         recipes = new CombineRecipe[] { toachRecipe };
         recipes = new CombineRecipe[] { Armor1Recipe };
         recipes = new CombineRecipe[] { Armor2Recipe };
