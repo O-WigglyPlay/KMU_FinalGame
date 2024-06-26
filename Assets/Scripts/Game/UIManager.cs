@@ -146,7 +146,7 @@ public class UIManager : MonoBehaviour
     public void SaveGame()
     {
         Debug.Log("저장되었습니다.");
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("StartMeue");
     }
 
     public void GameQuit()
