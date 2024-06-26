@@ -10,6 +10,15 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        // ¼³Á¤ È­¸éÀ¸·Î ÀÌµ¿ÇÏ´Â ÄÚµå
+        // ì„¤ì • í™”ë©´ìœ¼ë¡œ ì´ë™í•˜ëŠ” ì½”ë“œ
+    }
+    
+    public void GameQuit()
+    {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+            Application.Quit();
+    #endif
     }
 }

@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Inventory : MonoBehaviour
 {
     public static Inventory Singleton;
     public static InventoryItem carriedItem;
-  
 
     [SerializeField] InventorySlot[] inventorySlots;
     [SerializeField] InventorySlot[] hotbarSlots;
@@ -25,8 +24,12 @@ public class Inventory : MonoBehaviour
     [Header("Item List")]
     [SerializeField] Item[] items;
 
+    [Header("Combine Recipes")]
+    [SerializeField] CombineRecipe[] combineRecipes; // 조합 레시피 배열
+
     [Header("Debug")]
     [SerializeField] Button giveItemBtn;
+    [SerializeField] Button combineItemBtn; // 새로운 조합 버튼
 
     void Awake()
     {
@@ -34,6 +37,11 @@ public class Inventory : MonoBehaviour
         if (giveItemBtn != null)
         {
             giveItemBtn.onClick.AddListener(delegate { SpawnRandomInventoryItem(); });
+        }
+
+        if (combineItemBtn != null)
+        {
+            combineItemBtn.onClick.AddListener(delegate { TryCombineItems(); }); // 조합 버튼 클릭 시 조합 시도
         }
     }
 
@@ -139,6 +147,74 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void TryCombineItems()
+    {
+        foreach (var recipe in combineRecipes)
+        {
+            if (CanCombine(recipe))
+            {
+                CombineItems(recipe);
+                return; // 한 번 조합하면 종료
+            }
+        }
+        Debug.Log("No combination available.");
+    }
+
+    private bool CanCombine(CombineRecipe recipe)
+    {
+        for (int i = 0; i < recipe.requiredItems.Length; i++)
+        {
+            int requiredCount = recipe.requiredQuantities[i];
+            int currentCount = 0;
+
+            foreach (var slot in inventorySlots)
+            {
+                if (slot.myItem != null && slot.myItem.myItem == recipe.requiredItems[i])
+                {
+                    currentCount += slot.myItem.quantity;
+                    if (currentCount >= requiredCount) break;
+                }
+            }
+
+            if (currentCount < requiredCount) return false;
+        }
+        return true;
+    }
+
+    private void CombineItems(CombineRecipe recipe)
+    {
+        for (int i = 0; i < recipe.requiredItems.Length; i++)
+        {
+            int requiredCount = recipe.requiredQuantities[i];
+
+            foreach (var slot in inventorySlots)
+            {
+                if (slot.myItem != null && slot.myItem.myItem == recipe.requiredItems[i])
+                {
+                    int slotCount = slot.myItem.quantity;
+                    if (slotCount >= requiredCount)
+                    {
+                        slot.myItem.AddQuantity(-requiredCount);
+                        if (slot.myItem.quantity == 0)
+                        {
+                            Destroy(slot.myItem.gameObject);
+                            slot.myItem = null;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        requiredCount -= slotCount;
+                        Destroy(slot.myItem.gameObject);
+                        slot.myItem = null;
+                    }
+                }
+            }
+        }
+        AddItem(recipe.resultItem);
+        Debug.Log("Combined items into " + recipe.resultItem.name);
     }
 
     public void SpawnRandomInventoryItem()

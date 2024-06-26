@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public enum SlotTag { None, Head, Chest, Legs, Feet }
-
 public class InventorySlot : MonoBehaviour, IPointerClickHandler, IDropHandler
 {
     public InventoryItem myItem { get; set; }
-    public SlotTag myTag;
+    public SlotTag myTag; // 기존의 SlotTag를 참조
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if(Inventory.carriedItem == null) return;
-            if(myTag != SlotTag.None && Inventory.carriedItem.myItem.itemTag != myTag) return;
+            if (Inventory.carriedItem == null) return;
+            if (myTag != SlotTag.None && Inventory.carriedItem.myItem.itemTag != myTag) return;
             SetItem(Inventory.carriedItem);
         }
-        else if(eventData.button == PointerEventData.InputButton.Right)
+        else if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (myItem != null && myItem.quantity > 1)
             {

@@ -1,7 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public enum SlotTag { None, Head, Chest, Legs, Feet }
+
 public class Item : MonoBehaviour
 {
     public Sprite itemIcon;
@@ -10,6 +12,9 @@ public class Item : MonoBehaviour
 
     [Header("If the item can be equipped")]
     public GameObject equipmentPrefab;
+
+    [Header("Combination Settings")]
+    public CombineRecipe[] combineRecipes; // 조합 레시피 배열
 
     private bool isPlayerInRange = false;
 
