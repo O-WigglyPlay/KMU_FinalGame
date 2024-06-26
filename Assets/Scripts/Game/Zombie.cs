@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
+    public int Zombie_Hp = 10;  //좀비 체력 초기화
     public float moveSpeed; // 몬스터의 이동 속도
     public float attackRange = 2f; // 몬스터의 근접 공격 범위
     public float attackCooldown = 1f; // 공격 쿨다운 시간
@@ -84,6 +85,14 @@ public class Zombie : MonoBehaviour
                 // 플레이어에게 데미지를 줍니다.
                 player.TakeDamage(attackDamage);
             }
+        }
+    }
+    public void TakeDamage(int n_Dmg)
+    {
+        Zombie_Hp -= n_Dmg;
+        if (Zombie_Hp <= 0)
+        {
+            Die();
         }
     }
 
