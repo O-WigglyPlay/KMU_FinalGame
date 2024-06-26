@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LoadingScreen : MonoBehaviour
+public class IntroScreen : MonoBehaviour
 {
     public void StartGame()
     {
@@ -11,6 +11,6 @@ public class LoadingScreen : MonoBehaviour
 
     public void OpenSettings()
     {
-        // ¼³Á¤ È­¸éÀ¸·Î ÀÌµ¿ÇÏ´Â ÄÚµå
+        // ì„¤ì • í™”ë©´ìœ¼ë¡œ ì´ë™í•˜ëŠ” ì½”ë“œ
     }
 }
