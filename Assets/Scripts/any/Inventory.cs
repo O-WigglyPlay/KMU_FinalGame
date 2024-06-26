@@ -228,4 +228,16 @@ public class Inventory : MonoBehaviour
         int random = Random.Range(0, items.Length);
         return items[random];
     }
+
+    public bool HasItem(Item item)
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.myItem != null && slot.myItem.myItem == item)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
