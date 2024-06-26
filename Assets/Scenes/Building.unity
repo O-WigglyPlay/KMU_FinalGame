@@ -363,7 +363,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   buildingSize: {x: 0, y: 0}
+  collisionCheckSize: {x: 2.5, y: 2.5}
   buildingMenuUI: {fileID: 491600700}
+  inventory: {fileID: 0}
+  woodItem: {fileID: 0}
+  stoneItem: {fileID: 0}
+  buildingCostWood: 20
+  buildingCostStone: 10
 --- !u!4 &663550686
 Transform:
   m_ObjectHideFlags: 0
