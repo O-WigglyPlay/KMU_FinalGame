@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
     public GameObject deathPanel; // Death 패널 오브젝트
     public Button respawnButton; // 리스폰 버튼
     public Button mainMenuButton; // 메인메뉴 버튼
-    public Button applySettingsButton; // 설정 적용 버튼
     public Slider bgmSlider;
     public Slider effectSlider;
     public AudioSource bgmSource;
@@ -105,7 +104,6 @@ public class UIManager : MonoBehaviour
         // 버튼 이벤트 리스너 추가
         respawnButton.onClick.AddListener(RespawnPlayer);
         mainMenuButton.onClick.AddListener(GoToMainMenu);
-        applySettingsButton.onClick.AddListener(ApplySettings); // 설정 적용 버튼 리스너 추가
     }
 
     void Update()
@@ -148,7 +146,7 @@ public class UIManager : MonoBehaviour
     public void SaveGame()
     {
         Debug.Log("저장되었습니다.");
-        SceneManager.LoadScene("StartMeue");
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void GameQuit()
