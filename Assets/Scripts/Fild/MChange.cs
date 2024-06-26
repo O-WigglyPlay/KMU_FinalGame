@@ -7,6 +7,7 @@ public class MChange : MonoBehaviour
     public int Mineral_Hp = 10;
     public Sprite[] destructionSprites; // 파괴 스프라이트들의 배열
     public float destructionDelay = 1.0f; // 파괴 지연 시간
+    public GameObject mineralPrefab;  // Mineral 프리팹에 대한 참조
 
     private SpriteRenderer spriteRenderer;
     private int maxHp; // 최대 체력
@@ -35,18 +36,28 @@ public class MChange : MonoBehaviour
 
         if (Mineral_Hp <= 0)
         {
-            DestroyRock();
+            StartCoroutine(DestroyRock());
         }
     }
 
-    public void DestroyRock()
+    private IEnumerator DestroyRock()
     {
         if (!isDestroyed)
         {
+            isDestroyed = true;
+
             // 마지막 파괴 스프라이트로 변경
             spriteRenderer.sprite = destructionSprites[destructionSprites.Length - 1];
-            Destroy(gameObject, destructionDelay);
-            isDestroyed = true;
+
+            // 지연 시간 후에 프리팹 생성 및 오브젝트 파괴
+            yield return new WaitForSeconds(destructionDelay);
+
+            if (mineralPrefab != null)
+            {
+                Instantiate(mineralPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            }
+
+            Destroy(gameObject);
         }
     }
 }

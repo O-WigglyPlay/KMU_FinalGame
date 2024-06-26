@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1532395123
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -321884580, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,6 +107,7 @@ MonoBehaviour:
   - {fileID: -321884580, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   - {fileID: -2040925119, guid: ce3eb48c2615093429c60daff4282b52, type: 3}
   destructionDelay: 1
+  mineralPrefab: {fileID: 5931071289813178181, guid: b3620e9fe0f27ab4cb3f79da8a495ca6, type: 3}
 --- !u!95 &462982859707461339
 Animator:
   serializedVersion: 5
