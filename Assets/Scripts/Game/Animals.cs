@@ -58,10 +58,6 @@ public class Animals : MonoBehaviour
         {
             playerTransform = player.transform;
         }
-        else
-        {
-            Debug.LogError("Player not found in the scene.");
-        }
 
         // 랜덤한 방향으로 이동 시작
         moveDirection = Random.insideUnitCircle.normalized;

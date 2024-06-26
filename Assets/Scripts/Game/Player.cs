@@ -251,12 +251,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Tree"))
         {
             currentTree = collision.gameObject;  // 나무 오브젝트를 현재 충돌한 나무로 설정
-            Debug.Log("나무와 충돌 시작: " + currentTree.name);
         }
         else if (collision.gameObject.CompareTag("Mineral"))
         {
             currentMineral = collision.gameObject;  // 광물 오브젝트를 현재 충돌한 광물로 설정
-            Debug.Log("광물과 충돌 시작: " + currentMineral.name);
         }
 
         if (collision.gameObject.name == "Square")
@@ -280,7 +278,6 @@ public class Player : MonoBehaviour
         {
             if (currentTree == collision.gameObject)
             {
-                Debug.Log("나무와 충돌 끝: " + currentTree.name);
                 currentTree = null;  // 나무와의 충돌이 끝났다면 참조 제거
             }
         }
@@ -288,7 +285,6 @@ public class Player : MonoBehaviour
         {
             if (currentMineral == collision.gameObject)
             {
-                Debug.Log("광물과 충돌 끝: " + currentMineral.name);
                 currentMineral = null;  // 광물과의 충돌이 끝났다면 참조 제거
             }
         }
@@ -311,14 +307,12 @@ public class Player : MonoBehaviour
 
         if (n_Hp <= 0)
         {
-            Debug.Log("사망");
             Die();
         }
     }
 
     public void AttackCollision()
     {
-        Debug.Log("충돌 발생");
 
         if (currentTree != null)
         {
@@ -333,7 +327,6 @@ public class Player : MonoBehaviour
                 {
                     treeScript.Tree_Hp -= n_Dmg;  // 나머지 무기는 기본 데미지
                 }
-                Debug.Log("충돌로 인한 나무 체력 감소: " + treeScript.Tree_Hp);
             }
         }
         else if (currentMineral != null)

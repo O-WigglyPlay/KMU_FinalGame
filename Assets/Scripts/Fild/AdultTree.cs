@@ -22,10 +22,6 @@ public class AdultTree : MonoBehaviour
             // 처음엔 다 자란 나무로 시작
             animator.Play("FullyGrown");
         }
-        else
-        {
-            Debug.LogError("Animator가 할당되지 않았습니다.");
-        }
     }
 
     public void DestroyAndRespawn()
@@ -37,10 +33,6 @@ public class AdultTree : MonoBehaviour
             // 일정 시간 후 재생성
             StartCoroutine(RespawnTree());
         }
-        else
-        {
-            Debug.LogError("TreePrefab이 할당되지 않았습니다.");
-        }
     }
 
     IEnumerator RespawnTree()
@@ -51,10 +43,6 @@ public class AdultTree : MonoBehaviour
         if (newTreeScript != null)
         {
             newTreeScript.StartGrowthAnimation();
-        }
-        else
-        {
-            Debug.LogError("생성된 나무에 AdultTree 스크립트가 없습니다.");
         }
     }
 
@@ -76,10 +64,6 @@ public class AdultTree : MonoBehaviour
             animator.Play("Growth");
             yield return new WaitForSeconds(growthDuration);
             animator.Play("FullyGrown");
-        }
-        else
-        {
-            Debug.LogError("Animator가 할당되지 않았습니다.");
         }
     }
 }

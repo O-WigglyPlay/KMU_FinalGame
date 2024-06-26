@@ -36,10 +36,6 @@ public class InventoryManager : MonoBehaviour
             UpdateItemCountText();
             CheckIfTargetReached();
         }
-        else
-        {
-            Debug.Log("Not enough items in the inventory.");
-        }
     }
 
     private int GetCurrentItemCount()

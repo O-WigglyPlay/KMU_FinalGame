@@ -42,11 +42,9 @@ public class HungerManager : MonoBehaviour
 
     private void UpdateHungerUI()
     {
-        Debug.Log("Updating Hunger UI: Current Hunger = " + currentHunger); // 디버그 로그 출력
         for (int i = 0; i < hungerBlocks.Length; i++)
         {
-            hungerBlocks[i].enabled = i < currentHunger; // 현재 배고픔 상태에 따라 이미지 활성화/비활성화
-            Debug.Log("Hunger Block " + i + " is " + (hungerBlocks[i].enabled ? "enabled" : "disabled")); // 각 블록의 활성화 상태 출력
+            hungerBlocks[i].enabled = i < currentHunger; // 현재 배고픔 상태에 따라 이미지 활성화/비활성
         }
     }
 
@@ -56,7 +54,6 @@ public class HungerManager : MonoBehaviour
         {
             yield return new WaitForSeconds(interval); // 지정된 시간 간격 대기
             currentHunger--; // 배고픔 1 감소
-            Debug.Log("Decreasing Hunger: Current Hunger = " + currentHunger); // 디버그 로그 출력
             UpdateHungerUI(); // UI 업데이트
         }
     }

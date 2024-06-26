@@ -32,7 +32,6 @@ public class MChange : MonoBehaviour
 
         Mineral_Hp -= damage;
         UpdateSprite();
-        Debug.Log("남은 광물 체력 : " + Mineral_Hp);
 
         if (Mineral_Hp <= 0)
         {

@@ -145,8 +145,7 @@ public class UIManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("저장되었습니다.");
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("StartMeue");
     }
 
     public void GameQuit()
@@ -201,8 +200,6 @@ public class UIManager : MonoBehaviour
 
         // 해상도 변경 적용
         SetResolution(gameData.settings.resolutionIndex);
-
-        Debug.Log("Settings applied and saved.");
     }
 
     void Inventory()

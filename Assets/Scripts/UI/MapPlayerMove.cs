@@ -17,14 +17,12 @@ public class MapPlayerMove : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogError("Player 참조가 할당되지 않았습니다.");
             enabled = false;
             return;
         }
 
         if (mapIcon == null)
         {
-            Debug.LogError("MapIcon 참조가 할당되지 않았습니다.");
             enabled = false;
             return;
         }
@@ -47,10 +45,6 @@ public class MapPlayerMove : MonoBehaviour
     private void CheckPlayerMovement()
     {
         float distance = Vector2.Distance(player.transform.position, oldPos);
-
-        // 디버깅용 로그 출력
-        Debug.Log("Distance: " + distance + ", Is Colliding: " + player.IsColliding());
-
         // 플레이어가 멈추거나 충돌 상태일 때 맵 아이콘도 멈춤
         if (distance < stuckThreshold || player.IsColliding())
         {

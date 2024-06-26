@@ -56,10 +56,6 @@ public class BuildingSystem : MonoBehaviour
                         Instantiate(currentBuildingPrefab, buildPosition, Quaternion.Euler(0, 0, currentRotation));
                         UseResources(); // 자재 사용
                     }
-                    else
-                    {
-                        Debug.Log("Not enough resources to build!");
-                    }
                 }
             }
 
