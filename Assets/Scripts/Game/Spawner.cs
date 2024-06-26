@@ -6,9 +6,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject ZombiePrefab;  // 좀비 프리팹
-    public GameObject BigghostPrefab;   // 큰유령 프리팹
-    public GameObject SmallGhostPrefab; // 작은 유령 프리팹
-    public GameObject SpliterZombiePrefab; // 원거리 좀비 프리팹
 
     public float spawnInterval = 3f; // 몬스터 생성 간격
     public float spawnRadius = 5f;   // 몬스터 생성 반경
@@ -83,12 +80,6 @@ public class Spawner : MonoBehaviour
         {
             case 0:
                 return ZombiePrefab;
-            case 1:
-                return BigghostPrefab;
-            case 2:
-                return SmallGhostPrefab;
-            case 3:
-                return SpliterZombiePrefab;
             default:
                 return ZombiePrefab; // 기본값
         }
