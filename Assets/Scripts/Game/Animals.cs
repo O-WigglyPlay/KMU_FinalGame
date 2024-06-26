@@ -8,7 +8,7 @@ public class Animals : MonoBehaviour
     public int health = 100;
     public float moveSpeed; // 동물의 이동 속도
     public float speedBoostMultiplier = 2.0f; // 속도 증가 배율
-    public float speedBoostDuration = 2.0f; // 속도 증가 지속 시간
+    public float speedBoostDuration = 1.0f; // 속도 증가 지속 시간
     public float directionChangeInterval;// 방향을 변경하는 간격
 
     public GameObject meat; //동물을 죽였을 때 나오는 고기
