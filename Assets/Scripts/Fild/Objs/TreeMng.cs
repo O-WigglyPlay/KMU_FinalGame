@@ -12,18 +12,10 @@ public class TreeMng : MonoBehaviour
     {
         if (Tree_Hp <= 0 && !isDestroyed)
         {
-            Debug.Log("체력 0 이하 - 프리팹 생성 시도");
-
             if (teethPrefab != null)
             {
-                Debug.Log("프리팹 존재 확인 - 생성 시작");
                 Instantiate(teethPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                Debug.Log("프리팹 생성됨");
                 isDestroyed = true;  // 프리팹이 생성되었음을 표시
-            }
-            else
-            {
-                Debug.Log("프리팹 참조 없음");
             }
             StartCoroutine(DestroyTree());
         }

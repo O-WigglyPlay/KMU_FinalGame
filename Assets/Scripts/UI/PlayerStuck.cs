@@ -17,14 +17,12 @@ public class PlayerStuck : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogError("Player 참조가 할당되지 않았습니다.");
             enabled = false;
             return;
         }
 
         if (mapIconTransform == null)
         {
-            Debug.LogError("MapIcon Transform 참조가 할당되지 않았습니다.");
             enabled = false;
             return;
         }
@@ -33,7 +31,6 @@ public class PlayerStuck : MonoBehaviour
         mapIconPlayerScript = mapIconTransform.GetComponent<Player>();
         if (mapIconPlayerScript == null)
         {
-            Debug.LogError("MapIcon 객체에 Player 스크립트가 없습니다.");
             enabled = false;
             return;
         }
