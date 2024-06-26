@@ -16,13 +16,18 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject woodWeapon; // 나무 무기 오브젝트
     [SerializeField] private GameObject mineWeapon; // 광물 무기 오브젝트
     [SerializeField] private GameObject knifeWeapon; // 기본 무기 오브젝트
+    [SerializeField] private GameObject hair; // 머리 스프라이트
+    [SerializeField] private GameObject body; // 옷 스프라이트
 
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
+    private SpriteRenderer playerSpriteRenderer;
+    private Color originalColor; // 원래 색상을 저장하기 위한 변수
     private GameObject currentTree; // 현재 충돌 중인 나무 저장
     private GameObject currentMineral; // 현재 충돌 중인 광물 저장
     private bool isColliding = false; // 충돌 상태를 저장하는 변수
     private Vector2 lastMoveDirection; // 마지막 이동 방향
+    private Vector3 initialPosition; // 초기 위치를 저장하는 변수
 
     public static Player instance;
 
@@ -47,8 +52,11 @@ public class Player : MonoBehaviour
     {
         rb_Player = GetComponent<Rigidbody2D>();
         p_Ani = GetComponent<Animator>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>(); // 플레이어 스프라이트 렌더러 참조
+        originalColor = playerSpriteRenderer.color; // 원래 색상 저장
         n_Hp = n_maxHealth;  // 시작할 때 체력 초기화
         n_Dmg = 1;
+        initialPosition = transform.position; // 초기 위치 저장
 
         var attackCollider = attackTransform.GetComponent<BoxCollider2D>();
 
@@ -79,21 +87,29 @@ public class Player : MonoBehaviour
         {
             currentWeapon = WeaponType.None;
             DeactivateAllWeapons();
+            EnableCharacterSprites();
+            playerSpriteRenderer.color = originalColor; // 원래 색상으로 복원
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWeapon = WeaponType.Mine;
             ActivateWeapon(mineWeapon);
+            EnableCharacterSprites();
+            playerSpriteRenderer.color = originalColor; // 원래 색상으로 복원
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentWeapon = WeaponType.Wood;
             ActivateWeapon(woodWeapon);
+            EnableCharacterSprites();
+            playerSpriteRenderer.color = originalColor; // 원래 색상으로 복원
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currentWeapon = WeaponType.Knife;
             ActivateWeapon(knifeWeapon);
+            DisableCharacterSprites();
+            playerSpriteRenderer.color = new Color(80 / 255.0f, 80 / 255.0f, 80 / 255.0f); // 색상을 80으로 설정
         }
     }
 
@@ -217,7 +233,16 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("ResultScene");
+        Time.timeScale = 0f; // 게임 일시정지
+        UIManager.instance.ShowDeathPanel(); // Death 패널 활성화
+    }
+
+    public void Respawn()
+    {
+        transform.position = initialPosition; // 초기 위치로 이동
+        n_Hp = n_maxHealth; // 체력 초기화
+        healthStaminaManager.SetHealth(n_Hp, n_maxHealth); // UI 업데이트
+        Time.timeScale = 1f; // 게임 재개
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -286,6 +311,7 @@ public class Player : MonoBehaviour
 
         if (n_Hp <= 0)
         {
+            Debug.Log("사망");
             Die();
         }
     }
@@ -329,5 +355,17 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void DisableCharacterSprites()
+    {
+        hair.SetActive(false);
+        body.SetActive(false); // 옷 스프라이트 비활성화
+    }
+
+    private void EnableCharacterSprites()
+    {
+        hair.SetActive(true);
+        body.SetActive(true); // 옷 스프라이트 활성화
     }
 }

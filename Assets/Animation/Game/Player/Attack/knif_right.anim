@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 1166774838, guid: 32f37c01293474f8bb3dca14232dd503, type: 3}
-    - time: 0.11666667
+    - time: 0.15
       value: {fileID: 75934189, guid: 32f37c01293474f8bb3dca14232dd503, type: 3}
-    - time: 0.21666667
+    - time: 0.26666668
       value: {fileID: 341856060, guid: 32f37c01293474f8bb3dca14232dd503, type: 3}
-    - time: 0.33333334
+    - time: 0.41666666
       value: {fileID: 1166774838, guid: 32f37c01293474f8bb3dca14232dd503, type: 3}
     attribute: m_Sprite
     path: 
@@ -37,11 +37,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1548906129, guid: 7e266ac0f46374a24b2935f36cc2ecf3, type: 3}
-    - time: 0.11666667
+    - time: 0.15
       value: {fileID: -362834481, guid: 7e266ac0f46374a24b2935f36cc2ecf3, type: 3}
-    - time: 0.21666667
+    - time: 0.26666668
       value: {fileID: -2056900141, guid: 7e266ac0f46374a24b2935f36cc2ecf3, type: 3}
-    - time: 0.33333334
+    - time: 0.41666666
       value: {fileID: -1548906129, guid: 7e266ac0f46374a24b2935f36cc2ecf3, type: 3}
     attribute: m_Sprite
     path: Clothes/knife
@@ -87,7 +87,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.43333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

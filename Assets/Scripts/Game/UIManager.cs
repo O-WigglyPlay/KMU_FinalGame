@@ -7,12 +7,17 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
+
     public static bool isGamePause = false;
     public static bool isInvenOn = false;
     public GameObject pausePanel;
     public GameObject settingPanel;
     public GameObject inventoryPanel;
     public GameObject pauseButton;
+    public GameObject deathPanel; // Death 패널 오브젝트
+    public Button respawnButton; // 리스폰 버튼
+    public Button mainMenuButton; // 메인메뉴 버튼
     public Slider bgmSlider;
     public Slider effectSlider;
     public AudioSource bgmSource;
@@ -22,12 +27,25 @@ public class UIManager : MonoBehaviour
     Resolution[] resolutions;
     GameData gameData;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         InitializeGameData();
         InitializeResolutions();
         InitializeVolumeSettings();
         AddSliderListeners();
+        AddButtonListeners(); // 버튼 리스너 추가
     }
 
     void InitializeGameData()
@@ -79,6 +97,13 @@ public class UIManager : MonoBehaviour
         // 슬라이더 이벤트 리스너 추가
         bgmSlider.onValueChanged.AddListener(SetVolumeBGM);
         effectSlider.onValueChanged.AddListener(SetVolumeEffect);
+    }
+
+    void AddButtonListeners()
+    {
+        // 버튼 이벤트 리스너 추가
+        respawnButton.onClick.AddListener(RespawnPlayer);
+        mainMenuButton.onClick.AddListener(GoToMainMenu);
     }
 
     void Update()
@@ -198,5 +223,22 @@ public class UIManager : MonoBehaviour
                 isInvenOn = true;
             }   
         }
+    }
+
+    public void ShowDeathPanel()
+    {
+        deathPanel.SetActive(true); // Death 패널 활성화
+    }
+
+    public void RespawnPlayer()
+    {
+        Player.instance.Respawn(); // 플레이어 리스폰
+        deathPanel.SetActive(false); // Death 패널 비활성화
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f; // 게임 시간 재개
+        SceneManager.LoadScene("StartMeue"); // 메인 씬으로 이동
     }
 }
