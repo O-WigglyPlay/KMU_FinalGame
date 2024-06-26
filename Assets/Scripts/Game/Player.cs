@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject down_Hitbox; // Down 히트박스 오브젝트
     [SerializeField] private GameObject woodWeapon; // 나무 무기 오브젝트
     [SerializeField] private GameObject mineWeapon; // 광물 무기 오브젝트
+    [SerializeField] private GameObject knifeWeapon; // 기본 무기 오브젝트
 
     private Rigidbody2D rb_Player;
     private Animator p_Ani;
@@ -26,6 +27,9 @@ public class Player : MonoBehaviour
     public static Player instance;
 
     private HealthStaminaManager healthStaminaManager;
+
+    private enum WeaponType { None, Mine, Wood, Knife }
+    private WeaponType currentWeapon = WeaponType.None;
 
     private void Awake()
     {
@@ -51,6 +55,11 @@ public class Player : MonoBehaviour
         // HealthStaminaManager 찾기
         healthStaminaManager = FindObjectOfType<HealthStaminaManager>();
         healthStaminaManager.SetHealth(n_Hp, n_maxHealth); // 초기 체력을 설정
+
+        // 기본 무기 활성화
+        knifeWeapon.SetActive(true);
+        woodWeapon.SetActive(false);
+        mineWeapon.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -60,7 +69,48 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        SelectWeapon();
         Attack();
+    }
+
+    private void SelectWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWeapon = WeaponType.None;
+            DeactivateAllWeapons();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = WeaponType.Mine;
+            ActivateWeapon(mineWeapon);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWeapon = WeaponType.Wood;
+            ActivateWeapon(woodWeapon);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentWeapon = WeaponType.Knife;
+            ActivateWeapon(knifeWeapon);
+        }
+    }
+
+    private void ActivateWeapon(GameObject weapon)
+    {
+        mineWeapon.SetActive(false);
+        woodWeapon.SetActive(false);
+        knifeWeapon.SetActive(false);
+
+        weapon.SetActive(true);
+    }
+
+    private void DeactivateAllWeapons()
+    {
+        mineWeapon.SetActive(false);
+        woodWeapon.SetActive(false);
+        knifeWeapon.SetActive(false);
     }
 
     private void Attack()
@@ -72,17 +122,23 @@ public class Player : MonoBehaviour
 
             DisableAllHitboxes(); // 모든 히트박스를 비활성화합니다.
 
+            string animationPrefix = "Atk_";
+            if (currentWeapon == WeaponType.Knife)
+            {
+                animationPrefix = "knif_";
+            }
+
             // 좌우 공격
             if (lastMoveX == -1)
             {
                 attackTransform.localPosition = new Vector3(-0.033f, attackTransform.localPosition.y, attackTransform.localPosition.z);
-                p_Ani.Play("Atk_left");
+                p_Ani.Play(animationPrefix + "left");
                 EnableHitbox(attackTransform.gameObject); // 왼쪽 공격 시 attackTransform 히트박스를 활성화합니다.
             }
             else if (lastMoveX == 1)
             {
                 attackTransform.localPosition = new Vector3(0.6f, attackTransform.localPosition.y, attackTransform.localPosition.z);
-                p_Ani.Play("Atk_right");
+                p_Ani.Play(animationPrefix + "right");
                 EnableHitbox(attackTransform.gameObject); // 오른쪽 공격 시 attackTransform 히트박스를 활성화합니다.
             }
 
@@ -90,12 +146,12 @@ public class Player : MonoBehaviour
             if (lastMoveY == 1)
             {
                 EnableHitbox(top_Hitbox);
-                p_Ani.Play("Atk_top");  // 위쪽 공격 애니메이션 실행
+                p_Ani.Play(animationPrefix + "top");  // 위쪽 공격 애니메이션 실행
             }
             else if (lastMoveY == -1)
             {
                 EnableHitbox(down_Hitbox);
-                p_Ani.Play("Atk_bottom");  // 아래쪽 공격 애니메이션 실행
+                p_Ani.Play(animationPrefix + "bottom");  // 아래쪽 공격 애니메이션 실행
             }
 
             AttackCollision(); // 공격 충돌 검사를 수행합니다.
@@ -170,15 +226,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Tree"))
         {
             currentTree = collision.gameObject;  // 나무 오브젝트를 현재 충돌한 나무로 설정
-            woodWeapon.SetActive(true);
-            mineWeapon.SetActive(false);
             Debug.Log("나무와 충돌 시작: " + currentTree.name);
         }
         else if (collision.gameObject.CompareTag("Mineral"))
         {
             currentMineral = collision.gameObject;  // 광물 오브젝트를 현재 충돌한 광물로 설정
-            woodWeapon.SetActive(false);
-            mineWeapon.SetActive(true);
             Debug.Log("광물과 충돌 시작: " + currentMineral.name);
         }
 
@@ -205,7 +257,6 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("나무와 충돌 끝: " + currentTree.name);
                 currentTree = null;  // 나무와의 충돌이 끝났다면 참조 제거
-                woodWeapon.SetActive(false); // 나무 무기 비활성화
             }
         }
         else if (collision.gameObject.CompareTag("Mineral"))
@@ -214,7 +265,6 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("광물과 충돌 끝: " + currentMineral.name);
                 currentMineral = null;  // 광물과의 충돌이 끝났다면 참조 제거
-                mineWeapon.SetActive(false); // 광물 무기 비활성화
             }
         }
     }
@@ -249,7 +299,14 @@ public class Player : MonoBehaviour
             TreeMng treeScript = currentTree.GetComponent<TreeMng>();
             if (treeScript != null)
             {
-                treeScript.Tree_Hp -= n_Dmg;  // 나무의 체력 감소
+                if (currentWeapon == WeaponType.Wood)
+                {
+                    treeScript.Tree_Hp -= 3;  // 나무 무기 사용 시 3 데미지
+                }
+                else
+                {
+                    treeScript.Tree_Hp -= n_Dmg;  // 나머지 무기는 기본 데미지
+                }
                 Debug.Log("충돌로 인한 나무 체력 감소: " + treeScript.Tree_Hp);
             }
         }
@@ -258,7 +315,14 @@ public class Player : MonoBehaviour
             MChange mineralScript = currentMineral.GetComponent<MChange>();
             if (mineralScript != null)
             {
-                mineralScript.TakeDamage(n_Dmg);  // 광물의 체력 감소
+                if (currentWeapon == WeaponType.Mine)
+                {
+                    mineralScript.TakeDamage(3);  // 광물 무기 사용 시 3 데미지
+                }
+                else
+                {
+                    mineralScript.TakeDamage(n_Dmg);  // 나머지 무기는 기본 데미지
+                }
                 if (mineralScript.Mineral_Hp <= 0)
                 {
                     currentMineral = null; // 파괴 후 currentMineral 참조 제거
