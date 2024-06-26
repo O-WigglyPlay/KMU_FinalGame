@@ -14,12 +14,6 @@ public class GameManager : MonoBehaviour
         GameLoad();
 
     }
-    void Update()
-    {
-        if (Input.GetButtonDown("Cancel"))
-            menuSet.SetActive(true);
-    }
-
 
     public void GameSave()
     {
