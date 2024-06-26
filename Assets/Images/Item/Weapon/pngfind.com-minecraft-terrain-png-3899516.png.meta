@@ -1,0 +1,2226 @@
+fileFormatVersion: 2
+guid: 52d036d5e44751444a417d34b98c75a3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 799
+        width: 139
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18605addb7597314286bb16e1468d78e
+      internalID: -1293997811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 792
+        width: 418
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61dd44581982b71459ac1ff109edab7f
+      internalID: 438580686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 168
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa91fad09e5b1d4fa47830c9d2f9a55
+      internalID: 292386606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 582
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e0cafc3c3613148af36fa5534e9f2b
+      internalID: 1466089876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_4
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 491
+        width: 174
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dedadef90cd09a40a56839dd34a6a72
+      internalID: -2018650638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 582
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95816aaf545f0f4ab64eb077acb767e
+      internalID: 1240983509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_6
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 496
+        width: 174
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dde4f013a911c648b530fe84877be2c
+      internalID: -1427570726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 582
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3a7a763a5cc4847a4f86541c69ec88
+      internalID: 299215541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_8
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 547
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0139e729e9cc41e4ba7ff234a54e2994
+      internalID: 424639587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_9
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 545
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e719384f874f114db0eb22ccf2f140e
+      internalID: -58485089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_10
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 546
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e809298d1690933498e235420084339a
+      internalID: -1934883590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_11
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 545
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6477a131a2adcd747a5654d6c3cc61a3
+      internalID: 1132429035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_12
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64800002fc54c154ea17f1e3715ebce6
+      internalID: 753593488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_13
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8daf6169dc7c27741a29d4e4d3542f27
+      internalID: 398694253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_14
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fa0bd1391dd6a4d86b7d62e417843a
+      internalID: 1981569317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_15
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85e1a337e3827d4cbba1b1be1cdd36f
+      internalID: 1601723059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_16
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbeca60cfd216c4696126bbc41543a2
+      internalID: 2023599386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_17
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a413f823b126da249832d64a05bfed8c
+      internalID: -761569332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_18
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea35c3d48670bb438a82f1058746e77
+      internalID: 2129638527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_19
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 486
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1be199aabdd58f479117f35b94363f6
+      internalID: 1689532612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_20
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76074e37eab270944ab1a3f1abc00b63
+      internalID: -2096678517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_21
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd97ad26f2e1de942887e9a3180caadd
+      internalID: -183009717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_22
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf7f4f3ca387e54188894d5da21a60f
+      internalID: 1811376000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_23
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d458e4c94c9f1408eb6fcc35a8c6fc
+      internalID: -1554492907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_24
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4789995cc4f62f546a64d0f3773f0a41
+      internalID: -1444258271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_25
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 399
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5e2756a8f78b6489042492d4197c72
+      internalID: 297418573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_26
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 433
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5d560f344298a468623f7e53562189
+      internalID: -25372788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_27
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 433
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc81891634efddf42859069179f4ac05
+      internalID: 541039249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_28
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 433
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523eff3feda3dbd4e8d298a1c8c2ec0a
+      internalID: -1766024043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_29
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 435
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b550240e65e46c409f17389b16f19d9
+      internalID: 149864444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_30
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 447
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191bcd3ab0800e849828a8b0fd85787a
+      internalID: 1092146228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_31
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 431
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1de818e25a8de4fbddd8ef27c2e7d1
+      internalID: -647475195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 401
+        width: 30
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f16fbd68dc9e64aa773c65ca86ec02
+      internalID: 1943483431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_33
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 433
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ff51ad35ea3b34a90da89a18c1e5e7
+      internalID: -358428620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_34
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 434
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de590898d5151e4499d0de1cfade510a
+      internalID: 1670985110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_35
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 435
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ea698dd0fd9064e810dec21ba23add
+      internalID: -310991947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_36
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 395
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f2d144b6f2e474c99d1b7c996970af
+      internalID: -1352567325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_37
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 395
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f82882b99e07db42aa733a381ac0963
+      internalID: 2115131982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_38
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 395
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae0dcc4b8cf0924e9686fef4d5501cb
+      internalID: 1744280039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_39
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 395
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290d18ed00a62584ea94b9662e50435e
+      internalID: -234338114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_40
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 395
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d573ff1075d91f42b9562e9a8c7dac3
+      internalID: 1990986371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_41
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 403
+        width: 64
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de077af23efd3348ba08b0260e4859c
+      internalID: -1652303535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_42
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 401
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3778c4f98efebc240b1e5aef4ac36e10
+      internalID: 1991216771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_43
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 399
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e67824eda7190469889d8eaaf57c25
+      internalID: -1046678676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_44
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 401
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36718300a41d724a888fb46a6be2b36
+      internalID: -150018742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_45
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 400
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26be61594c565c140b0615f1dd03d37d
+      internalID: -1658490045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_46
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 402
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563dae2faba77c34e817d36b514f0927
+      internalID: -164039544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_47
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 403
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc47291d2b43f9c45be830559f8491de
+      internalID: -368894117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_48
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 403
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068d129cab526a34cb48eb6291f5664e
+      internalID: -591379377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_49
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 365
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e9d579d0129b945aa0e2d0aeb564a3
+      internalID: 165170955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_50
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 365
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b2c07a1271bf74f8928d144f01fdd4
+      internalID: -2119155760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_51
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 365
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430190267a19de04993f2fc37460baba
+      internalID: 898313313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_52
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 365
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1ea6516822db74ab7203c5cdac2bba
+      internalID: 633231444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_53
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 365
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0024ffb2e48d89d449dbfef3ea70873b
+      internalID: 224394580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_54
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 367
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a052048af82a7f14188fa8687fa82e95
+      internalID: -1027073921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_55
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 369
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa16bf502bd1af44b5e6e8a4c9608cf
+      internalID: -94452767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_56
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 371
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e88b71e8a36b64781b5f40cd7019b5
+      internalID: 1871933124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_57
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 371
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2e4634d229da84d85e811f7d6ed70f
+      internalID: -1084670432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_58
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 367
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b150fb776297df449737f21301a9641
+      internalID: -1038602374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_59
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 367
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61184b88a0832d74596687bd18c6b88b
+      internalID: 1820586076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_60
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 367
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df49fa5c0131ce648b44d2b8ff098f54
+      internalID: 339282518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_61
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 367
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3a45e0f3a856943a4ca8ca2dd0ed5e
+      internalID: -980061178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_62
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 370
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a353dd2d658be0d49b887ab2d75d7160
+      internalID: 27179764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_63
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 372
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a21d642933a8bc4ab23148db21cd0e1
+      internalID: 423726546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_64
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 372
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d78118b684c49e4bab47ad442eb3f2b
+      internalID: 619062989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_65
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 331
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c309a5417505064ca49fef3f124b66f
+      internalID: -777558518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_66
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 331
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822dc679d506ea646a60b2efa535378b
+      internalID: -2045668655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_67
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 332
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5607fc4b76ac41241905c8be05cf599a
+      internalID: 422670275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_68
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 332
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9512b9e93f065ee4686e65dff32b7535
+      internalID: -1970436953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_69
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 332
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d504982f52b65042a47043d7faa0b3c
+      internalID: 123537394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_70
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 337
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3235114018e587439450495c223ffe4
+      internalID: -659711771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_71
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 339
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4438290a91ac364b83ef706b60bf459
+      internalID: 682368633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_72
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 337
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382d060e20b9c914daec3546cf585f5e
+      internalID: 474795168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_73
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 339
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0896c0886cfbf4da2c2b6bd4dda536
+      internalID: 686786708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_74
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 339
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837004641e4630842bec5d09288f326e
+      internalID: -491818775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_75
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 339
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee44a15f4a1d5541acc99b7727bfbfc
+      internalID: 342488490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_76
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 337
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798291e3782ee904b88da93bb0295677
+      internalID: 403635520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_77
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 342
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca2b8076ca5820499ff59cdc7c3f07a
+      internalID: -876777815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_78
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 342
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438702d6622ad1549be78722d1874af7
+      internalID: 786095962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_79
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 340
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a55f28f8f45704a8575e12e94733bb
+      internalID: 1788451957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_80
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 338
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b479e40f03cf414db1f0788671d7d41
+      internalID: -1426955709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_81
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 303
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731a06ede258e7642b031a3b0f970f25
+      internalID: -837238393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_82
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 302
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d13d446a83ef5b41a0b967c22fcfbd4
+      internalID: -1442659324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_83
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 309
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d8e192438771c4c9b98d4b24fe5477
+      internalID: -611407566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_84
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 309
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7798fb54ab01c40b4a1a3ea7c5a0ce
+      internalID: -1054363122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_85
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 308
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a923bcfdfff369849930cde619d6ccd9
+      internalID: -552898943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_86
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 305
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcaf696221988324e9c97cd9a58d6a39
+      internalID: -1667169033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_87
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 305
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fd98b037821ad44b2f0181aa9df35b
+      internalID: 2135087765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_88
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 305
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831f1e4aba3db0e41a3c0063528cf2a4
+      internalID: 1676816987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_89
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 305
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e3123e5219c694bb829239671ac994
+      internalID: -595490521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_90
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 307
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644ed4a94a58148449dfe06019916d37
+      internalID: -1529211729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_91
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 307
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d0b59ccd472174a9872a6526b28e80
+      internalID: 180455443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_92
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 32
+        width: 448
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8af6422f4c7ca0469facc7fb6f6aa1f
+      internalID: 1343987324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_93
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 256
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32a81665108085408e4696aab796e39
+      internalID: -1801071786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_94
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 96
+        width: 160
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f70429ef49d6d4885f37df6a1d6816
+      internalID: 2122423759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-minecraft-terrain-png-3899516_95
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 30
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4824bbc3fbe5be545836957b3247216a
+      internalID: -1787302879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pngfind.com-minecraft-terrain-png-3899516_0: -1293997811
+      pngfind.com-minecraft-terrain-png-3899516_1: 438580686
+      pngfind.com-minecraft-terrain-png-3899516_10: -1934883590
+      pngfind.com-minecraft-terrain-png-3899516_11: 1132429035
+      pngfind.com-minecraft-terrain-png-3899516_12: 753593488
+      pngfind.com-minecraft-terrain-png-3899516_13: 398694253
+      pngfind.com-minecraft-terrain-png-3899516_14: 1981569317
+      pngfind.com-minecraft-terrain-png-3899516_15: 1601723059
+      pngfind.com-minecraft-terrain-png-3899516_16: 2023599386
+      pngfind.com-minecraft-terrain-png-3899516_17: -761569332
+      pngfind.com-minecraft-terrain-png-3899516_18: 2129638527
+      pngfind.com-minecraft-terrain-png-3899516_19: 1689532612
+      pngfind.com-minecraft-terrain-png-3899516_2: 292386606
+      pngfind.com-minecraft-terrain-png-3899516_20: -2096678517
+      pngfind.com-minecraft-terrain-png-3899516_21: -183009717
+      pngfind.com-minecraft-terrain-png-3899516_22: 1811376000
+      pngfind.com-minecraft-terrain-png-3899516_23: -1554492907
+      pngfind.com-minecraft-terrain-png-3899516_24: -1444258271
+      pngfind.com-minecraft-terrain-png-3899516_25: 297418573
+      pngfind.com-minecraft-terrain-png-3899516_26: -25372788
+      pngfind.com-minecraft-terrain-png-3899516_27: 541039249
+      pngfind.com-minecraft-terrain-png-3899516_28: -1766024043
+      pngfind.com-minecraft-terrain-png-3899516_29: 149864444
+      pngfind.com-minecraft-terrain-png-3899516_3: 1466089876
+      pngfind.com-minecraft-terrain-png-3899516_30: 1092146228
+      pngfind.com-minecraft-terrain-png-3899516_31: -647475195
+      pngfind.com-minecraft-terrain-png-3899516_32: 1943483431
+      pngfind.com-minecraft-terrain-png-3899516_33: -358428620
+      pngfind.com-minecraft-terrain-png-3899516_34: 1670985110
+      pngfind.com-minecraft-terrain-png-3899516_35: -310991947
+      pngfind.com-minecraft-terrain-png-3899516_36: -1352567325
+      pngfind.com-minecraft-terrain-png-3899516_37: 2115131982
+      pngfind.com-minecraft-terrain-png-3899516_38: 1744280039
+      pngfind.com-minecraft-terrain-png-3899516_39: -234338114
+      pngfind.com-minecraft-terrain-png-3899516_4: -2018650638
+      pngfind.com-minecraft-terrain-png-3899516_40: 1990986371
+      pngfind.com-minecraft-terrain-png-3899516_41: -1652303535
+      pngfind.com-minecraft-terrain-png-3899516_42: 1991216771
+      pngfind.com-minecraft-terrain-png-3899516_43: -1046678676
+      pngfind.com-minecraft-terrain-png-3899516_44: -150018742
+      pngfind.com-minecraft-terrain-png-3899516_45: -1658490045
+      pngfind.com-minecraft-terrain-png-3899516_46: -164039544
+      pngfind.com-minecraft-terrain-png-3899516_47: -368894117
+      pngfind.com-minecraft-terrain-png-3899516_48: -591379377
+      pngfind.com-minecraft-terrain-png-3899516_49: 165170955
+      pngfind.com-minecraft-terrain-png-3899516_5: 1240983509
+      pngfind.com-minecraft-terrain-png-3899516_50: -2119155760
+      pngfind.com-minecraft-terrain-png-3899516_51: 898313313
+      pngfind.com-minecraft-terrain-png-3899516_52: 633231444
+      pngfind.com-minecraft-terrain-png-3899516_53: 224394580
+      pngfind.com-minecraft-terrain-png-3899516_54: -1027073921
+      pngfind.com-minecraft-terrain-png-3899516_55: -94452767
+      pngfind.com-minecraft-terrain-png-3899516_56: 1871933124
+      pngfind.com-minecraft-terrain-png-3899516_57: -1084670432
+      pngfind.com-minecraft-terrain-png-3899516_58: -1038602374
+      pngfind.com-minecraft-terrain-png-3899516_59: 1820586076
+      pngfind.com-minecraft-terrain-png-3899516_6: -1427570726
+      pngfind.com-minecraft-terrain-png-3899516_60: 339282518
+      pngfind.com-minecraft-terrain-png-3899516_61: -980061178
+      pngfind.com-minecraft-terrain-png-3899516_62: 27179764
+      pngfind.com-minecraft-terrain-png-3899516_63: 423726546
+      pngfind.com-minecraft-terrain-png-3899516_64: 619062989
+      pngfind.com-minecraft-terrain-png-3899516_65: -777558518
+      pngfind.com-minecraft-terrain-png-3899516_66: -2045668655
+      pngfind.com-minecraft-terrain-png-3899516_67: 422670275
+      pngfind.com-minecraft-terrain-png-3899516_68: -1970436953
+      pngfind.com-minecraft-terrain-png-3899516_69: 123537394
+      pngfind.com-minecraft-terrain-png-3899516_7: 299215541
+      pngfind.com-minecraft-terrain-png-3899516_70: -659711771
+      pngfind.com-minecraft-terrain-png-3899516_71: 682368633
+      pngfind.com-minecraft-terrain-png-3899516_72: 474795168
+      pngfind.com-minecraft-terrain-png-3899516_73: 686786708
+      pngfind.com-minecraft-terrain-png-3899516_74: -491818775
+      pngfind.com-minecraft-terrain-png-3899516_75: 342488490
+      pngfind.com-minecraft-terrain-png-3899516_76: 403635520
+      pngfind.com-minecraft-terrain-png-3899516_77: -876777815
+      pngfind.com-minecraft-terrain-png-3899516_78: 786095962
+      pngfind.com-minecraft-terrain-png-3899516_79: 1788451957
+      pngfind.com-minecraft-terrain-png-3899516_8: 424639587
+      pngfind.com-minecraft-terrain-png-3899516_80: -1426955709
+      pngfind.com-minecraft-terrain-png-3899516_81: -837238393
+      pngfind.com-minecraft-terrain-png-3899516_82: -1442659324
+      pngfind.com-minecraft-terrain-png-3899516_83: -611407566
+      pngfind.com-minecraft-terrain-png-3899516_84: -1054363122
+      pngfind.com-minecraft-terrain-png-3899516_85: -552898943
+      pngfind.com-minecraft-terrain-png-3899516_86: -1667169033
+      pngfind.com-minecraft-terrain-png-3899516_87: 2135087765
+      pngfind.com-minecraft-terrain-png-3899516_88: 1676816987
+      pngfind.com-minecraft-terrain-png-3899516_89: -595490521
+      pngfind.com-minecraft-terrain-png-3899516_9: -58485089
+      pngfind.com-minecraft-terrain-png-3899516_90: -1529211729
+      pngfind.com-minecraft-terrain-png-3899516_91: 180455443
+      pngfind.com-minecraft-terrain-png-3899516_92: 1343987324
+      pngfind.com-minecraft-terrain-png-3899516_93: -1801071786
+      pngfind.com-minecraft-terrain-png-3899516_94: 2122423759
+      pngfind.com-minecraft-terrain-png-3899516_95: -1787302879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
